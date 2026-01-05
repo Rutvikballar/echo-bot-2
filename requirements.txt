@@ -4,3 +4,5 @@ flask-mqtt
 flask-socketio
 eventlet
 paho-mqtt
+numpy
+matplotlib
