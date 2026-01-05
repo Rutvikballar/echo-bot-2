@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECHO Robot - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-brand">
+            <span class="robot-icon">🤖</span>
+            <span class="brand-text">ECHO Robot Control</span>
+        </div>
+        <div class="nav-links">
+            <a href="/admin" class="nav-link active">🔧 Admin</a>
+            <a href="/nurse" class="nav-link">👩‍⚕️ Nurse</a>
+            <a href="/elder/1" class="nav-link">👴 Elder 1</a>
+            <a href="/elder/2" class="nav-link">👴 Elder 2</a>
+            <a href="/elder/3" class="nav-link">👴 Elder 3</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <h1 class="page-title">🔧 Admin Dashboard</h1>
+
+        <!-- Stats Cards -->
+        <div class="stats-row">
+            <div class="stat-card battery-card">
+                <div class="stat-icon">🔋</div>
+                <div class="stat-info">
+                    <span class="stat-label">Battery</span>
+                    <span class="stat-value" id="battery-value">100%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" id="battery-bar" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="stat-card temp-card">
+                <div class="stat-icon">🌡️</div>
+                <div class="stat-info">
+                    <span class="stat-label">Temperature</span>
+                    <span class="stat-value" id="temp-value">42°C</span>
+                </div>
+            </div>
+            <div class="stat-card speed-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <span class="stat-label">Speed</span>
+                    <span class="stat-value" id="speed-value">15</span>
+                </div>
+            </div>
+            <div class="stat-card task-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-info">
+                    <span class="stat-label">Current Task</span>
+                    <span class="stat-value" id="task-value">Idle</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera and Map Row -->
+        <div class="media-row">
+            <div class="media-card">
+                <h3>📹 Live Camera Feed</h3>
+                <div class="canvas-container">
+                    <canvas id="camera-canvas" width="400" height="300"></canvas>
+                    <div class="no-feed" id="camera-placeholder">Waiting for camera feed...</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <h3>🗺️ Live Map</h3>
+                <div class="canvas-container">
+                    <canvas id="map-canvas" width="400" height="400"></canvas>
+                    <div class="no-feed" id="map-placeholder">Waiting for map data...</div>
+                </div>
+                <div class="map-legend">
+                    <span class="legend-item"><span class="legend-color" style="background:#000"></span>Unknown</span>
+                    <span class="legend-item"><span class="legend-color"
+                            style="background:#fff;border:1px solid #ccc"></span>Free</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#808080"></span>Wall</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#00ffff"></span>Elder
+                        1</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#ff00ff"></span>Elder
+                        2</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#ffff00"></span>Elder
+                        3</span>
+                    <span class="legend-item"><span class="legend-color"
+                            style="background:#ff0000"></span>Medicine</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#00ff00"></span>Dock</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#0000ff"></span>Robot</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Row -->
+        <div class="controls-row">
+            <!-- Manual Control -->
+            <div class="control-card">
+                <h3>🎮 Manual Control</h3>
+                <button class="action-btn manual-mode-btn" id="btn-manual-mode"
+                    style="width:100%; margin-bottom:1rem; background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    🎯 Enable Manual Mode
+                </button>
+                <div class="manual-controls">
+                    <div class="control-row">
+                        <button class="control-btn" id="btn-forward">▲</button>
+                    </div>
+                    <div class="control-row">
+                        <button class="control-btn" id="btn-left">◄</button>
+                        <button class="control-btn stop-btn" id="btn-stop">STOP</button>
+                        <button class="control-btn" id="btn-right">►</button>
+                    </div>
+                    <div class="control-row">
+                        <button class="control-btn" id="btn-backward">▼</button>
+                    </div>
+                </div>
+                <p style="text-align:center; color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+                    Use WASD or Arrow keys when in Manual Mode
+                </p>
+            </div>
+
+            <!-- Speed Control -->
+            <div class="control-card">
+                <h3>⚡ Speed Control</h3>
+                <div class="speed-control">
+                    <input type="range" id="speed-slider" min="5" max="25" value="15" class="speed-slider">
+                    <div class="speed-labels">
+                        <span>5</span>
+                        <span id="speed-display">15</span>
+                        <span>25</span>
+                    </div>
+                    <button class="apply-btn" id="apply-speed">Apply Speed</button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="control-card">
+                <h3>🚀 Quick Actions</h3>
+                <div class="quick-actions">
+                    <button class="action-btn dock-btn" id="btn-dock">🔌 Force Dock</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="connection-status" class="status-indicator disconnected">● Disconnected</span>
+            <span id="last-update">Last update: --</span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        // Initialize admin page
+        initAdminPage();
+    </script>
+</body>
+
+</html>

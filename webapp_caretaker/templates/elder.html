@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECHO Robot - Elder Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="elder-body">
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-brand">
+            <span class="robot-icon">🤖</span>
+            <span class="brand-text">ECHO Robot Control</span>
+        </div>
+        <div class="nav-links">
+            <a href="/admin" class="nav-link">🔧 Admin</a>
+            <a href="/nurse" class="nav-link">👩‍⚕️ Nurse</a>
+            <a href="/elder/1" class="nav-link {% if elder_id == 1 %}active{% endif %}">👴 Elder 1</a>
+            <a href="/elder/2" class="nav-link {% if elder_id == 2 %}active{% endif %}">👴 Elder 2</a>
+            <a href="/elder/3" class="nav-link {% if elder_id == 3 %}active{% endif %}">👴 Elder 3</a>
+        </div>
+    </nav>
+
+    <div class="elder-container">
+        <h1 class="elder-title">👴 Elder {{ elder_id }} Panel</h1>
+        <p class="elder-subtitle">How can we help you today?</p>
+
+        <div class="elder-buttons-container">
+            <button class="big-action-btn nurse-btn" onclick="showNurseRequestModal()">
+                <span class="btn-icon">🔔</span>
+                <span class="btn-text">CALL NURSE</span>
+            </button>
+
+            <button class="big-action-btn ambulance-btn" id="ambulance-btn" data-elder-id="{{ elder_id }}">
+                <span class="btn-icon">🚨</span>
+                <span class="btn-text">CALL AMBULANCE</span>
+            </button>
+        </div>
+
+        <!-- Status indicator -->
+        <div class="elder-status" id="elder-status">
+            <span id="connection-status" class="status-indicator disconnected">● Disconnected</span>
+        </div>
+    </div>
+
+    <!-- Nurse Request Modal -->
+    <div id="nurse-request-modal" class="modal">
+        <div class="modal-content nurse-request-content">
+            <span class="modal-close" onclick="closeModal('nurse-request-modal')">&times;</span>
+            <h2>🔔 Call Nurse Request</h2>
+            <p class="modal-subtitle">What do you need help with?</p>
+
+            <div class="request-categories">
+                <!-- Urgent / Pain -->
+                <div class="request-category">
+                    <h3 class="category-title urgent">🔴 URGENT / PAIN</h3>
+                    <div class="request-options">
+                        <button class="request-btn" onclick="sendNurseRequest('Toilet')">
+                            🚽 Toilet
+                        </button>
+                        <button class="request-btn" onclick="sendNurseRequest('Pain / Hurt')">
+                            🤕 Pain / Hurt
+                        </button>
+                        <button class="request-btn" onclick="sendNurseRequest('Dizzy')">
+                            💫 Dizzy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Daily Needs -->
+                <div class="request-category">
+                    <h3 class="category-title daily">🔵 DAILY NEEDS</h3>
+                    <div class="request-options">
+                        <button class="request-btn" onclick="sendNurseRequest('Thirsty / Water')">
+                            💧 Thirsty / Water
+                        </button>
+                        <button class="request-btn" onclick="sendNurseRequest('Medication Help')">
+                            💊 Medication Help
+                        </button>
+                        <button class="request-btn" onclick="sendNurseRequest('Help Standing Up')">
+                            ⚓ Help Standing Up
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comfort -->
+                <div class="request-category">
+                    <h3 class="category-title comfort">⚪ COMFORT</h3>
+                    <div class="request-options comfort-options">
+                        <button class="request-btn" onclick="sendNurseRequest('Too Hot/Cold')">
+                            🌡️ Too Hot/Cold
+                        </button>
+                        <button class="request-btn" onclick="sendNurseRequest('Lonely/Chat')">
+                            🗣️ Lonely/Chat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Custom Message -->
+                <div class="custom-message-section">
+                    <button class="request-btn custom-btn" onclick="showCustomMessage()">
+                        ❓ Something Else (Type Message)
+                    </button>
+                    <div id="custom-message-input" class="custom-input hidden">
+                        <input type="text" id="custom-message" placeholder="Type your message...">
+                        <button onclick="sendCustomRequest()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nurse Chat Modal (after sending request) -->
+    <div id="nurse-chat-modal" class="modal">
+        <div class="modal-content chat-modal">
+            <span class="modal-close" onclick="closeModal('nurse-chat-modal')">&times;</span>
+            <h2>💬 Chat with Nurse</h2>
+            <div class="chat-container" id="nurse-chat">
+                <!-- Chat messages will be added here -->
+            </div>
+            <div class="chat-input-row">
+                <input type="text" id="elder-reply-input" placeholder="Type a message...">
+                <button onclick="sendElderMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ambulance Dialog Modal -->
+    <div id="ambulance-modal" class="modal">
+        <div class="modal-content ambulance-dialog">
+            <span class="modal-close" onclick="closeModal('ambulance-modal')">&times;</span>
+            <h2>🚨 Emergency Call - 112</h2>
+            <div class="chat-container" id="ambulance-chat">
+                <!-- Chat messages will be added here -->
+            </div>
+            <div class="chat-status" id="call-status">Connecting to Emergency Services...</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        // Store elder ID for this page
+        const ELDER_ID = parseInt("{{ elder_id }}");
+        // Initialize elder page
+        initElderPage(ELDER_ID);
+
+        // Setup ambulance button click handler
+        document.getElementById('ambulance-btn').addEventListener('click', function () {
+            showAmbulanceDialog('elder', ELDER_ID);
+        });
+    </script>
+</body>
+
+</html>

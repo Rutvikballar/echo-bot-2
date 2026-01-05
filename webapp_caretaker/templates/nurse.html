@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECHO Robot - Nurse Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-brand">
+            <span class="robot-icon">🤖</span>
+            <span class="brand-text">ECHO Robot Control</span>
+        </div>
+        <div class="nav-links">
+            <a href="/admin" class="nav-link">🔧 Admin</a>
+            <a href="/nurse" class="nav-link active">👩‍⚕️ Nurse</a>
+            <a href="/elder/1" class="nav-link">👴 Elder 1</a>
+            <a href="/elder/2" class="nav-link">👴 Elder 2</a>
+            <a href="/elder/3" class="nav-link">👴 Elder 3</a>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <h1 class="page-title">👩‍⚕️ Nurse Dashboard</h1>
+
+        <!-- Stats Cards (Limited) -->
+        <div class="stats-row stats-row-compact">
+            <div class="stat-card battery-card">
+                <div class="stat-icon">🔋</div>
+                <div class="stat-info">
+                    <span class="stat-label">Battery</span>
+                    <span class="stat-value" id="battery-value">100%</span>
+                </div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" id="battery-bar" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="stat-card task-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-info">
+                    <span class="stat-label">Current Task</span>
+                    <span class="stat-value" id="task-value">Idle</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera and Map Row -->
+        <div class="media-row">
+            <div class="media-card">
+                <h3>📹 Live Camera Feed</h3>
+                <div class="canvas-container">
+                    <canvas id="camera-canvas" width="400" height="300"></canvas>
+                    <div class="no-feed" id="camera-placeholder">Waiting for camera feed...</div>
+                </div>
+            </div>
+            <div class="media-card">
+                <h3>🗺️ Live Map</h3>
+                <div class="canvas-container">
+                    <canvas id="map-canvas" width="400" height="400"></canvas>
+                    <div class="no-feed" id="map-placeholder">Waiting for map data...</div>
+                </div>
+                <div class="map-legend">
+                    <span class="legend-item"><span class="legend-color" style="background:#00ffff"></span>Elder
+                        1</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#ff00ff"></span>Elder
+                        2</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#ffff00"></span>Elder
+                        3</span>
+                    <span class="legend-item"><span class="legend-color"
+                            style="background:#ff0000"></span>Medicine</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#00ff00"></span>Dock</span>
+                    <span class="legend-item"><span class="legend-color" style="background:#0000ff"></span>Robot</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Robot Control Center -->
+        <div class="control-section">
+            <h2>🤖 Robot Control Center</h2>
+            <div class="elder-buttons" style="grid-template-columns: repeat(3, 1fr);">
+                <button class="elder-btn" data-elder="1" onclick="showElderOptions(1)">
+                    <span class="elder-icon">👴</span>
+                    <span>Elder 1</span>
+                </button>
+                <button class="elder-btn" data-elder="2" onclick="showElderOptions(2)">
+                    <span class="elder-icon">👴</span>
+                    <span>Elder 2</span>
+                </button>
+                <button class="elder-btn" data-elder="3" onclick="showElderOptions(3)">
+                    <span class="elder-icon">👴</span>
+                    <span>Elder 3</span>
+                </button>
+            </div>
+
+
+            <!-- Emergency Actions -->
+            <div class="emergency-row">
+                <button class="emergency-btn stop-btn" id="btn-stop-task" onclick="sendCommand('stop')">
+                    🛑 STOP TASK
+                </button>
+                <button class="emergency-btn dock-btn" onclick="sendCommand('goto_dock')">
+                    🔌 Force Dock
+                </button>
+                <button class="emergency-btn ambulance-btn" onclick="showAmbulanceDialog('nurse')">
+                    🚨 CALL AMBULANCE
+                </button>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="connection-status" class="status-indicator disconnected">● Disconnected</span>
+            <span id="last-update">Last update: --</span>
+        </div>
+    </div>
+
+    <!-- Elder Options Modal -->
+    <div id="elder-options-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('elder-options-modal')">&times;</span>
+            <h2 id="elder-options-title">Elder 1 Options</h2>
+            <div class="modal-buttons">
+                <button class="modal-btn monitor-btn" onclick="handleElderOption('monitor')">
+                    👁️ Monitor Elder
+                    <small>Send robot to check on elder</small>
+                </button>
+                <button class="modal-btn medicine-btn" onclick="handleElderOption('medicine')">
+                    💊 Give Medication
+                    <small>Get medicine first, then deliver</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ambulance Dialog Modal -->
+    <div id="ambulance-modal" class="modal">
+        <div class="modal-content ambulance-dialog">
+            <span class="modal-close" onclick="closeModal('ambulance-modal')">&times;</span>
+            <h2>🚨 Emergency Call - 112</h2>
+            <div class="chat-container" id="ambulance-chat">
+                <!-- Chat messages will be added here -->
+            </div>
+            <div class="chat-status" id="call-status">Connecting to Emergency Services...</div>
+        </div>
+    </div>
+
+    <!-- Elder Alert Notification -->
+    <div id="elder-alert" class="elder-alert hidden">
+        <div class="alert-content">
+            <span class="alert-icon">🔔</span>
+            <span class="alert-message" id="alert-message">Elder 1 needs help</span>
+            <button class="alert-reply-btn" onclick="replyToElder()">Reply</button>
+            <button class="alert-close-btn" onclick="closeElderAlert()">&times;</button>
+        </div>
+    </div>
+
+    <!-- Elder Chat Modal -->
+    <div id="elder-chat-modal" class="modal">
+        <div class="modal-content chat-modal">
+            <span class="modal-close" onclick="closeModal('elder-chat-modal')">&times;</span>
+            <h2>💬 Chat with Elder</h2>
+            <div class="chat-container" id="elder-chat">
+                <!-- Chat messages will be added here -->
+            </div>
+            <div class="chat-input-row">
+                <input type="text" id="nurse-reply-input" placeholder="Type your reply...">
+                <button onclick="sendNurseReply()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        // Initialize nurse page
+        initNursePage();
+    </script>
+</body>
+
+</html>

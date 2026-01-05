@@ -1,0 +1,1930 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/bedroom/protos/Bed.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/humans/pedestrian/protos/Pedestrian.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Window.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Radiator.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/WallPlug.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/living_room_furniture/protos/Sofa.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/television/protos/Television.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/telephone/protos/OfficeTelephone.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/plants/protos/BunchOfSunFlowers.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/RoundTable.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/lights/protos/CeilingLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Ceiling.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Roughcast.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/bathroom/protos/Toilet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/bathroom/protos/Bathtube.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/bathroom/protos/WashingMachine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/bathroom/protos/BathroomSink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/mirror/protos/Mirror.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/school_furniture/protos/Clock.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/living_room_furniture/protos/Armchair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/stairs/protos/StraightStairs.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/utensils/protos/Plate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/FruitBowl.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Apple.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/fruits/protos/Orange.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/living_room_furniture/protos/Carpet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/WaterBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/hospital/protos/MedicineBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Cypress.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Leather.proto"
+
+WorldInfo {
+  info [
+    ""
+  ]
+  physicsDisableLinearThreshold 0.14
+}
+Viewpoint {
+  orientation -0.707093355084351 -0.0020462808750950005 0.7071172462400672 3.1390218125995815
+  position -2.096238212233899 5.549141235496277 6.95803969944741
+  follow "TURTLEBOT3_BURGER"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 30 40
+}
+WaterBottle {
+  translation -10.07 9.79999999999587 0.7078038000000003
+  rotation -0.9999999999996922 3.376794813951877e-07 -7.080971800682948e-07 1.8322159958882275e-09
+}
+Television {
+  translation -11 3.99 1.53
+  rotation 0 0 1 -1.5707953071795862
+  name "television(1)"
+}
+Carpet {
+  translation -10.82 1.21 0
+}
+Apple {
+  translation -11.953293617847155 -6.262649979382206 0.798788749060517
+  rotation 0.23924011853751326 0.9439044792736984 -0.22761480551406346 0.6093761970246505
+}
+Apple {
+  translation -11.853776852813615 -6.252972424618733 0.7983337770869019
+  rotation -0.30348293440346136 0.4693605961590674 0.8292157374887847 0.6123050347862213
+  name "apple(1)"
+}
+Apple {
+  translation -11.898171530967026 -6.224707911454106 0.8830336356001006
+  rotation -0.3456285075348214 0.7162237275078085 0.6062709847370831 0.31233546197781564
+  name "apple(4)"
+}
+Apple {
+  translation -11.8251026754982 -6.296712035252288 0.8831427758627919
+  rotation 0.9368879485877097 -0.27983610135673226 -0.2096013553595916 1.2321810548780656
+  name "apple(5)"
+}
+Apple {
+  translation -11.997154386166743 -6.353174711288732 0.8869028064574895
+  rotation 0.9431064511627406 0.023570604697962003 -0.33165441105071025 -2.647070876909571
+  name "apple(2)"
+}
+Apple {
+  translation -11.925585112570033 -6.4130173918467355 0.9227525820513893
+  rotation 0.42753407105032787 0.3790193086316862 0.8207063919426313 0.8797294578375571
+  name "apple(3)"
+}
+Chair {
+  translation -11.32 -5.9 0
+  rotation 0 0 1 3.14159
+  name "chair(2)"
+}
+Chair {
+  translation -11.95 -5.26 0
+  rotation 0 0 1 -1.5707953071795862
+  name "chair(2)"
+}
+Chair {
+  translation -11.32 -6.75 0
+  rotation 0 0 1 3.14159
+  name "chair(2)"
+}
+Chair {
+  translation -11.95 -7.27 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "chair(2)"
+}
+Chair {
+  translation -12.6 -5.9 0
+  name "chair(2)"
+}
+Chair {
+  translation -12.6 -6.8 0
+  name "chair(2)"
+}
+Plate {
+  translation -11.623081565331747 -5.659175662356114 0.739972890971605
+  rotation 0.0027590550444675167 0.29108201011884555 0.9566941261450462 0.0012444401959817565
+}
+Plate {
+  translation -12.212918207755715 -5.659868910664416 0.7399749591404097
+  rotation 0.006794165639866667 0.30306928547122525 0.9529443045200591 0.0013378892975049175
+  name "plate(3)"
+}
+Plate {
+  translation -12.231129157040918 -6.080605075354956 0.7399680061356888
+  rotation -0.09713234314985698 -0.2375034314564657 0.9665181984632375 0.0013599060110242333
+  name "plate(4)"
+}
+Plate {
+  translation -12.231287514052882 -6.560222467371458 0.7399748257598635
+  rotation 0.21335635413837928 0.20213516849856564 0.9558349438082053 0.001429250245908333
+  name "plate(5)"
+}
+Plate {
+  translation -12.251686946195138 -6.9800332653881645 0.739974857216577
+  rotation 0.0035703964973970346 -0.3222740243571288 0.9466396914843112 0.0012431973790047407
+  name "plate(6)"
+}
+Plate {
+  translation -11.613031152030713 -6.089075746175434 0.7399680060719197
+  rotation -0.09394138160558682 -0.22723881836447413 0.9692974446733834 0.0014191174480227007
+  name "plate(1)"
+}
+Plate {
+  translation -11.622424299245939 -6.559011364819935 0.7399680060721278
+  rotation -0.09411110667975033 -0.22749466728689693 0.969220963431733 0.001417380740213458
+  name "plate(2)"
+}
+Plate {
+  translation -11.632186459326968 -6.969194713726279 0.7399758063992375
+  rotation -0.003924136567973456 0.3297324558036267 0.9440662628978462 0.0013191727511199238
+  name "plate(7)"
+}
+TexturedBackgroundLight {
+}
+Cabinet {
+  translation 4.19 3.49 0
+  rotation 0 0 1 1.5708
+  name "cabinet(1)"
+}
+Clock {
+  translation 2.01156e-05 3.4 1.96
+  rotation 0 0 -1 -1.5708053071795867
+}
+Mirror {
+  translation 1.72 10.09 0.95
+  rotation 1 0 0 1.5708
+}
+Mirror {
+  translation -2.11 -2.73 1.4
+  rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 -2.094395307179586
+  name "mirror(1)"
+}
+CeilingLight {
+  translation 0 4.82 3.08
+  name "ceiling light 1 R1(7)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 2.67 4.82 3.08
+  name "ceiling light 1 R1(8)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 2.67 8.1 3.08
+  name "ceiling light 1 R1(9)"
+  bulbColor 1 1 0.8
+}
+BathroomSink {
+  translation -2.09 -2.9 0.7
+  rotation 0 0 1 3.14159
+}
+WashingMachine {
+  translation -4.36 -1.67 0.53
+}
+Bathtube {
+  translation -4.24 -3.54 0
+}
+Toilet {
+  translation -3.02 -4.35 0
+  rotation 0 0 1 1.5708
+}
+Ceiling {
+  translation -3 6 3
+  contactMaterial ""
+  size 30 30
+  appearance Roughcast {
+    colorOverride 0.9 0.9 0.9
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+CeilingLight {
+  translation 0 1.95 3.08
+  name "ceiling light 1 R1(1)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 0 8.08 3.08
+  name "ceiling light 1 R1(6)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 2.77 1.94 3.08
+  name "ceiling light 1 R1(2)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 2.77 -3.03 3.08
+  name "ceiling light 1 R1(3)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation 0.24 -3.03 3.08
+  name "ceiling light 1 R1(4)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -3.32 -2.5 3.08
+  name "ceiling light 1 R1(5)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -11.77 -3.16 3.08
+  name "ceiling light 1 R1(10)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -11.77 -7.74 3.08
+  name "ceiling light 1 R1(14)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -11.77 0.72 3.08
+  name "ceiling light 1 R1(11)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -7.04 0.72 3.08
+  name "ceiling light 1 R1(12)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -3.86 6.26 3.08
+  name "ceiling light 1 R1(15)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -3.86 1.14 3.08
+  name "ceiling light 1 R1(18)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -10.52 5.51 3.08
+  name "ceiling light 1 R1(16)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -10.62 8.87 3.08
+  name "ceiling light 1 R1(17)"
+  bulbColor 1 1 0.8
+}
+CeilingLight {
+  translation -7.04 -3.28 3.08
+  name "ceiling light 1 R1(13)"
+  bulbColor 1 1 0.8
+}
+BunchOfSunFlowers {
+  translation -13.28 -9.27 0
+  name "bunch of sunflowers(1)"
+}
+BunchOfSunFlowers {
+  translation -12.83 -9.27 0
+  name "bunch of sunflowers(2)"
+}
+BunchOfSunFlowers {
+  translation -12.24 -9.27 0
+  name "bunch of sunflowers(3)"
+}
+BunchOfSunFlowers {
+  translation -11.65 -9.27 0
+  name "bunch of sunflowers(4)"
+}
+BunchOfSunFlowers {
+  translation -11.03 -9.27 0
+  name "bunch of sunflowers(7)"
+}
+BunchOfSunFlowers {
+  translation -13.43 -0.25 0
+  name "bunch of sunflowers(5)"
+}
+BunchOfSunFlowers {
+  translation -13.39 6.12 0
+  name "bunch of sunflowers(8)"
+}
+BunchOfSunFlowers {
+  translation -13.39 6.51 0
+  name "bunch of sunflowers(9)"
+}
+BunchOfSunFlowers {
+  translation -13.39 6.91 0
+  name "bunch of sunflowers(10)"
+}
+BunchOfSunFlowers {
+  translation -13.43 -2.36 0
+  name "bunch of sunflowers(6)"
+}
+OfficeTelephone {
+  translation -1.4918582602517656 -2.7878031159113283 0.7449108316104567
+  rotation -0.0021819496703875 -0.9999827559386124 -0.005452240003294086 0.9238235573431607
+}
+Television {
+  translation -1.57 -3.47 1.06
+}
+Desk {
+  translation 4.42 6.32 0
+  name "desk(1)"
+}
+Desk {
+  translation -9.91 9.64 0
+  rotation 0 0 1 1.5708
+  name "desk(2)"
+}
+Keyboard {
+  translation 4.36 2.2 0.71
+}
+Monitor {
+  translation 4.55 2.23 0.71
+  rotation 0 0 1 3.14159
+}
+Solid {
+  translation 0 0 -509351101.63075864
+  name "solid(3)"
+  physics Physics {
+    mass 8
+  }
+}
+Solid {
+  translation 0 0 -509524702.9267539
+  name "solid(2)"
+  physics Physics {
+    mass 3
+    damping Damping {
+    }
+  }
+}
+Sofa {
+  translation -12.89 1.2 0
+  name "sofa(1)"
+}
+Sofa {
+  translation -8.84 1.2 0
+  rotation 0 0 1 3.14159
+  name "sofa(6)"
+}
+Sofa {
+  translation -10.85 -0.51 0
+  rotation 0 0 1 1.5708
+  name "sofa(5)"
+}
+Sofa {
+  translation -1.34 -0.86 0
+  name "sofa(3)"
+}
+Sofa {
+  translation 0.25 2.65 0
+  rotation 0 0 1 -1.5707953071795862
+  name "sofa(2)"
+}
+Sofa {
+  translation -0.97 8.39 0
+  name "sofa(4)"
+}
+OfficeChair {
+  translation 3.5920179701903945 6.35040909534314 -0.0014153365560814757
+  rotation -0.0010123432119288813 -0.04198378075079615 -0.9991177795010406 0.03346814167664824
+  name "office chair(1)"
+  seatAppearance Leather {
+    colorOverride 0.6 0.6 0.7
+    textureTransform TextureTransform {
+      scale 10 10
+    }
+  }
+}
+Cabinet {
+  translation -13.61 9.1 0
+  rotation 0 0 -1 5.307156870259904e-06
+  name "cabinet(4)"
+  depth 0.7
+  innerThickness 0.17
+}
+Chair {
+  translation 1.61 -4.28 1
+  rotation 0 0 1 1.5708
+}
+Chair {
+  translation 0.95 -4.28 0
+  rotation 0 0 1 1.5708
+  name "chair(1)"
+}
+Chair {
+  translation 0.25 -4.28 0
+  rotation 0 0 1 1.5708
+  name "chair(2)"
+}
+WallPlug {
+  translation 4.81 -2.43 0.56
+  rotation 0 0 1 3.14159
+}
+WallPlug {
+  translation 4.81 -2.52 0.56
+  rotation 0 0 1 3.14159
+  name "wall plug(1)"
+}
+WallPlug {
+  translation 4.81 -2.62 0.56
+  rotation 0 0 1 3.14159
+  name "wall plug(2)"
+}
+Radiator {
+  translation -0.509996 -4.68 0.3
+  rotation 0 0 1 1.5708
+}
+Radiator {
+  translation -2.21 -3.83 0.3
+  rotation 0 0 1 -3.1415853071795863
+  name "radiator(1)"
+}
+Table {
+  translation -1.26 -3.42 0
+}
+Door {
+  translation -13.77 -1.28 0
+  rotation 0 0 1 3.14159
+  name "door(3)"
+  size 0.2 1 3
+  position -0.1742168063608467
+}
+Door {
+  translation -3.47999 10.21 0
+  rotation 0 0 1 -1.5707953071795862
+  name "door(4)"
+  size 0.2 1 3
+  position -0.0015788222290543455
+  selfClosing TRUE
+}
+Window {
+  translation 4.9 0.38 0
+  size 0.2 0.8 3
+}
+Window {
+  translation 0.61 10.21 0
+  rotation 0 0 1 1.5708
+  name "window(1)"
+  size 0.2 0.8 3
+}
+Window {
+  translation -11.28 10.21 0
+  rotation 0 0 1 1.5708
+  name "window(2)"
+  size 0.2 0.8 3
+}
+Pedestrian {
+  translation 4.04 -3.85 1.36
+  rotation -0.7071067811862364 9.381857096790023e-07 -0.7071067811862364 3.14159
+  name "Patient 1"
+}
+Pedestrian {
+  translation 3.92 8.78 1.01
+  rotation -0.577349935856137 -0.577349935856137 -0.5773509358560258 2.09439
+  name "Patient 1(1)"
+}
+Pedestrian {
+  translation -8.29 8.78 1.11
+  rotation -0.577349935856137 -0.577349935856137 -0.5773509358560258 2.09439
+  name "Patient 1(2)"
+}
+Solid {
+  translation 0 0 -509691884.93545234
+  name "solid(1)"
+  physics Physics {
+    mass 40
+  }
+}
+SpotLight {
+  attenuation 0 0 1
+  beamWidth 0.7
+  direction 0 1 -1
+  intensity 0
+}
+Bed {
+  translation 3.66 -3.81 0
+  rotation 0 0 1 3.14159
+}
+Bed {
+  translation 3.66001 8.52 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bed(1)"
+}
+Bed {
+  translation -8.14999 8.52 0
+  rotation 0 0 1 -1.5707953071795862
+  name "bed(2)"
+}
+Wall {
+  translation -2.05 -4.9 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(1)"
+  size 0.2 14 3
+}
+Wall {
+  translation 1.55 3.29 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(5)"
+  size 0.2 6.89 3
+}
+Wall {
+  translation 3 10.21 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(9)"
+  size 0.2 4 3
+}
+Wall {
+  translation -1.39 10.21 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(11)"
+  size 0.2 3.2 3
+}
+Wall {
+  translation -12.77 10.21 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(18)"
+  size 0.2 2.2 3
+}
+Wall {
+  translation -7.43 10.21 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(19)"
+  size 0.2 6.9 3
+}
+Cypress {
+  translation -6.43 -7.18 -0.04
+}
+Cypress {
+  translation -6.43 -8.58 -0.04
+  name "cypress tree(9)"
+}
+Cypress {
+  translation -4.99 -7.18 -0.04
+  name "cypress tree(1)"
+}
+Cypress {
+  translation -4.99 -8.56 -0.04
+  name "cypress tree(8)"
+}
+Cypress {
+  translation -3.29 -7.18 -0.04
+  name "cypress tree(2)"
+}
+Cypress {
+  translation -3.29 -8.56 -0.04
+  name "cypress tree(7)"
+}
+Cypress {
+  translation -1.5 -7.18 -0.04
+  name "cypress tree(3)"
+}
+Cypress {
+  translation -1.5 -8.53 -0.04
+  name "cypress tree(6)"
+}
+Cypress {
+  translation 0.24 -7.18 -0.04
+  name "cypress tree(4)"
+}
+Cypress {
+  translation 0.24 -8.62 -0.04
+  name "cypress tree(5)"
+}
+DEF flacon MedicineBottle {
+  translation -9.92 9.75 0.75
+}
+DEF flacon MedicineBottle {
+  translation -9.86 9.75 0.75
+  name "medicine bottle(1)"
+}
+DEF flacon MedicineBottle {
+  translation -9.79 9.75 0.75
+  name "medicine bottle(2)"
+}
+DEF flacon MedicineBottle {
+  translation -9.72 9.75 0.75
+  name "medicine bottle(3)"
+}
+Wall {
+  translation -11.36 4.125 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(20)"
+  size 0.25 4.8 3
+}
+Solid {
+  name "solid(5)"
+}
+Wall {
+  translation -7.39 4.124 0
+  rotation 0 0 1 1.5707963267948968
+  name "wall(21)"
+  size 0.25 0.71 3
+}
+Wall {
+  translation 4.9 6.77 0
+  rotation 0 0 1 4.692820414042842e-06
+  name "wall(10)"
+  size 0.2 7.08 3
+}
+Wall {
+  translation -1.875 4.2 0
+  rotation 0 0 1 4.692820414042842e-06
+  name "wall(12)"
+  size 0.25 2 3
+}
+Armchair {
+  translation 1.54 4.07 0
+  rotation 0 0 1 1.5708
+}
+Armchair {
+  translation 0.2 4.11 0
+  rotation 0 0 1 1.5708
+  name "armchair(1)"
+}
+Armchair {
+  translation -9.76 -8.59001 0
+  rotation 0 0 1 -3.1415853071795863
+  name "armchair(2)"
+}
+Armchair {
+  translation -9.76 -7.35001 0
+  rotation 0 0 1 -3.1415853071795863
+  name "armchair(6)"
+}
+Armchair {
+  translation -9.76 -6.03001 0
+  rotation 0 0 1 -3.1415853071795863
+  name "armchair(7)"
+}
+Armchair {
+  translation -6.75001 -4.12001 0
+  rotation 0 0 1 1.5708
+  name "armchair(4)"
+}
+Armchair {
+  translation -8.26001 -4.12001 0
+  rotation 0 0 1 1.5708
+  name "armchair(5)"
+}
+Armchair {
+  translation -1.1 4.11 -3.9778e-15
+  rotation 9.58976e-09 9.58979e-09 -1 -1.5707953071795862
+  name "armchair(3)"
+}
+Armchair {
+  translation -9.73 4.98001 -1.65521e-07
+  rotation 9.58976e-09 9.58979e-09 -1 -1.5707953071795862
+  name "armchair(8)"
+}
+Armchair {
+  translation -11.02 4.98001 -1.90275e-07
+  rotation 9.58976e-09 9.58979e-09 -1 -1.5707953071795862
+  name "armchair(9)"
+}
+Armchair {
+  translation -12.35 4.98001 -2.15789e-07
+  rotation 9.58976e-09 9.58979e-09 -1 -1.5707953071795862
+  name "armchair(10)"
+}
+Mirror {
+  translation 1.82 10.09 1.05
+  rotation 1 0 0 1.5708
+  name "mirror(2)"
+}
+Wall {
+  translation -1.875 8.23 0
+  rotation 0 0 1 4.692820414042842e-06
+  name "wall(13)"
+  size 0.25 3.96 3
+}
+Wall {
+  translation -1.875 -2 0
+  size 0.25 5 3
+}
+Wall {
+  translation -4.89 -2.49 0
+  name "wall(6)"
+  size 0.2 4.99 3
+}
+Wall {
+  translation -13.77 -5.78 0
+  name "wall(16)"
+  size 0.2 8 3
+}
+Wall {
+  translation -13.77 4.69 0
+  name "wall(17)"
+  size 0.2 11 3
+}
+Solid {
+  translation 0 0 1.49
+  name "solid(4)"
+}
+Wall {
+  translation -6.99 7.18 0
+  name "wall(22)"
+  size 0.2 6.2 3
+}
+Wall {
+  translation -5.47 7.18 0
+  name "wall(23)"
+  size 0.2 6.2 3
+}
+Wall {
+  translation -8.96 -7.29 0
+  name "wall(14)"
+  size 0.2 5 3
+}
+Wall {
+  translation -11.37 -9.69 0
+  rotation 0 0 1 1.5708
+  name "wall(15)"
+  size 0.2 5 3
+}
+Wall {
+  translation -3.98 -0.119993 0
+  rotation 0 0 1 1.5708
+  name "wall(7)"
+  size 0.25 1.8 3
+}
+Wall {
+  translation 4.9 -2.5 0
+  name "wall(2)"
+  size 0.2 5 3
+}
+Solid {
+  translation 0 0 -509691884.93545234
+  physics Physics {
+    mass 0.1
+  }
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 0
+  location 0 0.3 0
+}
+Wall {
+  translation 4.9 2.03 0
+  name "wall(3)"
+  size 0.2 2.5 3
+}
+Wall {
+  translation -1.875 2.68 0
+  name "wall(4)"
+  size 0.25 1.42 3
+}
+StraightStairs {
+  translation -6.21 4.32 0
+  rotation 0 0 1 1.5708
+  stepSize 0.4 1.27 0
+  nSteps 15
+}
+Table {
+  translation -11.94 -6.3 0
+  name "table(1)"
+}
+Orange {
+  translation -11.952454256409807 -6.366125619105214 0.7986908008323964
+  rotation 0.49242320657304484 0.8552000880546085 -0.16171640306323387 0.7935580695631618
+}
+Orange {
+  translation -11.853503605582537 -6.352948318118623 0.7988197015688154
+  rotation -0.02475598858600796 0.46613370948656685 0.8843678566690575 0.8539484723609294
+  name "orange(1)"
+}
+Orange {
+  translation -11.995749385388757 -6.2452980772809985 0.8875273966742512
+  rotation -0.43091471915883206 -0.9016206046903351 0.03732010195724931 2.054310034860627
+  name "orange(2)"
+}
+Orange {
+  translation -11.913875898407447 -6.313858820906768 0.925159669655609
+  rotation -0.9516683509520467 -0.03345446409919264 -0.30530009601709596 0.6544696086758368
+  name "orange(3)"
+}
+Orange {
+  translation -11.804594724819532 -6.206301777085417 0.9203801115224943
+  rotation -0.7367186378572679 0.6677651365821816 0.10646769932290279 0.7288686082376017
+  name "orange(4)"
+}
+Orange {
+  translation -11.831819241278263 -6.396257139641479 0.8862078908406101
+  rotation -0.5885518290455621 -0.7806366580089136 -0.21026923859613464 0.5847197707826551
+  name "orange(5)"
+}
+FruitBowl {
+  translation -11.910415443787624 -6.309443369424397 0.739097479995494
+  rotation -0.013797663664336879 0.05494059702994483 -0.9983942884829614 0.012839530598131874
+}
+RoundTable {
+  translation -10.86 1.22 0
+  name "round table(1)"
+}
+Cabinet {
+  translation -5.08 -3.68 0
+  rotation 0 0 1 3.14159
+  name "cabinet(2)"
+}
+Cabinet {
+  translation -5.08 -2.69 0
+  rotation 0 0 1 3.14159
+  name "cabinet(3)"
+}
+DEF TURTLEBOT3_BURGER Robot {
+  translation -2.0987438810587475 5.602024817883846 -0.00024773258437518764
+  rotation -0.002330696547327188 0.0023377326022851683 -0.9999945514150987 -1.571918409815586
+  children [
+    Pose {
+      translation -0.03 0 0.153
+      children [
+        SpotLight {
+          attenuation 0 0 1
+          beamWidth 0.7
+          direction 1 0 0
+        }
+        Gyro {
+          name "gyro1"
+        }
+        Accelerometer {
+          name "accelerometer1"
+        }
+        InertialUnit {
+          name "imu"
+        }
+        Camera {
+          translation 0.06 0 0.013
+          rotation 0 0.7071067811865475 -0.7071067811865475 0
+          fieldOfView 2
+          width 640
+          height 560
+        }
+        Lidar {
+          translation 0 0 0.02
+          children [
+            Pose {
+              rotation 0 0.7071032811764938 0.7071102811792772 3.141585
+              children [
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                  }
+                  device [
+                    RotationalMotor {
+                      name "LDS-01_main_motor"
+                      maxVelocity 40
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 -0.01 0
+                    rotation 1 0 0 -1.5708
+                    children [
+                      Transform {
+                        scale 0.001 0.001 0.001
+                        children [
+                          Shape {
+                            appearance DEF MAIN_APPEARANCE PBRAppearance {
+                              baseColor 0 0 0
+                              roughnessMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_roughness.jpg"
+                                ]
+                              }
+                              metalness 0
+                              normalMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_normal.jpg"
+                                ]
+                              }
+                              normalMapFactor 2
+                              occlusionMap ImageTexture {
+                                url [
+                                  "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_occlusion.jpg"
+                                ]
+                              }
+                              occlusionMapStrength 2
+                              textureTransform TextureTransform {
+                                scale 4 4
+                              }
+                            }
+                            geometry Mesh {
+                              url [
+                                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/turret.obj"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    name "lower"
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 1 0
+                    anchor -0.046 0 0
+                  }
+                  device [
+                    RotationalMotor {
+                      name "LDS-01_secondary_motor"
+                      maxVelocity 150
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 -0.01 0
+                    rotation 1 0 0 -1.5708
+                    children [
+                      Transform {
+                        scale 0.001 0.001 0.001
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.886671 0.833646 0.78027
+                              metalness 0
+                            }
+                            geometry Mesh {
+                              url [
+                                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/wheel.obj"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+                Pose {
+                  translation 0 -0.01 0
+                  rotation 1 0 0 -1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 0 0
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Mesh {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/belt.obj"
+                        ]
+                      }
+                    }
+                  ]
+                }
+                Transform {
+                  translation 0 -0.01 0
+                  rotation -1 0 0 1.5708
+                  scale 0.001 0.001 0.001
+                  children [
+                    Shape {
+                      appearance DEF MAIN_APPEARANCE PBRAppearance {
+                        baseColor 0 0 0
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_roughness.jpg"
+                          ]
+                        }
+                        metalness 0
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_normal.jpg"
+                          ]
+                        }
+                        normalMapFactor 2
+                        occlusionMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_occlusion.jpg"
+                          ]
+                        }
+                        occlusionMapStrength 2
+                        textureTransform TextureTransform {
+                          scale 4 4
+                        }
+                      }
+                      geometry Mesh {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/base.obj"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+            Solid {
+              translation 0.035 0.0245 -0.0105
+              rotation 0 -1 0 -1.570787
+              children [
+                Transform {
+                  scale 0.375 0.375 0.375
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg"
+                          ]
+                        }
+                        metalnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_normal.jpg"
+                          ]
+                        }
+                      }
+                      geometry IndexedFaceSet {
+                        coord Coordinate {
+                          point [
+                            -0.00798 0 0, -0.00798 0.001732 0.003, -0.00798 0.003464 0, -0.00798 0.001732 -0.003, -0.00798 -0.001732 -0.003, -0.00798 -0.001732 0.003, -0.00798 -0.003464 0, 0 -0.001682 0.006279, 0 0.001682 0.006279, 0 0 0.0065, 0 -0.00325 0.005629, 0 0.00325 0.005629, 0 -0.004596 0.004596, 0 0.004596 0.004596, 0 0 0, 0 -0.005629 0.00325, 0 -0.006279 0.001682, 0 -0.0065 0, 0 -0.006279 -0.001682, 0 -0.005629 -0.00325, 0 -0.004596 -0.004596, 0 0.005629 0.00325, 0 0.006279 0.001682, 0 0.0065 0, 0 0.006279 -0.001682, 0 0.005629 -0.00325, 0 0.004596 -0.004596, 0 -0.00325 -0.005629, 0 0.00325 -0.005629, 0 -0.001682 -0.006279, 0 0.001682 -0.006279, 0 0 -0.0065, -0.00398 -0.001732 0.003, -0.00398 0.001732 0.003, -0.00398 0.001732 -0.003, -0.00398 -0.001732 -0.003, -0.00398 0.003464 0, -0.00398 -0.003464 0, -0.007566 0.006179 0.001406, -0.007561 0.006083 0.00179, -0.007232 0.006279 0.001682, -0.00784 0.005933 0.001259, -0.00798 0.005607 0.001281, -0.007845 0.005828 0.001638, -0.00798 0.004913 0.002955, -0.007842 0.00511 0.003243, -0.007845 0.005302 0.002906, -0.007563 0.005377 0.003353, -0.007232 0.005629 0.00325, -0.007561 0.005574 0.003018, -0.007232 0.0065 0, -0.007566 0.006339 -0.000193, -0.007566 0.006339 0.000193, -0.00784 0.006074 -0.000193, -0.00798 0.005775 0, -0.00784 0.006074 0.000193, -0.00784 0.005933 -0.001259, -0.007845 0.005828 -0.001638, -0.00798 0.005607 -0.001281, -0.007566 0.006179 -0.001406, -0.007232 0.006279 -0.001682, -0.007561 0.006083 -0.00179, -0.00798 0.004913 -0.002955, -0.007845 0.005302 -0.002906, -0.007842 0.00511 -0.003243, -0.007561 0.005574 -0.003018, -0.007232 0.005629 -0.00325, -0.007563 0.005377 -0.003353, -0.007563 -0.005584 -0.003001, -0.007563 -0.005391 -0.003335, -0.007232 -0.005629 -0.00325, -0.007842 -0.00534 -0.00286, -0.00798 -0.004976 -0.002873, -0.007842 -0.005147 -0.003195, -0.00798 -0.003936 -0.004228, -0.007837 -0.004073 -0.004517, -0.007842 -0.004348 -0.004237, -0.007569 -0.00431 -0.004649, -0.007232 -0.004596 -0.004596, -0.007563 -0.004594 -0.004374, -0.007569 0.00431 -0.004649, -0.007563 0.004594 -0.004374, -0.007232 0.004596 -0.004596, -0.007837 0.004073 -0.004517, -0.00798 0.003936 -0.004228, -0.007842 0.004348 -0.004237, -0.00798 -0.0029 -0.005023, -0.007837 -0.002878 -0.005371, -0.007837 -0.003212 -0.005177, -0.007569 -0.003003 -0.005588, -0.007232 -0.00325 -0.005629, -0.007569 -0.003338 -0.005395, -0.007837 0.003212 -0.005177, -0.007837 0.002878 -0.005371, -0.00798 0.0029 -0.005023, -0.007569 0.003338 -0.005395, -0.007232 0.00325 -0.005629, -0.007569 0.003003 -0.005588, -0.007842 -0.001495 -0.005883, -0.007837 -0.001876 -0.005786, -0.00798 -0.001694 -0.005523, -0.007563 -0.001491 -0.006165, -0.007232 -0.001682 -0.006279, -0.007569 -0.001871 -0.006057, -0.007837 0.001876 -0.005786, -0.007842 0.001495 -0.005883, -0.00798 0.001694 -0.005523, -0.007569 0.001871 -0.006057, -0.007232 0.001682 -0.006279, -0.007563 0.001491 -0.006165, -0.007232 0 -0.0065, -0.007563 -0.000193 -0.006336, -0.007563 0.000193 -0.006336, -0.007842 -0.000193 -0.006055, -0.00798 0 -0.005746, -0.007842 0.000193 -0.006055, -0.007569 0.001871 0.006057, -0.007563 0.001491 0.006165, -0.007232 0.001682 0.006279, -0.007837 0.001876 0.005786, -0.00798 0.001694 0.005523, -0.007842 0.001495 0.005883, -0.00784 -0.001876 0.005768, -0.007845 -0.001495 0.005866, -0.00798 -0.001694 0.005496, -0.007566 -0.001872 0.006055, -0.007232 -0.001682 0.006279, -0.007561 -0.001491 0.006163, -0.007232 0 0.0065, -0.007563 0.000215 0.006333, -0.007561 -0.000174 0.006336, -0.007842 0.000253 0.006047, -0.00798 0.000103 0.005733, -0.007845 -0.000135 0.006045, -0.007232 -0.00325 0.005629, -0.007566 -0.003002 0.005586, -0.007566 -0.003337 0.005393, -0.00784 -0.00287 0.005357, -0.00798 -0.002888 0.005002, -0.00784 -0.003204 0.005163, -0.007837 0.002878 0.005371, -0.007837 0.003212 0.005177, -0.00798 0.0029 0.005023, -0.007569 0.003003 0.005588, -0.007232 0.00325 0.005629, -0.007569 0.003338 0.005395, -0.007845 -0.004332 0.004228, -0.00784 -0.004057 0.004509, -0.00798 -0.003912 0.004215, -0.007561 -0.004592 0.004373, -0.007232 -0.004596 0.004596, -0.007566 -0.004307 0.004648, -0.007837 0.004073 0.004517, -0.007842 0.004348 0.004237, -0.00798 0.003936 0.004228, -0.007569 0.00431 0.004649, -0.007232 0.004596 0.004596, -0.007563 0.004594 0.004374, -0.00798 -0.005016 0.002777, -0.007842 -0.005363 0.002804, -0.007845 -0.005168 0.003139, -0.007563 -0.005592 0.002981, -0.007232 -0.005629 0.00325, -0.007561 -0.0054 0.003319, -0.00798 -0.00563 0.001295, -0.007837 -0.005948 0.001269, -0.007842 -0.005843 0.001647, -0.007569 -0.006181 0.001408, -0.007232 -0.006279 0.001682, -0.007563 -0.006085 0.001791, -0.007569 -0.006341 0.000193, -0.007569 -0.006341 -0.000193, -0.007232 -0.0065 0, -0.007837 -0.00609 0.000193, -0.00798 -0.0058 0, -0.007837 -0.00609 -0.000193, -0.00798 -0.00563 -0.001295, -0.007842 -0.005843 -0.001647, -0.007837 -0.005948 -0.001269, -0.007563 -0.006085 -0.001791, -0.007232 -0.006279 -0.001682, -0.007569 -0.006181 -0.001408
+                          ]
+                        }
+                        texCoord TextureCoordinate {
+                          point [
+                            0.6664 0.6845, 0.4572 0.6418, 0.6636 0.6418, 0.4776 0.132, 0.5495 0.1403, 0.4656 0.1759, 0.5704 0.3533, 0.5306 0.3306, 0.6154 0.2973, 0.3758 0.488, 0.1762 0.4499, 0.381 0.4499, 0.7918 0.1729, 0.7918 0.2183, 0.7202 0.1625, 0.6826 0.5142, 0.6814 0.5435, 0.6729 0.5422, 0.4613 0.4606, 0.6723 0.4283, 0.6678 0.4606, 0.6626 0.5468, 0.458 0.501, 0.6645 0.501, 0.3758 0.6721, 0.1762 0.7102, 0.1709 0.6721, 0.3985 0.6954, 0.3902 0.7021, 0.3865 0.6746, 0.3921 0.6332, 0.3942 0.6616, 0.3855 0.6651, 0.3909 0.5872, 0.3917 0.6224, 0.3824 0.6223, 0.3854 0.4951, 0.3943 0.4988, 0.3922 0.5269, 0.7438 0.927, 0.9532 0.9688, 0.7467 0.9697, 0.6885 0.3511, 0.6154 0.2973, 0.7072 0.2597, 0.6066 0.3629, 0.6154 0.2973, 0.6441 0.3629, 0.7414 0.3306, 0.7632 0.309, 0.7692 0.3136, 0.391 0.5763, 0.3815 0.5751, 0.3824 0.5378, 0.9677 0.5738, 0.9688 0.6031, 0.9601 0.6061, 0.4938 0.2943, 0.5365 0.2376, 0.5306 0.3306, 0.4752 0.2626, 0.5365 0.2376, 0.4938 0.2943, 0.7423 0.5664, 0.9486 0.5186, 0.9487 0.5667, 0.7423 0.5183, 0.9502 0.472, 0.9486 0.5186, 0.7297 0.0606, 0.6971 0.0421, 0.7021 0.0358, 0.6623 0.5948, 0.4562 0.5468, 0.6626 0.5468, 0.6724 0.5988, 0.6813 0.596, 0.6823 0.6323, 0.5652 0.0497, 0.6413 0.1028, 0.5495 0.1403, 0.676 0.6783, 0.6738 0.6453, 0.6827 0.6426, 0.458 0.501, 0.6626 0.5468, 0.4562 0.5468, 0.9629 0.4371, 0.9713 0.4414, 0.9693 0.4682, 0.0413 0.2812, 0.0287 0.2348, 0.2136 0.2108, 0.3271 0.3568, 0.285 0.3809, 0.2136 0.2108, 0.3271 0.0648, 0.3615 0.0988, 0.2136 0.2108, 0.3985 0.2348, 0.3859 0.2812, 0.2136 0.2108, 0.1422 0.3809, 0.1001 0.3568, 0.2136 0.2108, 0.0287 0.2348, 0.0287 0.1868, 0.2136 0.2108, 0.3985 0.1868, 0.3985 0.2348, 0.2136 0.2108, 0.2379 0.0283, 0.285 0.0408, 0.2136 0.2108, 0.3615 0.0988, 0.3859 0.1404, 0.2136 0.2108, 0.0656 0.0988, 0.1001 0.0648, 0.2136 0.2108, 0.3859 0.2812, 0.3615 0.3229, 0.2136 0.2108, 0.3615 0.3229, 0.3271 0.3568, 0.2136 0.2108, 0.1001 0.0648, 0.1422 0.0408, 0.2136 0.2108, 0.0287 0.1868, 0.0413 0.1404, 0.2136 0.2108, 0.285 0.3809, 0.2379 0.3933, 0.2136 0.2108, 0.7385 0.0673, 0.7434 0.061, 0.77 0.0872, 0.7469 0.4297, 0.9502 0.472, 0.7439 0.4717, 0.4874 0.0863, 0.5122 0.0618, 0.5151 0.069, 0.4562 0.5468, 0.6623 0.5948, 0.4559 0.5948, 0.6723 0.4283, 0.4613 0.4606, 0.4658 0.4283, 0.3725 0.6277, 0.1709 0.6721, 0.1677 0.6277, 0.4559 0.5948, 0.6636 0.6418, 0.4572 0.6418, 0.9588 0.8373, 0.9674 0.8385, 0.9673 0.8692, 0.1709 0.6721, 0.3725 0.6277, 0.3758 0.6721, 0.3714 0.5801, 0.1677 0.6277, 0.1665 0.5801, 0.9486 0.5186, 0.7423 0.5664, 0.7423 0.5183, 0.9678 0.513, 0.9588 0.5131, 0.96 0.4778, 0.7471 0.6538, 0.9503 0.6129, 0.9535 0.6541, 0.9585 0.5617, 0.9585 0.5241, 0.9677 0.5239, 0.5546 0.3642, 0.5226 0.346, 0.5285 0.3402, 0.744 0.7863, 0.9536 0.745, 0.9505 0.7854, 0.4963 0.1, 0.5495 0.1403, 0.4776 0.132, 0.4599 0.6845, 0.6705 0.72, 0.464 0.72, 0.7287 0.0709, 0.7202 0.1625, 0.6413 0.1028, 0.7634 0.1051, 0.7202 0.1625, 0.7287 0.0709, 0.6862 0.0467, 0.7287 0.0709, 0.6413 0.1028, 0.7439 0.6126, 0.9487 0.5667, 0.9503 0.6129, 0.9487 0.5667, 0.7439 0.6126, 0.7423 0.5664, 0.6705 0.72, 0.4599 0.6845, 0.6664 0.6845, 0.6636 0.6418, 0.4559 0.5948, 0.6623 0.5948, 0.3725 0.5324, 0.1665 0.5801, 0.1677 0.5324, 0.171 0.488, 0.3725 0.5324, 0.1677 0.5324, 0.9488 0.8312, 0.744 0.7863, 0.9505 0.7854, 0.7423 0.88, 0.9502 0.9261, 0.7438 0.927, 0.3725 0.5324, 0.171 0.488, 0.3758 0.488, 0.9532 0.9688, 0.7438 0.927, 0.9502 0.9261, 0.1677 0.6277, 0.3714 0.5801, 0.3725 0.6277, 0.7598 0.2996, 0.7072 0.2597, 0.7783 0.2679, 0.4572 0.6418, 0.6664 0.6845, 0.4599 0.6845, 0.9688 0.915, 0.9599 0.9188, 0.9588 0.8831, 0.7821 0.1372, 0.7202 0.1625, 0.7634 0.1051, 0.6726 0.553, 0.6812 0.5543, 0.681 0.5849, 0.9502 0.472, 0.7469 0.4297, 0.9533 0.43, 0.6849 0.869, 0.5668 0.7767, 0.6807 0.7767, 0.5668 0.7767, 0.6849 0.869, 0.571 0.869, 0.0509 0.7669, 0.169 0.8592, 0.0551 0.8592, 0.169 0.8592, 0.0509 0.7669, 0.1648 0.7669, 0.959 0.8265, 0.9602 0.7935, 0.9686 0.7985, 0.7355 0.3451, 0.7025 0.3639, 0.6983 0.3567, 0.744 0.7863, 0.9488 0.8312, 0.7423 0.8321, 0.1665 0.5801, 0.3725 0.5324, 0.3714 0.5801, 0.563 0.9439, 0.6849 0.869, 0.6769 0.9439, 0.6849 0.869, 0.563 0.9439, 0.571 0.869, 0.8587 0.0283, 0.9581 0.1398, 0.8587 0.1398, 0.9581 0.1398, 0.8587 0.0283, 0.9581 0.0283, 0.3985 0.914, 0.3124 0.7669, 0.3985 0.8159, 0.3124 0.7669, 0.3985 0.914, 0.2263 0.8159, 0.2263 0.8159, 0.3985 0.914, 0.3124 0.9631, 0.2263 0.8159, 0.3124 0.9631, 0.2263 0.914, 0.0471 0.9341, 0.169 0.8592, 0.1609 0.9341, 0.169 0.8592, 0.0471 0.9341, 0.0551 0.8592, 0.8587 0.2579, 0.9574 0.3717, 0.8587 0.3703, 0.9574 0.3717, 0.8587 0.2579, 0.9574 0.2594, 0.6441 0.3629, 0.6154 0.2973, 0.6885 0.3511, 0.9487 0.8792, 0.7423 0.8321, 0.9488 0.8312, 0.4656 0.2273, 0.5365 0.2376, 0.4752 0.2626, 0.9536 0.745, 0.744 0.7863, 0.7471 0.7459, 0.2379 0.3933, 0.1892 0.3933, 0.2136 0.2108, 0.285 0.0408, 0.3271 0.0648, 0.2136 0.2108, 0.3859 0.1404, 0.3985 0.1868, 0.2136 0.2108, 0.0413 0.1404, 0.0656 0.0988, 0.2136 0.2108, 0.1422 0.0408, 0.1892 0.0283, 0.2136 0.2108, 0.0656 0.3229, 0.0413 0.2812, 0.2136 0.2108, 0.1892 0.3933, 0.1422 0.3809, 0.2136 0.2108, 0.1001 0.3568, 0.0656 0.3229, 0.2136 0.2108, 0.1892 0.0283, 0.2379 0.0283, 0.2136 0.2108, 0.458 0.501, 0.6678 0.4606, 0.6645 0.501, 0.7515 0.6872, 0.9535 0.6541, 0.9579 0.6875, 0.7336 0.3254, 0.6885 0.3511, 0.7072 0.2597, 0.9502 0.9261, 0.7423 0.88, 0.9487 0.8792, 0.1762 0.4499, 0.3758 0.488, 0.171 0.488, 0.5306 0.3306, 0.5365 0.2376, 0.6154 0.2973, 0.6862 0.0467, 0.6413 0.1028, 0.6501 0.0372, 0.9535 0.6541, 0.7515 0.6872, 0.7471 0.6538, 0.5228 0.0739, 0.5652 0.0497, 0.5495 0.1403, 0.1762 0.7102, 0.3758 0.6721, 0.381 0.7102, 0.5228 0.0739, 0.5495 0.1403, 0.4963 0.1, 0.7783 0.2679, 0.7072 0.2597, 0.7918 0.2183, 0.4656 0.1759, 0.5495 0.1403, 0.5365 0.2376, 0.6501 0.0372, 0.6413 0.1028, 0.6126 0.0372, 0.7918 0.2183, 0.7072 0.2597, 0.7202 0.1625, 0.5704 0.3533, 0.6154 0.2973, 0.6066 0.3629, 0.7336 0.3254, 0.7072 0.2597, 0.7598 0.2996, 0.6678 0.4606, 0.458 0.501, 0.4613 0.4606, 0.4656 0.2273, 0.4656 0.1759, 0.5365 0.2376, 0.6126 0.0372, 0.6413 0.1028, 0.5652 0.0497, 0.7918 0.1729, 0.7202 0.1625, 0.7821 0.1372, 0.9502 0.472, 0.7423 0.5183, 0.7439 0.4717, 0.9503 0.6129, 0.7471 0.6538, 0.7439 0.6126, 0.7423 0.8321, 0.9487 0.8792, 0.7423 0.88, 0.9606 0.6161, 0.9693 0.6131, 0.9713 0.6393, 0.9629 0.6458, 0.9636 0.6547, 0.9535 0.6541, 0.4849 0.2972, 0.4938 0.2943, 0.4918 0.306, 0.5306 0.3306, 0.5285 0.3402, 0.5197 0.3335, 0.963 0.7526, 0.9536 0.745, 0.9638 0.7442, 0.9503 0.6129, 0.9601 0.6061, 0.9606 0.6161, 0.4652 0.2608, 0.4752 0.2626, 0.4695 0.2709, 0.4572 0.2314, 0.4559 0.2203, 0.4656 0.2273, 0.9589 0.5727, 0.9487 0.5667, 0.9585 0.5617, 0.4656 0.1759, 0.4559 0.1814, 0.4573 0.1705, 0.9585 0.5241, 0.9486 0.5186, 0.9588 0.5131, 0.6781 0.4595, 0.6772 0.4678, 0.6678 0.4606, 0.7385 0.0673, 0.7287 0.0709, 0.7297 0.0606, 0.6862 0.0467, 0.6867 0.0377, 0.6971 0.0421, 0.6742 0.5092, 0.6645 0.501, 0.6747 0.499, 0.9607 0.4674, 0.96 0.4778, 0.9502 0.472, 0.4708 0.126, 0.4776 0.132, 0.4666 0.1363, 0.6501 0.0372, 0.6456 0.0283, 0.6566 0.0297, 0.6726 0.553, 0.6626 0.5468, 0.6729 0.5422, 0.4863 0.0994, 0.4931 0.0907, 0.4963 0.1, 0.9629 0.4371, 0.9533 0.43, 0.9638 0.4283, 0.6034 0.0299, 0.6145 0.0283, 0.6126 0.0372, 0.6724 0.5988, 0.6623 0.5948, 0.6724 0.5876, 0.5151 0.069, 0.5241 0.0623, 0.5228 0.0739, 0.677 0.6874, 0.6664 0.6845, 0.676 0.6783, 0.6636 0.6418, 0.6734 0.635, 0.6738 0.6453, 0.567 0.0395, 0.5652 0.0497, 0.5567 0.0437, 0.9588 0.872, 0.9588 0.8831, 0.9487 0.8792, 0.6421 0.3717, 0.6441 0.3629, 0.6533 0.3701, 0.7414 0.3306, 0.7324 0.3373, 0.7336 0.3254, 0.9637 0.9717, 0.9532 0.9688, 0.9627 0.9626, 0.9502 0.9261, 0.9599 0.9188, 0.9604 0.9291, 0.688 0.3609, 0.6885 0.3511, 0.6983 0.3567, 0.3758 0.488, 0.3864 0.4856, 0.3854 0.4951, 0.7632 0.309, 0.7598 0.2996, 0.77 0.3004, 0.611 0.3717, 0.6 0.3703, 0.6066 0.3629, 0.9588 0.8373, 0.9488 0.8312, 0.959 0.8265, 0.7896 0.2637, 0.7854 0.274, 0.7783 0.2679, 0.3824 0.5378, 0.3725 0.5324, 0.3831 0.5271, 0.57 0.3623, 0.5596 0.358, 0.5704 0.3533, 0.9602 0.7935, 0.9505 0.7854, 0.9606 0.7833, 0.7918 0.2183, 0.8013 0.2152, 0.7998 0.2261, 0.3816 0.5862, 0.3714 0.5801, 0.3815 0.5751, 0.7918 0.1729, 0.7999 0.1687, 0.8013 0.1798, 0.3831 0.6331, 0.3725 0.6277, 0.3824 0.6223, 0.3855 0.6651, 0.3865 0.6746, 0.3758 0.6721, 0.7919 0.1391, 0.7821 0.1372, 0.7876 0.129, 0.7634 0.1051, 0.7651 0.0936, 0.7721 0.1024, 0.3915 0.7102, 0.381 0.7102, 0.3902 0.7021, 0.7434 0.061, 0.7385 0.0673, 0.7297 0.0606, 0.7287 0.0709, 0.6862 0.0467, 0.6971 0.0421, 0.6742 0.5092, 0.6747 0.499, 0.6834 0.5042, 0.6645 0.501, 0.6678 0.4606, 0.6772 0.4678, 0.48 0.3037, 0.4849 0.2972, 0.4918 0.306, 0.5306 0.3306, 0.5197 0.3335, 0.4918 0.306, 0.5226 0.346, 0.5137 0.3393, 0.5197 0.3335, 0.9535 0.6541, 0.9636 0.6547, 0.9671 0.6809, 0.7444 0.3381, 0.7355 0.3451, 0.7324 0.3373, 0.9532 0.9688, 0.9502 0.9261, 0.9604 0.9291, 0.9599 0.9188, 0.9688 0.915, 0.9694 0.9253, 0.6885 0.3511, 0.7336 0.3254, 0.7324 0.3373, 0.9588 0.872, 0.9673 0.8692, 0.9677 0.8803, 0.6885 0.3511, 0.688 0.3609, 0.6533 0.3701, 0.9487 0.8792, 0.9588 0.8831, 0.9599 0.9188, 0.3919 0.5377, 0.3824 0.5378, 0.3831 0.5271, 0.3758 0.488, 0.3854 0.4951, 0.3831 0.5271, 0.3953 0.4893, 0.3943 0.4988, 0.3854 0.4951, 0.7783 0.2679, 0.7854 0.274, 0.77 0.3004, 0.9602 0.7935, 0.9606 0.7833, 0.9694 0.7885, 0.9505 0.7854, 0.9536 0.745, 0.963 0.7526, 0.5306 0.3306, 0.5704 0.3533, 0.5596 0.358, 0.6862 0.0467, 0.6501 0.0372, 0.6566 0.0297, 0.6726 0.553, 0.6729 0.5422, 0.6814 0.5435, 0.6626 0.5468, 0.6645 0.501, 0.6742 0.5092, 0.9503 0.6129, 0.9606 0.6161, 0.9629 0.6458, 0.9688 0.6031, 0.9693 0.6131, 0.9606 0.6161, 0.4938 0.2943, 0.4849 0.2972, 0.4695 0.2709, 0.5122 0.0618, 0.5211 0.0549, 0.5241 0.0623, 0.6664 0.6845, 0.6636 0.6418, 0.6738 0.6453, 0.6823 0.6323, 0.6827 0.6426, 0.6738 0.6453, 0.5652 0.0497, 0.5228 0.0739, 0.5241 0.0623, 0.3942 0.6616, 0.3952 0.671, 0.3865 0.6746, 0.7634 0.1051, 0.7721 0.1024, 0.7876 0.129, 0.7651 0.0936, 0.77 0.0872, 0.7767 0.0962, 0.3758 0.6721, 0.3865 0.6746, 0.3902 0.7021, 0.4863 0.0994, 0.4806 0.095, 0.4874 0.0863, 0.6705 0.72, 0.6664 0.6845, 0.677 0.6874, 0.5228 0.0739, 0.4963 0.1, 0.4931 0.0907, 0.7918 0.2183, 0.7998 0.2261, 0.7896 0.2637, 0.3816 0.5862, 0.3815 0.5751, 0.391 0.5763, 0.3725 0.5324, 0.3824 0.5378, 0.3815 0.5751, 0.9607 0.4674, 0.9693 0.4682, 0.9689 0.4786, 0.4656 0.1759, 0.4573 0.1705, 0.4666 0.1363, 0.9677 0.5239, 0.9585 0.5241, 0.9588 0.5131, 0.9502 0.472, 0.96 0.4778, 0.9588 0.5131, 0.6813 0.596, 0.6724 0.5988, 0.6724 0.5876, 0.6626 0.5468, 0.6726 0.553, 0.6724 0.5876, 0.6126 0.0372, 0.6145 0.0283, 0.6456 0.0283, 0.7918 0.2183, 0.7918 0.1729, 0.8013 0.1798, 0.3831 0.6331, 0.3824 0.6223, 0.3917 0.6224, 0.3725 0.6277, 0.3714 0.5801, 0.3816 0.5862, 0.9588 0.8373, 0.959 0.8265, 0.9676 0.8278, 0.9488 0.8312, 0.9505 0.7854, 0.9602 0.7935, 0.5704 0.3533, 0.6066 0.3629, 0.6 0.3703, 0.7336 0.3254, 0.7598 0.2996, 0.7632 0.309, 0.3758 0.488, 0.381 0.4499, 0.3902 0.4581, 0.7287 0.0709, 0.7385 0.0673, 0.7651 0.0936, 0.6723 0.4283, 0.6816 0.4345, 0.6781 0.4595, 0.9589 0.5727, 0.9585 0.5617, 0.9677 0.5628, 0.9487 0.5667, 0.9486 0.5186, 0.9585 0.5241, 0.4656 0.1759, 0.4656 0.2273, 0.4559 0.2203, 0.6623 0.5948, 0.6724 0.5988, 0.6734 0.635, 0.5652 0.0497, 0.567 0.0395, 0.6034 0.0299, 0.7918 0.1729, 0.7821 0.1372, 0.7919 0.1391, 0.3758 0.6721, 0.3725 0.6277, 0.3831 0.6331, 0.9533 0.43, 0.9629 0.4371, 0.9607 0.4674, 0.4776 0.132, 0.4708 0.126, 0.4863 0.0994, 0.4656 0.2273, 0.4752 0.2626, 0.4652 0.2608, 0.9503 0.6129, 0.9487 0.5667, 0.9589 0.5727, 0.9488 0.8312, 0.9588 0.8373, 0.9588 0.872, 0.6441 0.3629, 0.6421 0.3717, 0.611 0.3717, 0.5197 0.3335, 0.5137 0.3393, 0.4868 0.3127, 0.6742 0.5092, 0.6826 0.5142, 0.6729 0.5422, 0.3952 0.671, 0.3985 0.6954, 0.3865 0.6746, 0.3831 0.6331, 0.3921 0.6332, 0.3855 0.6651, 0.3816 0.5862, 0.3909 0.5872, 0.3824 0.6223, 0.3831 0.5271, 0.3854 0.4951, 0.3922 0.5269, 0.7444 0.3381, 0.7414 0.3306, 0.7692 0.3136, 0.3919 0.5377, 0.391 0.5763, 0.3824 0.5378, 0.9589 0.5727, 0.9677 0.5738, 0.9601 0.6061, 0.7346 0.0543, 0.7297 0.0606, 0.7021 0.0358, 0.6734 0.635, 0.6724 0.5988, 0.6823 0.6323, 0.6849 0.6757, 0.676 0.6783, 0.6827 0.6426, 0.9607 0.4674, 0.9629 0.4371, 0.9693 0.4682, 0.7651 0.0936, 0.7385 0.0673, 0.77 0.0872, 0.4931 0.0907, 0.4874 0.0863, 0.5151 0.069, 0.9588 0.872, 0.9588 0.8373, 0.9673 0.8692, 0.9689 0.4786, 0.9678 0.513, 0.96 0.4778, 0.9677 0.5628, 0.9585 0.5617, 0.9677 0.5239, 0.5596 0.358, 0.5546 0.3642, 0.5285 0.3402, 0.9677 0.8803, 0.9688 0.915, 0.9588 0.8831, 0.6724 0.5876, 0.6726 0.553, 0.681 0.5849, 0.9676 0.8278, 0.959 0.8265, 0.9686 0.7985, 0.7324 0.3373, 0.7355 0.3451, 0.6983 0.3567, 0.9629 0.6458, 0.9606 0.6161, 0.9713 0.6393, 0.7346 0.0543, 0.7434 0.061, 0.7297 0.0606, 0.7297 0.0606, 0.7287 0.0709, 0.6971 0.0421, 0.6826 0.5142, 0.6742 0.5092, 0.6834 0.5042, 0.6747 0.499, 0.6645 0.501, 0.6772 0.4678, 0.4868 0.3127, 0.48 0.3037, 0.4918 0.306, 0.4938 0.2943, 0.5306 0.3306, 0.4918 0.306, 0.5285 0.3402, 0.5226 0.346, 0.5197 0.3335, 0.9579 0.6875, 0.9535 0.6541, 0.9671 0.6809, 0.7414 0.3306, 0.7444 0.3381, 0.7324 0.3373, 0.9627 0.9626, 0.9532 0.9688, 0.9604 0.9291, 0.9604 0.9291, 0.9599 0.9188, 0.9694 0.9253, 0.6983 0.3567, 0.6885 0.3511, 0.7324 0.3373, 0.9588 0.8831, 0.9588 0.872, 0.9677 0.8803, 0.6441 0.3629, 0.6885 0.3511, 0.6533 0.3701, 0.9502 0.9261, 0.9487 0.8792, 0.9599 0.9188, 0.3922 0.5269, 0.3919 0.5377, 0.3831 0.5271, 0.3725 0.5324, 0.3758 0.488, 0.3831 0.5271, 0.3864 0.4856, 0.3953 0.4893, 0.3854 0.4951, 0.7598 0.2996, 0.7783 0.2679, 0.77 0.3004, 0.9686 0.7985, 0.9602 0.7935, 0.9694 0.7885, 0.9606 0.7833, 0.9505 0.7854, 0.963 0.7526, 0.5285 0.3402, 0.5306 0.3306, 0.5596 0.358, 0.6867 0.0377, 0.6862 0.0467, 0.6566 0.0297, 0.6812 0.5543, 0.6726 0.553, 0.6814 0.5435, 0.6729 0.5422, 0.6626 0.5468, 0.6742 0.5092, 0.9535 0.6541, 0.9503 0.6129, 0.9629 0.6458, 0.9601 0.6061, 0.9688 0.6031, 0.9606 0.6161, 0.4752 0.2626, 0.4938 0.2943, 0.4695 0.2709, 0.5151 0.069, 0.5122 0.0618, 0.5241 0.0623, 0.676 0.6783, 0.6664 0.6845, 0.6738 0.6453, 0.6734 0.635, 0.6823 0.6323, 0.6738 0.6453, 0.5567 0.0437, 0.5652 0.0497, 0.5241 0.0623, 0.3855 0.6651, 0.3942 0.6616, 0.3865 0.6746, 0.7821 0.1372, 0.7634 0.1051, 0.7876 0.129, 0.7721 0.1024, 0.7651 0.0936, 0.7767 0.0962, 0.381 0.7102, 0.3758 0.6721, 0.3902 0.7021, 0.4931 0.0907, 0.4863 0.0994, 0.4874 0.0863, 0.6799 0.7131, 0.6705 0.72, 0.677 0.6874, 0.5151 0.069, 0.5228 0.0739, 0.4931 0.0907, 0.7783 0.2679, 0.7918 0.2183, 0.7896 0.2637, 0.3909 0.5872, 0.3816 0.5862, 0.391 0.5763, 0.3714 0.5801, 0.3725 0.5324, 0.3815 0.5751, 0.96 0.4778, 0.9607 0.4674, 0.9689 0.4786, 0.4776 0.132, 0.4656 0.1759, 0.4666 0.1363, 0.9678 0.513, 0.9677 0.5239, 0.9588 0.5131, 0.9486 0.5186, 0.9502 0.472, 0.9588 0.5131, 0.681 0.5849, 0.6813 0.596, 0.6724 0.5876, 0.6623 0.5948, 0.6626 0.5468, 0.6724 0.5876, 0.6501 0.0372, 0.6126 0.0372, 0.6456 0.0283, 0.8013 0.2152, 0.7918 0.2183, 0.8013 0.1798, 0.3921 0.6332, 0.3831 0.6331, 0.3917 0.6224, 0.3824 0.6223, 0.3725 0.6277, 0.3816 0.5862, 0.9674 0.8385, 0.9588 0.8373, 0.9676 0.8278, 0.959 0.8265, 0.9488 0.8312, 0.9602 0.7935, 0.57 0.3623, 0.5704 0.3533, 0.6 0.3703, 0.7414 0.3306, 0.7336 0.3254, 0.7632 0.309, 0.3864 0.4856, 0.3758 0.488, 0.3902 0.4581, 0.7634 0.1051, 0.7287 0.0709, 0.7651 0.0936, 0.6678 0.4606, 0.6723 0.4283, 0.6781 0.4595, 0.9677 0.5738, 0.9589 0.5727, 0.9677 0.5628, 0.9585 0.5617, 0.9487 0.5667, 0.9585 0.5241, 0.4559 0.1814, 0.4656 0.1759, 0.4559 0.2203, 0.6636 0.6418, 0.6623 0.5948, 0.6734 0.635, 0.6126 0.0372, 0.5652 0.0497, 0.6034 0.0299, 0.7999 0.1687, 0.7918 0.1729, 0.7919 0.1391, 0.3855 0.6651, 0.3758 0.6721, 0.3831 0.6331, 0.9502 0.472, 0.9533 0.43, 0.9607 0.4674, 0.4963 0.1, 0.4776 0.132, 0.4863 0.0994, 0.4572 0.2314, 0.4656 0.2273, 0.4652 0.2608, 0.9601 0.6061, 0.9503 0.6129, 0.9589 0.5727, 0.9487 0.8792, 0.9488 0.8312, 0.9588 0.872, 0.6066 0.3629, 0.6441 0.3629, 0.611 0.3717, 0.4918 0.306, 0.5197 0.3335, 0.4868 0.3127
+                          ]
+                        }
+                        coordIndex [
+                          108, 31, 110, -1, 84, 3, 62, -1, 154, 44, 1, -1, 134, 7, 126, -1, 164, 158, 6, -1, 75, 88, 91, -1, 19, 180, 70, -1, 90, 20, 78, -1, 172, 18, 17, -1, 178, 181, 171, -1, 165, 173, 170, -1, 159, 166, 169, -1, 136, 139, 147, -1, 9, 126, 7, -1, 132, 1, 5, -1, 142, 1, 120, -1, 122, 137, 135, -1, 160, 163, 149, -1, 56, 53, 51, -1, 42, 2, 44, -1, 54, 2, 42, -1, 24, 66, 60, -1, 25, 82, 66, -1, 73, 76, 79, -1, 102, 27, 90, -1, 101, 98, 113, -1, 114, 4, 3, -1, 109, 112, 115, -1, 20, 90, 27, -1, 95, 92, 83, -1, 25, 24, 14, -1, 20, 27, 14, -1, 10, 12, 14, -1, 17, 18, 14, -1, 30, 28, 14, -1, 24, 23, 14, -1, 16, 17, 14, -1, 9, 7, 14, -1, 12, 15, 14, -1, 21, 13, 14, -1, 18, 19, 14, -1, 19, 20, 14, -1, 13, 11, 14, -1, 23, 22, 14, -1, 27, 29, 14, -1, 71, 68, 179, -1, 28, 82, 26, -1, 97, 107, 104, -1, 27, 102, 29, -1, 180, 19, 18, -1, 168, 17, 16, -1, 29, 110, 31, -1, 143, 140, 119, -1, 17, 168, 172, -1, 162, 16, 15, -1, 66, 24, 25, -1, 64, 67, 81, -1, 22, 50, 40, -1, 61, 65, 63, -1, 157, 47, 45, -1, 13, 48, 156, -1, 94, 3, 84, -1, 30, 96, 28, -1, 72, 6, 4, -1, 176, 6, 72, -1, 74, 72, 4, -1, 23, 60, 50, -1, 60, 23, 24, -1, 96, 30, 108, -1, 110, 29, 102, -1, 150, 15, 12, -1, 10, 150, 12, -1, 144, 13, 156, -1, 8, 128, 9, -1, 150, 10, 134, -1, 126, 9, 128, -1, 16, 162, 168, -1, 138, 5, 148, -1, 31, 108, 30, -1, 131, 129, 117, -1, 174, 6, 176, -1, 89, 87, 99, -1, 82, 28, 96, -1, 1, 32, 5, -1, 32, 1, 33, -1, 34, 4, 35, -1, 4, 34, 3, -1, 145, 155, 152, -1, 127, 130, 133, -1, 13, 144, 11, -1, 15, 150, 162, -1, 36, 1, 2, -1, 1, 36, 33, -1, 34, 2, 3, -1, 2, 34, 36, -1, 36, 32, 33, -1, 32, 36, 37, -1, 37, 36, 34, -1, 37, 34, 35, -1, 37, 4, 6, -1, 4, 37, 35, -1, 32, 6, 5, -1, 6, 32, 37, -1, 120, 1, 132, -1, 118, 11, 144, -1, 58, 2, 54, -1, 48, 13, 21, -1, 29, 31, 14, -1, 7, 10, 14, -1, 15, 16, 14, -1, 22, 21, 14, -1, 11, 8, 14, -1, 26, 25, 14, -1, 31, 30, 14, -1, 28, 26, 14, -1, 8, 9, 14, -1, 20, 70, 78, -1, 21, 40, 48, -1, 124, 132, 5, -1, 128, 8, 118, -1, 7, 134, 10, -1, 44, 2, 1, -1, 74, 4, 86, -1, 40, 21, 22, -1, 106, 114, 3, -1, 18, 172, 180, -1, 106, 3, 94, -1, 148, 5, 158, -1, 62, 3, 2, -1, 86, 4, 100, -1, 158, 5, 6, -1, 154, 1, 142, -1, 124, 5, 138, -1, 70, 20, 19, -1, 58, 62, 2, -1, 100, 4, 114, -1, 164, 6, 174, -1, 82, 25, 26, -1, 50, 22, 23, -1, 11, 118, 8, -1, 52, 55, 41, -1, 38, 39, 40, -1, 41, 42, 43, -1, 44, 45, 46, -1, 47, 48, 49, -1, 50, 51, 52, -1, 53, 54, 55, -1, 56, 57, 58, -1, 59, 60, 61, -1, 62, 63, 64, -1, 65, 66, 67, -1, 68, 69, 70, -1, 71, 72, 73, -1, 74, 75, 76, -1, 77, 78, 79, -1, 80, 81, 82, -1, 83, 84, 85, -1, 86, 87, 88, -1, 89, 90, 91, -1, 92, 93, 94, -1, 95, 96, 97, -1, 98, 99, 100, -1, 101, 102, 103, -1, 104, 105, 106, -1, 107, 108, 109, -1, 110, 111, 112, -1, 113, 114, 115, -1, 116, 117, 118, -1, 119, 120, 121, -1, 122, 123, 124, -1, 125, 126, 127, -1, 128, 129, 130, -1, 131, 132, 133, -1, 134, 135, 136, -1, 137, 138, 139, -1, 140, 141, 142, -1, 143, 144, 145, -1, 146, 147, 148, -1, 149, 150, 151, -1, 152, 153, 154, -1, 155, 156, 157, -1, 158, 159, 160, -1, 161, 162, 163, -1, 164, 165, 166, -1, 167, 168, 169, -1, 170, 171, 172, -1, 173, 174, 175, -1, 176, 177, 178, -1, 179, 180, 181, -1, 68, 71, 73, -1, 72, 74, 76, -1, 77, 79, 76, -1, 78, 70, 69, -1, 38, 41, 43, -1, 44, 46, 43, -1, 47, 49, 46, -1, 40, 39, 49, -1, 125, 127, 123, -1, 126, 128, 130, -1, 129, 131, 133, -1, 132, 124, 123, -1, 116, 119, 121, -1, 132, 131, 121, -1, 118, 117, 129, -1, 146, 149, 151, -1, 134, 136, 151, -1, 137, 139, 136, -1, 148, 147, 139, -1, 155, 157, 153, -1, 156, 48, 47, -1, 44, 154, 153, -1, 74, 86, 88, -1, 89, 91, 88, -1, 90, 78, 77, -1, 50, 52, 38, -1, 53, 55, 52, -1, 42, 41, 55, -1, 107, 109, 105, -1, 108, 110, 112, -1, 113, 115, 112, -1, 114, 106, 105, -1, 173, 175, 171, -1, 176, 178, 175, -1, 177, 179, 181, -1, 172, 171, 181, -1, 92, 95, 97, -1, 96, 108, 107, -1, 106, 94, 93, -1, 158, 160, 146, -1, 161, 163, 160, -1, 150, 149, 163, -1, 80, 83, 85, -1, 62, 64, 85, -1, 63, 65, 67, -1, 82, 81, 67, -1, 98, 101, 103, -1, 90, 89, 103, -1, 100, 99, 87, -1, 158, 164, 166, -1, 167, 169, 166, -1, 168, 162, 161, -1, 143, 145, 141, -1, 144, 156, 155, -1, 154, 142, 141, -1, 124, 138, 137, -1, 134, 126, 125, -1, 72, 71, 177, -1, 180, 179, 68, -1, 59, 61, 57, -1, 60, 66, 65, -1, 62, 58, 57, -1, 102, 101, 111, -1, 114, 113, 98, -1, 164, 174, 173, -1, 172, 168, 167, -1, 96, 95, 80, -1, 84, 83, 92, -1, 58, 54, 53, -1, 50, 60, 59, -1, 144, 143, 116, -1, 120, 119, 140, -1, 46, 49, 39, -1, 77, 75, 91, -1, 175, 178, 171, -1, 167, 165, 170, -1, 161, 159, 169, -1, 151, 136, 147, -1, 125, 122, 135, -1, 146, 160, 149, -1, 59, 56, 51, -1, 69, 73, 79, -1, 111, 101, 113, -1, 105, 109, 115, -1, 80, 95, 83, -1, 177, 71, 179, -1, 93, 97, 104, -1, 116, 143, 119, -1, 85, 64, 81, -1, 57, 61, 63, -1, 153, 157, 45, -1, 121, 131, 117, -1, 103, 89, 99, -1, 141, 145, 152, -1, 123, 127, 133, -1, 38, 52, 41, -1, 69, 68, 73, -1, 73, 72, 76, -1, 75, 77, 76, -1, 79, 78, 69, -1, 39, 38, 43, -1, 42, 44, 43, -1, 45, 47, 46, -1, 48, 40, 49, -1, 122, 125, 123, -1, 127, 126, 130, -1, 130, 129, 133, -1, 133, 132, 123, -1, 117, 116, 121, -1, 120, 132, 121, -1, 128, 118, 129, -1, 147, 146, 151, -1, 150, 134, 151, -1, 135, 137, 136, -1, 138, 148, 139, -1, 152, 155, 153, -1, 157, 156, 47, -1, 45, 44, 153, -1, 75, 74, 88, -1, 87, 89, 88, -1, 91, 90, 77, -1, 40, 50, 38, -1, 51, 53, 52, -1, 54, 42, 55, -1, 104, 107, 105, -1, 109, 108, 112, -1, 111, 113, 112, -1, 115, 114, 105, -1, 170, 173, 171, -1, 174, 176, 175, -1, 178, 177, 181, -1, 180, 172, 181, -1, 93, 92, 97, -1, 97, 96, 107, -1, 104, 106, 93, -1, 148, 158, 146, -1, 159, 161, 160, -1, 162, 150, 163, -1, 81, 80, 85, -1, 84, 62, 85, -1, 64, 63, 67, -1, 66, 82, 67, -1, 99, 98, 103, -1, 102, 90, 103, -1, 86, 100, 87, -1, 159, 158, 166, -1, 165, 167, 166, -1, 169, 168, 161, -1, 140, 143, 141, -1, 145, 144, 155, -1, 152, 154, 141, -1, 122, 124, 137, -1, 135, 134, 125, -1, 176, 72, 177, -1, 70, 180, 68, -1, 56, 59, 57, -1, 61, 60, 65, -1, 63, 62, 57, -1, 110, 102, 111, -1, 100, 114, 98, -1, 165, 164, 173, -1, 170, 172, 167, -1, 82, 96, 80, -1, 94, 84, 92, -1, 56, 58, 53, -1, 51, 50, 59, -1, 118, 144, 116, -1, 142, 120, 140, -1, 43, 46, 39, -1
+                        ]
+                        texCoordIndex [
+                          0, 1, 2, -1, 3, 4, 5, -1, 6, 7, 8, -1, 9, 10, 11, -1, 12, 13, 14, -1, 15, 16, 17, -1, 18, 19, 20, -1, 21, 22, 23, -1, 24, 25, 26, -1, 27, 28, 29, -1, 30, 31, 32, -1, 33, 34, 35, -1, 36, 37, 38, -1, 39, 40, 41, -1, 42, 43, 44, -1, 45, 46, 47, -1, 48, 49, 50, -1, 51, 52, 53, -1, 54, 55, 56, -1, 57, 58, 59, -1, 60, 61, 62, -1, 63, 64, 65, -1, 66, 67, 68, -1, 69, 70, 71, -1, 72, 73, 74, -1, 75, 76, 77, -1, 78, 79, 80, -1, 81, 82, 83, -1, 84, 85, 86, -1, 87, 88, 89, -1, 90, 91, 92, -1, 93, 94, 95, -1, 96, 97, 98, -1, 99, 100, 101, -1, 102, 103, 104, -1, 105, 106, 107, -1, 108, 109, 110, -1, 111, 112, 113, -1, 114, 115, 116, -1, 117, 118, 119, -1, 120, 121, 122, -1, 123, 124, 125, -1, 126, 127, 128, -1, 129, 130, 131, -1, 132, 133, 134, -1, 135, 136, 137, -1, 138, 139, 140, -1, 141, 142, 143, -1, 144, 145, 146, -1, 147, 148, 149, -1, 150, 151, 152, -1, 153, 154, 155, -1, 156, 157, 158, -1, 159, 160, 161, -1, 162, 163, 164, -1, 165, 166, 167, -1, 168, 169, 170, -1, 171, 172, 173, -1, 174, 175, 176, -1, 177, 178, 179, -1, 180, 181, 182, -1, 183, 184, 185, -1, 186, 187, 188, -1, 189, 190, 191, -1, 192, 193, 194, -1, 195, 196, 197, -1, 198, 199, 200, -1, 201, 202, 203, -1, 204, 205, 206, -1, 207, 208, 209, -1, 210, 211, 212, -1, 213, 214, 215, -1, 216, 217, 218, -1, 219, 220, 221, -1, 222, 223, 224, -1, 225, 226, 227, -1, 228, 229, 230, -1, 231, 232, 233, -1, 234, 235, 236, -1, 237, 238, 239, -1, 240, 241, 242, -1, 243, 244, 245, -1, 246, 247, 248, -1, 249, 250, 251, -1, 252, 253, 254, -1, 255, 256, 257, -1, 258, 259, 260, -1, 261, 262, 263, -1, 264, 265, 266, -1, 267, 268, 269, -1, 270, 271, 272, -1, 273, 274, 275, -1, 276, 277, 278, -1, 279, 280, 281, -1, 282, 283, 284, -1, 285, 286, 287, -1, 288, 289, 290, -1, 291, 292, 293, -1, 294, 295, 296, -1, 297, 298, 299, -1, 300, 301, 302, -1, 303, 304, 305, -1, 306, 307, 308, -1, 309, 310, 311, -1, 312, 313, 314, -1, 315, 316, 317, -1, 318, 319, 320, -1, 321, 322, 323, -1, 324, 325, 326, -1, 327, 328, 329, -1, 330, 331, 332, -1, 333, 334, 335, -1, 336, 337, 338, -1, 339, 340, 341, -1, 342, 343, 344, -1, 345, 346, 347, -1, 348, 349, 350, -1, 351, 352, 353, -1, 354, 355, 356, -1, 357, 358, 359, -1, 360, 361, 362, -1, 363, 364, 365, -1, 366, 367, 368, -1, 369, 370, 371, -1, 372, 373, 374, -1, 375, 376, 377, -1, 378, 379, 380, -1, 381, 382, 383, -1, 384, 385, 386, -1, 387, 388, 389, -1, 390, 391, 392, -1, 393, 394, 395, -1, 396, 397, 398, -1, 399, 400, 401, -1, 402, 403, 404, -1, 405, 406, 407, -1, 408, 409, 410, -1, 411, 412, 413, -1, 414, 415, 416, -1, 417, 418, 419, -1, 420, 421, 422, -1, 423, 424, 425, -1, 426, 427, 428, -1, 429, 430, 431, -1, 432, 433, 434, -1, 435, 436, 437, -1, 438, 439, 440, -1, 441, 442, 443, -1, 444, 445, 446, -1, 447, 448, 449, -1, 450, 451, 452, -1, 453, 454, 455, -1, 456, 457, 458, -1, 459, 460, 461, -1, 462, 463, 464, -1, 465, 466, 467, -1, 468, 469, 470, -1, 471, 472, 473, -1, 474, 475, 476, -1, 477, 478, 479, -1, 480, 481, 482, -1, 483, 484, 485, -1, 486, 487, 488, -1, 489, 490, 491, -1, 492, 493, 494, -1, 495, 496, 497, -1, 498, 499, 500, -1, 501, 502, 503, -1, 504, 505, 506, -1, 507, 508, 509, -1, 510, 511, 512, -1, 513, 514, 515, -1, 516, 517, 518, -1, 519, 520, 521, -1, 522, 523, 524, -1, 525, 526, 527, -1, 528, 529, 530, -1, 531, 532, 533, -1, 534, 535, 536, -1, 537, 538, 539, -1, 540, 541, 542, -1, 543, 544, 545, -1, 546, 547, 548, -1, 549, 550, 551, -1, 552, 553, 554, -1, 555, 556, 557, -1, 558, 559, 560, -1, 561, 562, 563, -1, 564, 565, 566, -1, 567, 568, 569, -1, 570, 571, 572, -1, 573, 574, 575, -1, 576, 577, 578, -1, 579, 580, 581, -1, 582, 583, 584, -1, 585, 586, 587, -1, 588, 589, 590, -1, 591, 592, 593, -1, 594, 595, 596, -1, 597, 598, 599, -1, 600, 601, 602, -1, 603, 604, 605, -1, 606, 607, 608, -1, 609, 610, 611, -1, 612, 613, 614, -1, 615, 616, 617, -1, 618, 619, 620, -1, 621, 622, 623, -1, 624, 625, 626, -1, 627, 628, 629, -1, 630, 631, 632, -1, 633, 634, 635, -1, 636, 637, 638, -1, 639, 640, 641, -1, 642, 643, 644, -1, 645, 646, 647, -1, 648, 649, 650, -1, 651, 652, 653, -1, 654, 655, 656, -1, 657, 658, 659, -1, 660, 661, 662, -1, 663, 664, 665, -1, 666, 667, 668, -1, 669, 670, 671, -1, 672, 673, 674, -1, 675, 676, 677, -1, 678, 679, 680, -1, 681, 682, 683, -1, 684, 685, 686, -1, 687, 688, 689, -1, 690, 691, 692, -1, 693, 694, 695, -1, 696, 697, 698, -1, 699, 700, 701, -1, 702, 703, 704, -1, 705, 706, 707, -1, 708, 709, 710, -1, 711, 712, 713, -1, 714, 715, 716, -1, 717, 718, 719, -1, 720, 721, 722, -1, 723, 724, 725, -1, 726, 727, 728, -1, 729, 730, 731, -1, 732, 733, 734, -1, 735, 736, 737, -1, 738, 739, 740, -1, 741, 742, 743, -1, 744, 745, 746, -1, 747, 748, 749, -1, 750, 751, 752, -1, 753, 754, 755, -1, 756, 757, 758, -1, 759, 760, 761, -1, 762, 763, 764, -1, 765, 766, 767, -1, 768, 769, 770, -1, 771, 772, 773, -1, 774, 775, 776, -1, 777, 778, 779, -1, 780, 781, 782, -1, 783, 784, 785, -1, 786, 787, 788, -1, 789, 790, 791, -1, 792, 793, 794, -1, 795, 796, 797, -1, 798, 799, 800, -1, 801, 802, 803, -1, 804, 805, 806, -1, 807, 808, 809, -1, 810, 811, 812, -1, 813, 814, 815, -1, 816, 817, 818, -1, 819, 820, 821, -1, 822, 823, 824, -1, 825, 826, 827, -1, 828, 829, 830, -1, 831, 832, 833, -1, 834, 835, 836, -1, 837, 838, 839, -1, 840, 841, 842, -1, 843, 844, 845, -1, 846, 847, 848, -1, 849, 850, 851, -1, 852, 853, 854, -1, 855, 856, 857, -1, 858, 859, 860, -1, 861, 862, 863, -1, 864, 865, 866, -1, 867, 868, 869, -1, 870, 871, 872, -1, 873, 874, 875, -1, 876, 877, 878, -1, 879, 880, 881, -1, 882, 883, 884, -1, 885, 886, 887, -1, 888, 889, 890, -1, 891, 892, 893, -1, 894, 895, 896, -1, 897, 898, 899, -1, 900, 901, 902, -1, 903, 904, 905, -1, 906, 907, 908, -1, 909, 910, 911, -1, 912, 913, 914, -1, 915, 916, 917, -1, 918, 919, 920, -1, 921, 922, 923, -1, 924, 925, 926, -1, 927, 928, 929, -1, 930, 931, 932, -1, 933, 934, 935, -1, 936, 937, 938, -1, 939, 940, 941, -1, 942, 943, 944, -1, 945, 946, 947, -1, 948, 949, 950, -1, 951, 952, 953, -1, 954, 955, 956, -1, 957, 958, 959, -1, 960, 961, 962, -1, 963, 964, 965, -1, 966, 967, 968, -1, 969, 970, 971, -1, 972, 973, 974, -1, 975, 976, 977, -1, 978, 979, 980, -1, 981, 982, 983, -1, 984, 985, 986, -1, 987, 988, 989, -1, 990, 991, 992, -1, 993, 994, 995, -1, 996, 997, 998, -1, 999, 1000, 1001, -1, 1002, 1003, 1004, -1, 1005, 1006, 1007, -1, 1008, 1009, 1010, -1, 1011, 1012, 1013, -1, 1014, 1015, 1016, -1, 1017, 1018, 1019, -1, 1020, 1021, 1022, -1, 1023, 1024, 1025, -1, 1026, 1027, 1028, -1, 1029, 1030, 1031, -1, 1032, 1033, 1034, -1, 1035, 1036, 1037, -1, 1038, 1039, 1040, -1, 1041, 1042, 1043, -1, 1044, 1045, 1046, -1, 1047, 1048, 1049, -1, 1050, 1051, 1052, -1, 1053, 1054, 1055, -1, 1056, 1057, 1058, -1, 1059, 1060, 1061, -1, 1062, 1063, 1064, -1, 1065, 1066, 1067, -1, 1068, 1069, 1070, -1, 1071, 1072, 1073, -1
+                        ]
+                        creaseAngle 0.57
+                      }
+                    }
+                  ]
+                }
+                DEF CYLINDER Pose {
+                  translation 0.01 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg"
+                          ]
+                        }
+                        occlusionMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg"
+                          ]
+                        }
+                        textureTransform TextureTransform {
+                          rotation 1.5708
+                          scale 0.8 2
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.0015
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "screw0"
+              model "cap screw"
+              boundingObject Group {
+                children [
+                  USE CYLINDER
+                  Pose {
+                    translation -0.0015 0 0
+                    rotation 0 1 0 1.5708
+                    children [
+                      Cylinder {
+                        height 0.003
+                        radius 0.0025
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density 8050
+              }
+            }
+            Solid {
+              translation 0.035 0.0245 -0.0105
+              rotation 0 -1 0 -1.570787
+              children [
+                Transform {
+                  scale 0.375 0.375 0.375
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg"
+                          ]
+                        }
+                        metalnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_normal.jpg"
+                          ]
+                        }
+                      }
+                      geometry IndexedFaceSet {
+                        coord Coordinate {
+                          point [
+                            -0.00798 0 0, -0.00798 0.001732 0.003, -0.00798 0.003464 0, -0.00798 0.001732 -0.003, -0.00798 -0.001732 -0.003, -0.00798 -0.001732 0.003, -0.00798 -0.003464 0, 0 -0.001682 0.006279, 0 0.001682 0.006279, 0 0 0.0065, 0 -0.00325 0.005629, 0 0.00325 0.005629, 0 -0.004596 0.004596, 0 0.004596 0.004596, 0 0 0, 0 -0.005629 0.00325, 0 -0.006279 0.001682, 0 -0.0065 0, 0 -0.006279 -0.001682, 0 -0.005629 -0.00325, 0 -0.004596 -0.004596, 0 0.005629 0.00325, 0 0.006279 0.001682, 0 0.0065 0, 0 0.006279 -0.001682, 0 0.005629 -0.00325, 0 0.004596 -0.004596, 0 -0.00325 -0.005629, 0 0.00325 -0.005629, 0 -0.001682 -0.006279, 0 0.001682 -0.006279, 0 0 -0.0065, -0.00398 -0.001732 0.003, -0.00398 0.001732 0.003, -0.00398 0.001732 -0.003, -0.00398 -0.001732 -0.003, -0.00398 0.003464 0, -0.00398 -0.003464 0, -0.007566 0.006179 0.001406, -0.007561 0.006083 0.00179, -0.007232 0.006279 0.001682, -0.00784 0.005933 0.001259, -0.00798 0.005607 0.001281, -0.007845 0.005828 0.001638, -0.00798 0.004913 0.002955, -0.007842 0.00511 0.003243, -0.007845 0.005302 0.002906, -0.007563 0.005377 0.003353, -0.007232 0.005629 0.00325, -0.007561 0.005574 0.003018, -0.007232 0.0065 0, -0.007566 0.006339 -0.000193, -0.007566 0.006339 0.000193, -0.00784 0.006074 -0.000193, -0.00798 0.005775 0, -0.00784 0.006074 0.000193, -0.00784 0.005933 -0.001259, -0.007845 0.005828 -0.001638, -0.00798 0.005607 -0.001281, -0.007566 0.006179 -0.001406, -0.007232 0.006279 -0.001682, -0.007561 0.006083 -0.00179, -0.00798 0.004913 -0.002955, -0.007845 0.005302 -0.002906, -0.007842 0.00511 -0.003243, -0.007561 0.005574 -0.003018, -0.007232 0.005629 -0.00325, -0.007563 0.005377 -0.003353, -0.007563 -0.005584 -0.003001, -0.007563 -0.005391 -0.003335, -0.007232 -0.005629 -0.00325, -0.007842 -0.00534 -0.00286, -0.00798 -0.004976 -0.002873, -0.007842 -0.005147 -0.003195, -0.00798 -0.003936 -0.004228, -0.007837 -0.004073 -0.004517, -0.007842 -0.004348 -0.004237, -0.007569 -0.00431 -0.004649, -0.007232 -0.004596 -0.004596, -0.007563 -0.004594 -0.004374, -0.007569 0.00431 -0.004649, -0.007563 0.004594 -0.004374, -0.007232 0.004596 -0.004596, -0.007837 0.004073 -0.004517, -0.00798 0.003936 -0.004228, -0.007842 0.004348 -0.004237, -0.00798 -0.0029 -0.005023, -0.007837 -0.002878 -0.005371, -0.007837 -0.003212 -0.005177, -0.007569 -0.003003 -0.005588, -0.007232 -0.00325 -0.005629, -0.007569 -0.003338 -0.005395, -0.007837 0.003212 -0.005177, -0.007837 0.002878 -0.005371, -0.00798 0.0029 -0.005023, -0.007569 0.003338 -0.005395, -0.007232 0.00325 -0.005629, -0.007569 0.003003 -0.005588, -0.007842 -0.001495 -0.005883, -0.007837 -0.001876 -0.005786, -0.00798 -0.001694 -0.005523, -0.007563 -0.001491 -0.006165, -0.007232 -0.001682 -0.006279, -0.007569 -0.001871 -0.006057, -0.007837 0.001876 -0.005786, -0.007842 0.001495 -0.005883, -0.00798 0.001694 -0.005523, -0.007569 0.001871 -0.006057, -0.007232 0.001682 -0.006279, -0.007563 0.001491 -0.006165, -0.007232 0 -0.0065, -0.007563 -0.000193 -0.006336, -0.007563 0.000193 -0.006336, -0.007842 -0.000193 -0.006055, -0.00798 0 -0.005746, -0.007842 0.000193 -0.006055, -0.007569 0.001871 0.006057, -0.007563 0.001491 0.006165, -0.007232 0.001682 0.006279, -0.007837 0.001876 0.005786, -0.00798 0.001694 0.005523, -0.007842 0.001495 0.005883, -0.00784 -0.001876 0.005768, -0.007845 -0.001495 0.005866, -0.00798 -0.001694 0.005496, -0.007566 -0.001872 0.006055, -0.007232 -0.001682 0.006279, -0.007561 -0.001491 0.006163, -0.007232 0 0.0065, -0.007563 0.000215 0.006333, -0.007561 -0.000174 0.006336, -0.007842 0.000253 0.006047, -0.00798 0.000103 0.005733, -0.007845 -0.000135 0.006045, -0.007232 -0.00325 0.005629, -0.007566 -0.003002 0.005586, -0.007566 -0.003337 0.005393, -0.00784 -0.00287 0.005357, -0.00798 -0.002888 0.005002, -0.00784 -0.003204 0.005163, -0.007837 0.002878 0.005371, -0.007837 0.003212 0.005177, -0.00798 0.0029 0.005023, -0.007569 0.003003 0.005588, -0.007232 0.00325 0.005629, -0.007569 0.003338 0.005395, -0.007845 -0.004332 0.004228, -0.00784 -0.004057 0.004509, -0.00798 -0.003912 0.004215, -0.007561 -0.004592 0.004373, -0.007232 -0.004596 0.004596, -0.007566 -0.004307 0.004648, -0.007837 0.004073 0.004517, -0.007842 0.004348 0.004237, -0.00798 0.003936 0.004228, -0.007569 0.00431 0.004649, -0.007232 0.004596 0.004596, -0.007563 0.004594 0.004374, -0.00798 -0.005016 0.002777, -0.007842 -0.005363 0.002804, -0.007845 -0.005168 0.003139, -0.007563 -0.005592 0.002981, -0.007232 -0.005629 0.00325, -0.007561 -0.0054 0.003319, -0.00798 -0.00563 0.001295, -0.007837 -0.005948 0.001269, -0.007842 -0.005843 0.001647, -0.007569 -0.006181 0.001408, -0.007232 -0.006279 0.001682, -0.007563 -0.006085 0.001791, -0.007569 -0.006341 0.000193, -0.007569 -0.006341 -0.000193, -0.007232 -0.0065 0, -0.007837 -0.00609 0.000193, -0.00798 -0.0058 0, -0.007837 -0.00609 -0.000193, -0.00798 -0.00563 -0.001295, -0.007842 -0.005843 -0.001647, -0.007837 -0.005948 -0.001269, -0.007563 -0.006085 -0.001791, -0.007232 -0.006279 -0.001682, -0.007569 -0.006181 -0.001408
+                          ]
+                        }
+                        texCoord TextureCoordinate {
+                          point [
+                            0.6664 0.6845, 0.4572 0.6418, 0.6636 0.6418, 0.4776 0.132, 0.5495 0.1403, 0.4656 0.1759, 0.5704 0.3533, 0.5306 0.3306, 0.6154 0.2973, 0.3758 0.488, 0.1762 0.4499, 0.381 0.4499, 0.7918 0.1729, 0.7918 0.2183, 0.7202 0.1625, 0.6826 0.5142, 0.6814 0.5435, 0.6729 0.5422, 0.4613 0.4606, 0.6723 0.4283, 0.6678 0.4606, 0.6626 0.5468, 0.458 0.501, 0.6645 0.501, 0.3758 0.6721, 0.1762 0.7102, 0.1709 0.6721, 0.3985 0.6954, 0.3902 0.7021, 0.3865 0.6746, 0.3921 0.6332, 0.3942 0.6616, 0.3855 0.6651, 0.3909 0.5872, 0.3917 0.6224, 0.3824 0.6223, 0.3854 0.4951, 0.3943 0.4988, 0.3922 0.5269, 0.7438 0.927, 0.9532 0.9688, 0.7467 0.9697, 0.6885 0.3511, 0.6154 0.2973, 0.7072 0.2597, 0.6066 0.3629, 0.6154 0.2973, 0.6441 0.3629, 0.7414 0.3306, 0.7632 0.309, 0.7692 0.3136, 0.391 0.5763, 0.3815 0.5751, 0.3824 0.5378, 0.9677 0.5738, 0.9688 0.6031, 0.9601 0.6061, 0.4938 0.2943, 0.5365 0.2376, 0.5306 0.3306, 0.4752 0.2626, 0.5365 0.2376, 0.4938 0.2943, 0.7423 0.5664, 0.9486 0.5186, 0.9487 0.5667, 0.7423 0.5183, 0.9502 0.472, 0.9486 0.5186, 0.7297 0.0606, 0.6971 0.0421, 0.7021 0.0358, 0.6623 0.5948, 0.4562 0.5468, 0.6626 0.5468, 0.6724 0.5988, 0.6813 0.596, 0.6823 0.6323, 0.5652 0.0497, 0.6413 0.1028, 0.5495 0.1403, 0.676 0.6783, 0.6738 0.6453, 0.6827 0.6426, 0.458 0.501, 0.6626 0.5468, 0.4562 0.5468, 0.9629 0.4371, 0.9713 0.4414, 0.9693 0.4682, 0.0413 0.2812, 0.0287 0.2348, 0.2136 0.2108, 0.3271 0.3568, 0.285 0.3809, 0.2136 0.2108, 0.3271 0.0648, 0.3615 0.0988, 0.2136 0.2108, 0.3985 0.2348, 0.3859 0.2812, 0.2136 0.2108, 0.1422 0.3809, 0.1001 0.3568, 0.2136 0.2108, 0.0287 0.2348, 0.0287 0.1868, 0.2136 0.2108, 0.3985 0.1868, 0.3985 0.2348, 0.2136 0.2108, 0.2379 0.0283, 0.285 0.0408, 0.2136 0.2108, 0.3615 0.0988, 0.3859 0.1404, 0.2136 0.2108, 0.0656 0.0988, 0.1001 0.0648, 0.2136 0.2108, 0.3859 0.2812, 0.3615 0.3229, 0.2136 0.2108, 0.3615 0.3229, 0.3271 0.3568, 0.2136 0.2108, 0.1001 0.0648, 0.1422 0.0408, 0.2136 0.2108, 0.0287 0.1868, 0.0413 0.1404, 0.2136 0.2108, 0.285 0.3809, 0.2379 0.3933, 0.2136 0.2108, 0.7385 0.0673, 0.7434 0.061, 0.77 0.0872, 0.7469 0.4297, 0.9502 0.472, 0.7439 0.4717, 0.4874 0.0863, 0.5122 0.0618, 0.5151 0.069, 0.4562 0.5468, 0.6623 0.5948, 0.4559 0.5948, 0.6723 0.4283, 0.4613 0.4606, 0.4658 0.4283, 0.3725 0.6277, 0.1709 0.6721, 0.1677 0.6277, 0.4559 0.5948, 0.6636 0.6418, 0.4572 0.6418, 0.9588 0.8373, 0.9674 0.8385, 0.9673 0.8692, 0.1709 0.6721, 0.3725 0.6277, 0.3758 0.6721, 0.3714 0.5801, 0.1677 0.6277, 0.1665 0.5801, 0.9486 0.5186, 0.7423 0.5664, 0.7423 0.5183, 0.9678 0.513, 0.9588 0.5131, 0.96 0.4778, 0.7471 0.6538, 0.9503 0.6129, 0.9535 0.6541, 0.9585 0.5617, 0.9585 0.5241, 0.9677 0.5239, 0.5546 0.3642, 0.5226 0.346, 0.5285 0.3402, 0.744 0.7863, 0.9536 0.745, 0.9505 0.7854, 0.4963 0.1, 0.5495 0.1403, 0.4776 0.132, 0.4599 0.6845, 0.6705 0.72, 0.464 0.72, 0.7287 0.0709, 0.7202 0.1625, 0.6413 0.1028, 0.7634 0.1051, 0.7202 0.1625, 0.7287 0.0709, 0.6862 0.0467, 0.7287 0.0709, 0.6413 0.1028, 0.7439 0.6126, 0.9487 0.5667, 0.9503 0.6129, 0.9487 0.5667, 0.7439 0.6126, 0.7423 0.5664, 0.6705 0.72, 0.4599 0.6845, 0.6664 0.6845, 0.6636 0.6418, 0.4559 0.5948, 0.6623 0.5948, 0.3725 0.5324, 0.1665 0.5801, 0.1677 0.5324, 0.171 0.488, 0.3725 0.5324, 0.1677 0.5324, 0.9488 0.8312, 0.744 0.7863, 0.9505 0.7854, 0.7423 0.88, 0.9502 0.9261, 0.7438 0.927, 0.3725 0.5324, 0.171 0.488, 0.3758 0.488, 0.9532 0.9688, 0.7438 0.927, 0.9502 0.9261, 0.1677 0.6277, 0.3714 0.5801, 0.3725 0.6277, 0.7598 0.2996, 0.7072 0.2597, 0.7783 0.2679, 0.4572 0.6418, 0.6664 0.6845, 0.4599 0.6845, 0.9688 0.915, 0.9599 0.9188, 0.9588 0.8831, 0.7821 0.1372, 0.7202 0.1625, 0.7634 0.1051, 0.6726 0.553, 0.6812 0.5543, 0.681 0.5849, 0.9502 0.472, 0.7469 0.4297, 0.9533 0.43, 0.6849 0.869, 0.5668 0.7767, 0.6807 0.7767, 0.5668 0.7767, 0.6849 0.869, 0.571 0.869, 0.0509 0.7669, 0.169 0.8592, 0.0551 0.8592, 0.169 0.8592, 0.0509 0.7669, 0.1648 0.7669, 0.959 0.8265, 0.9602 0.7935, 0.9686 0.7985, 0.7355 0.3451, 0.7025 0.3639, 0.6983 0.3567, 0.744 0.7863, 0.9488 0.8312, 0.7423 0.8321, 0.1665 0.5801, 0.3725 0.5324, 0.3714 0.5801, 0.563 0.9439, 0.6849 0.869, 0.6769 0.9439, 0.6849 0.869, 0.563 0.9439, 0.571 0.869, 0.8587 0.0283, 0.9581 0.1398, 0.8587 0.1398, 0.9581 0.1398, 0.8587 0.0283, 0.9581 0.0283, 0.3985 0.914, 0.3124 0.7669, 0.3985 0.8159, 0.3124 0.7669, 0.3985 0.914, 0.2263 0.8159, 0.2263 0.8159, 0.3985 0.914, 0.3124 0.9631, 0.2263 0.8159, 0.3124 0.9631, 0.2263 0.914, 0.0471 0.9341, 0.169 0.8592, 0.1609 0.9341, 0.169 0.8592, 0.0471 0.9341, 0.0551 0.8592, 0.8587 0.2579, 0.9574 0.3717, 0.8587 0.3703, 0.9574 0.3717, 0.8587 0.2579, 0.9574 0.2594, 0.6441 0.3629, 0.6154 0.2973, 0.6885 0.3511, 0.9487 0.8792, 0.7423 0.8321, 0.9488 0.8312, 0.4656 0.2273, 0.5365 0.2376, 0.4752 0.2626, 0.9536 0.745, 0.744 0.7863, 0.7471 0.7459, 0.2379 0.3933, 0.1892 0.3933, 0.2136 0.2108, 0.285 0.0408, 0.3271 0.0648, 0.2136 0.2108, 0.3859 0.1404, 0.3985 0.1868, 0.2136 0.2108, 0.0413 0.1404, 0.0656 0.0988, 0.2136 0.2108, 0.1422 0.0408, 0.1892 0.0283, 0.2136 0.2108, 0.0656 0.3229, 0.0413 0.2812, 0.2136 0.2108, 0.1892 0.3933, 0.1422 0.3809, 0.2136 0.2108, 0.1001 0.3568, 0.0656 0.3229, 0.2136 0.2108, 0.1892 0.0283, 0.2379 0.0283, 0.2136 0.2108, 0.458 0.501, 0.6678 0.4606, 0.6645 0.501, 0.7515 0.6872, 0.9535 0.6541, 0.9579 0.6875, 0.7336 0.3254, 0.6885 0.3511, 0.7072 0.2597, 0.9502 0.9261, 0.7423 0.88, 0.9487 0.8792, 0.1762 0.4499, 0.3758 0.488, 0.171 0.488, 0.5306 0.3306, 0.5365 0.2376, 0.6154 0.2973, 0.6862 0.0467, 0.6413 0.1028, 0.6501 0.0372, 0.9535 0.6541, 0.7515 0.6872, 0.7471 0.6538, 0.5228 0.0739, 0.5652 0.0497, 0.5495 0.1403, 0.1762 0.7102, 0.3758 0.6721, 0.381 0.7102, 0.5228 0.0739, 0.5495 0.1403, 0.4963 0.1, 0.7783 0.2679, 0.7072 0.2597, 0.7918 0.2183, 0.4656 0.1759, 0.5495 0.1403, 0.5365 0.2376, 0.6501 0.0372, 0.6413 0.1028, 0.6126 0.0372, 0.7918 0.2183, 0.7072 0.2597, 0.7202 0.1625, 0.5704 0.3533, 0.6154 0.2973, 0.6066 0.3629, 0.7336 0.3254, 0.7072 0.2597, 0.7598 0.2996, 0.6678 0.4606, 0.458 0.501, 0.4613 0.4606, 0.4656 0.2273, 0.4656 0.1759, 0.5365 0.2376, 0.6126 0.0372, 0.6413 0.1028, 0.5652 0.0497, 0.7918 0.1729, 0.7202 0.1625, 0.7821 0.1372, 0.9502 0.472, 0.7423 0.5183, 0.7439 0.4717, 0.9503 0.6129, 0.7471 0.6538, 0.7439 0.6126, 0.7423 0.8321, 0.9487 0.8792, 0.7423 0.88, 0.9606 0.6161, 0.9693 0.6131, 0.9713 0.6393, 0.9629 0.6458, 0.9636 0.6547, 0.9535 0.6541, 0.4849 0.2972, 0.4938 0.2943, 0.4918 0.306, 0.5306 0.3306, 0.5285 0.3402, 0.5197 0.3335, 0.963 0.7526, 0.9536 0.745, 0.9638 0.7442, 0.9503 0.6129, 0.9601 0.6061, 0.9606 0.6161, 0.4652 0.2608, 0.4752 0.2626, 0.4695 0.2709, 0.4572 0.2314, 0.4559 0.2203, 0.4656 0.2273, 0.9589 0.5727, 0.9487 0.5667, 0.9585 0.5617, 0.4656 0.1759, 0.4559 0.1814, 0.4573 0.1705, 0.9585 0.5241, 0.9486 0.5186, 0.9588 0.5131, 0.6781 0.4595, 0.6772 0.4678, 0.6678 0.4606, 0.7385 0.0673, 0.7287 0.0709, 0.7297 0.0606, 0.6862 0.0467, 0.6867 0.0377, 0.6971 0.0421, 0.6742 0.5092, 0.6645 0.501, 0.6747 0.499, 0.9607 0.4674, 0.96 0.4778, 0.9502 0.472, 0.4708 0.126, 0.4776 0.132, 0.4666 0.1363, 0.6501 0.0372, 0.6456 0.0283, 0.6566 0.0297, 0.6726 0.553, 0.6626 0.5468, 0.6729 0.5422, 0.4863 0.0994, 0.4931 0.0907, 0.4963 0.1, 0.9629 0.4371, 0.9533 0.43, 0.9638 0.4283, 0.6034 0.0299, 0.6145 0.0283, 0.6126 0.0372, 0.6724 0.5988, 0.6623 0.5948, 0.6724 0.5876, 0.5151 0.069, 0.5241 0.0623, 0.5228 0.0739, 0.677 0.6874, 0.6664 0.6845, 0.676 0.6783, 0.6636 0.6418, 0.6734 0.635, 0.6738 0.6453, 0.567 0.0395, 0.5652 0.0497, 0.5567 0.0437, 0.9588 0.872, 0.9588 0.8831, 0.9487 0.8792, 0.6421 0.3717, 0.6441 0.3629, 0.6533 0.3701, 0.7414 0.3306, 0.7324 0.3373, 0.7336 0.3254, 0.9637 0.9717, 0.9532 0.9688, 0.9627 0.9626, 0.9502 0.9261, 0.9599 0.9188, 0.9604 0.9291, 0.688 0.3609, 0.6885 0.3511, 0.6983 0.3567, 0.3758 0.488, 0.3864 0.4856, 0.3854 0.4951, 0.7632 0.309, 0.7598 0.2996, 0.77 0.3004, 0.611 0.3717, 0.6 0.3703, 0.6066 0.3629, 0.9588 0.8373, 0.9488 0.8312, 0.959 0.8265, 0.7896 0.2637, 0.7854 0.274, 0.7783 0.2679, 0.3824 0.5378, 0.3725 0.5324, 0.3831 0.5271, 0.57 0.3623, 0.5596 0.358, 0.5704 0.3533, 0.9602 0.7935, 0.9505 0.7854, 0.9606 0.7833, 0.7918 0.2183, 0.8013 0.2152, 0.7998 0.2261, 0.3816 0.5862, 0.3714 0.5801, 0.3815 0.5751, 0.7918 0.1729, 0.7999 0.1687, 0.8013 0.1798, 0.3831 0.6331, 0.3725 0.6277, 0.3824 0.6223, 0.3855 0.6651, 0.3865 0.6746, 0.3758 0.6721, 0.7919 0.1391, 0.7821 0.1372, 0.7876 0.129, 0.7634 0.1051, 0.7651 0.0936, 0.7721 0.1024, 0.3915 0.7102, 0.381 0.7102, 0.3902 0.7021, 0.7434 0.061, 0.7385 0.0673, 0.7297 0.0606, 0.7287 0.0709, 0.6862 0.0467, 0.6971 0.0421, 0.6742 0.5092, 0.6747 0.499, 0.6834 0.5042, 0.6645 0.501, 0.6678 0.4606, 0.6772 0.4678, 0.48 0.3037, 0.4849 0.2972, 0.4918 0.306, 0.5306 0.3306, 0.5197 0.3335, 0.4918 0.306, 0.5226 0.346, 0.5137 0.3393, 0.5197 0.3335, 0.9535 0.6541, 0.9636 0.6547, 0.9671 0.6809, 0.7444 0.3381, 0.7355 0.3451, 0.7324 0.3373, 0.9532 0.9688, 0.9502 0.9261, 0.9604 0.9291, 0.9599 0.9188, 0.9688 0.915, 0.9694 0.9253, 0.6885 0.3511, 0.7336 0.3254, 0.7324 0.3373, 0.9588 0.872, 0.9673 0.8692, 0.9677 0.8803, 0.6885 0.3511, 0.688 0.3609, 0.6533 0.3701, 0.9487 0.8792, 0.9588 0.8831, 0.9599 0.9188, 0.3919 0.5377, 0.3824 0.5378, 0.3831 0.5271, 0.3758 0.488, 0.3854 0.4951, 0.3831 0.5271, 0.3953 0.4893, 0.3943 0.4988, 0.3854 0.4951, 0.7783 0.2679, 0.7854 0.274, 0.77 0.3004, 0.9602 0.7935, 0.9606 0.7833, 0.9694 0.7885, 0.9505 0.7854, 0.9536 0.745, 0.963 0.7526, 0.5306 0.3306, 0.5704 0.3533, 0.5596 0.358, 0.6862 0.0467, 0.6501 0.0372, 0.6566 0.0297, 0.6726 0.553, 0.6729 0.5422, 0.6814 0.5435, 0.6626 0.5468, 0.6645 0.501, 0.6742 0.5092, 0.9503 0.6129, 0.9606 0.6161, 0.9629 0.6458, 0.9688 0.6031, 0.9693 0.6131, 0.9606 0.6161, 0.4938 0.2943, 0.4849 0.2972, 0.4695 0.2709, 0.5122 0.0618, 0.5211 0.0549, 0.5241 0.0623, 0.6664 0.6845, 0.6636 0.6418, 0.6738 0.6453, 0.6823 0.6323, 0.6827 0.6426, 0.6738 0.6453, 0.5652 0.0497, 0.5228 0.0739, 0.5241 0.0623, 0.3942 0.6616, 0.3952 0.671, 0.3865 0.6746, 0.7634 0.1051, 0.7721 0.1024, 0.7876 0.129, 0.7651 0.0936, 0.77 0.0872, 0.7767 0.0962, 0.3758 0.6721, 0.3865 0.6746, 0.3902 0.7021, 0.4863 0.0994, 0.4806 0.095, 0.4874 0.0863, 0.6705 0.72, 0.6664 0.6845, 0.677 0.6874, 0.5228 0.0739, 0.4963 0.1, 0.4931 0.0907, 0.7918 0.2183, 0.7998 0.2261, 0.7896 0.2637, 0.3816 0.5862, 0.3815 0.5751, 0.391 0.5763, 0.3725 0.5324, 0.3824 0.5378, 0.3815 0.5751, 0.9607 0.4674, 0.9693 0.4682, 0.9689 0.4786, 0.4656 0.1759, 0.4573 0.1705, 0.4666 0.1363, 0.9677 0.5239, 0.9585 0.5241, 0.9588 0.5131, 0.9502 0.472, 0.96 0.4778, 0.9588 0.5131, 0.6813 0.596, 0.6724 0.5988, 0.6724 0.5876, 0.6626 0.5468, 0.6726 0.553, 0.6724 0.5876, 0.6126 0.0372, 0.6145 0.0283, 0.6456 0.0283, 0.7918 0.2183, 0.7918 0.1729, 0.8013 0.1798, 0.3831 0.6331, 0.3824 0.6223, 0.3917 0.6224, 0.3725 0.6277, 0.3714 0.5801, 0.3816 0.5862, 0.9588 0.8373, 0.959 0.8265, 0.9676 0.8278, 0.9488 0.8312, 0.9505 0.7854, 0.9602 0.7935, 0.5704 0.3533, 0.6066 0.3629, 0.6 0.3703, 0.7336 0.3254, 0.7598 0.2996, 0.7632 0.309, 0.3758 0.488, 0.381 0.4499, 0.3902 0.4581, 0.7287 0.0709, 0.7385 0.0673, 0.7651 0.0936, 0.6723 0.4283, 0.6816 0.4345, 0.6781 0.4595, 0.9589 0.5727, 0.9585 0.5617, 0.9677 0.5628, 0.9487 0.5667, 0.9486 0.5186, 0.9585 0.5241, 0.4656 0.1759, 0.4656 0.2273, 0.4559 0.2203, 0.6623 0.5948, 0.6724 0.5988, 0.6734 0.635, 0.5652 0.0497, 0.567 0.0395, 0.6034 0.0299, 0.7918 0.1729, 0.7821 0.1372, 0.7919 0.1391, 0.3758 0.6721, 0.3725 0.6277, 0.3831 0.6331, 0.9533 0.43, 0.9629 0.4371, 0.9607 0.4674, 0.4776 0.132, 0.4708 0.126, 0.4863 0.0994, 0.4656 0.2273, 0.4752 0.2626, 0.4652 0.2608, 0.9503 0.6129, 0.9487 0.5667, 0.9589 0.5727, 0.9488 0.8312, 0.9588 0.8373, 0.9588 0.872, 0.6441 0.3629, 0.6421 0.3717, 0.611 0.3717, 0.5197 0.3335, 0.5137 0.3393, 0.4868 0.3127, 0.6742 0.5092, 0.6826 0.5142, 0.6729 0.5422, 0.3952 0.671, 0.3985 0.6954, 0.3865 0.6746, 0.3831 0.6331, 0.3921 0.6332, 0.3855 0.6651, 0.3816 0.5862, 0.3909 0.5872, 0.3824 0.6223, 0.3831 0.5271, 0.3854 0.4951, 0.3922 0.5269, 0.7444 0.3381, 0.7414 0.3306, 0.7692 0.3136, 0.3919 0.5377, 0.391 0.5763, 0.3824 0.5378, 0.9589 0.5727, 0.9677 0.5738, 0.9601 0.6061, 0.7346 0.0543, 0.7297 0.0606, 0.7021 0.0358, 0.6734 0.635, 0.6724 0.5988, 0.6823 0.6323, 0.6849 0.6757, 0.676 0.6783, 0.6827 0.6426, 0.9607 0.4674, 0.9629 0.4371, 0.9693 0.4682, 0.7651 0.0936, 0.7385 0.0673, 0.77 0.0872, 0.4931 0.0907, 0.4874 0.0863, 0.5151 0.069, 0.9588 0.872, 0.9588 0.8373, 0.9673 0.8692, 0.9689 0.4786, 0.9678 0.513, 0.96 0.4778, 0.9677 0.5628, 0.9585 0.5617, 0.9677 0.5239, 0.5596 0.358, 0.5546 0.3642, 0.5285 0.3402, 0.9677 0.8803, 0.9688 0.915, 0.9588 0.8831, 0.6724 0.5876, 0.6726 0.553, 0.681 0.5849, 0.9676 0.8278, 0.959 0.8265, 0.9686 0.7985, 0.7324 0.3373, 0.7355 0.3451, 0.6983 0.3567, 0.9629 0.6458, 0.9606 0.6161, 0.9713 0.6393, 0.7346 0.0543, 0.7434 0.061, 0.7297 0.0606, 0.7297 0.0606, 0.7287 0.0709, 0.6971 0.0421, 0.6826 0.5142, 0.6742 0.5092, 0.6834 0.5042, 0.6747 0.499, 0.6645 0.501, 0.6772 0.4678, 0.4868 0.3127, 0.48 0.3037, 0.4918 0.306, 0.4938 0.2943, 0.5306 0.3306, 0.4918 0.306, 0.5285 0.3402, 0.5226 0.346, 0.5197 0.3335, 0.9579 0.6875, 0.9535 0.6541, 0.9671 0.6809, 0.7414 0.3306, 0.7444 0.3381, 0.7324 0.3373, 0.9627 0.9626, 0.9532 0.9688, 0.9604 0.9291, 0.9604 0.9291, 0.9599 0.9188, 0.9694 0.9253, 0.6983 0.3567, 0.6885 0.3511, 0.7324 0.3373, 0.9588 0.8831, 0.9588 0.872, 0.9677 0.8803, 0.6441 0.3629, 0.6885 0.3511, 0.6533 0.3701, 0.9502 0.9261, 0.9487 0.8792, 0.9599 0.9188, 0.3922 0.5269, 0.3919 0.5377, 0.3831 0.5271, 0.3725 0.5324, 0.3758 0.488, 0.3831 0.5271, 0.3864 0.4856, 0.3953 0.4893, 0.3854 0.4951, 0.7598 0.2996, 0.7783 0.2679, 0.77 0.3004, 0.9686 0.7985, 0.9602 0.7935, 0.9694 0.7885, 0.9606 0.7833, 0.9505 0.7854, 0.963 0.7526, 0.5285 0.3402, 0.5306 0.3306, 0.5596 0.358, 0.6867 0.0377, 0.6862 0.0467, 0.6566 0.0297, 0.6812 0.5543, 0.6726 0.553, 0.6814 0.5435, 0.6729 0.5422, 0.6626 0.5468, 0.6742 0.5092, 0.9535 0.6541, 0.9503 0.6129, 0.9629 0.6458, 0.9601 0.6061, 0.9688 0.6031, 0.9606 0.6161, 0.4752 0.2626, 0.4938 0.2943, 0.4695 0.2709, 0.5151 0.069, 0.5122 0.0618, 0.5241 0.0623, 0.676 0.6783, 0.6664 0.6845, 0.6738 0.6453, 0.6734 0.635, 0.6823 0.6323, 0.6738 0.6453, 0.5567 0.0437, 0.5652 0.0497, 0.5241 0.0623, 0.3855 0.6651, 0.3942 0.6616, 0.3865 0.6746, 0.7821 0.1372, 0.7634 0.1051, 0.7876 0.129, 0.7721 0.1024, 0.7651 0.0936, 0.7767 0.0962, 0.381 0.7102, 0.3758 0.6721, 0.3902 0.7021, 0.4931 0.0907, 0.4863 0.0994, 0.4874 0.0863, 0.6799 0.7131, 0.6705 0.72, 0.677 0.6874, 0.5151 0.069, 0.5228 0.0739, 0.4931 0.0907, 0.7783 0.2679, 0.7918 0.2183, 0.7896 0.2637, 0.3909 0.5872, 0.3816 0.5862, 0.391 0.5763, 0.3714 0.5801, 0.3725 0.5324, 0.3815 0.5751, 0.96 0.4778, 0.9607 0.4674, 0.9689 0.4786, 0.4776 0.132, 0.4656 0.1759, 0.4666 0.1363, 0.9678 0.513, 0.9677 0.5239, 0.9588 0.5131, 0.9486 0.5186, 0.9502 0.472, 0.9588 0.5131, 0.681 0.5849, 0.6813 0.596, 0.6724 0.5876, 0.6623 0.5948, 0.6626 0.5468, 0.6724 0.5876, 0.6501 0.0372, 0.6126 0.0372, 0.6456 0.0283, 0.8013 0.2152, 0.7918 0.2183, 0.8013 0.1798, 0.3921 0.6332, 0.3831 0.6331, 0.3917 0.6224, 0.3824 0.6223, 0.3725 0.6277, 0.3816 0.5862, 0.9674 0.8385, 0.9588 0.8373, 0.9676 0.8278, 0.959 0.8265, 0.9488 0.8312, 0.9602 0.7935, 0.57 0.3623, 0.5704 0.3533, 0.6 0.3703, 0.7414 0.3306, 0.7336 0.3254, 0.7632 0.309, 0.3864 0.4856, 0.3758 0.488, 0.3902 0.4581, 0.7634 0.1051, 0.7287 0.0709, 0.7651 0.0936, 0.6678 0.4606, 0.6723 0.4283, 0.6781 0.4595, 0.9677 0.5738, 0.9589 0.5727, 0.9677 0.5628, 0.9585 0.5617, 0.9487 0.5667, 0.9585 0.5241, 0.4559 0.1814, 0.4656 0.1759, 0.4559 0.2203, 0.6636 0.6418, 0.6623 0.5948, 0.6734 0.635, 0.6126 0.0372, 0.5652 0.0497, 0.6034 0.0299, 0.7999 0.1687, 0.7918 0.1729, 0.7919 0.1391, 0.3855 0.6651, 0.3758 0.6721, 0.3831 0.6331, 0.9502 0.472, 0.9533 0.43, 0.9607 0.4674, 0.4963 0.1, 0.4776 0.132, 0.4863 0.0994, 0.4572 0.2314, 0.4656 0.2273, 0.4652 0.2608, 0.9601 0.6061, 0.9503 0.6129, 0.9589 0.5727, 0.9487 0.8792, 0.9488 0.8312, 0.9588 0.872, 0.6066 0.3629, 0.6441 0.3629, 0.611 0.3717, 0.4918 0.306, 0.5197 0.3335, 0.4868 0.3127
+                          ]
+                        }
+                        coordIndex [
+                          108, 31, 110, -1, 84, 3, 62, -1, 154, 44, 1, -1, 134, 7, 126, -1, 164, 158, 6, -1, 75, 88, 91, -1, 19, 180, 70, -1, 90, 20, 78, -1, 172, 18, 17, -1, 178, 181, 171, -1, 165, 173, 170, -1, 159, 166, 169, -1, 136, 139, 147, -1, 9, 126, 7, -1, 132, 1, 5, -1, 142, 1, 120, -1, 122, 137, 135, -1, 160, 163, 149, -1, 56, 53, 51, -1, 42, 2, 44, -1, 54, 2, 42, -1, 24, 66, 60, -1, 25, 82, 66, -1, 73, 76, 79, -1, 102, 27, 90, -1, 101, 98, 113, -1, 114, 4, 3, -1, 109, 112, 115, -1, 20, 90, 27, -1, 95, 92, 83, -1, 25, 24, 14, -1, 20, 27, 14, -1, 10, 12, 14, -1, 17, 18, 14, -1, 30, 28, 14, -1, 24, 23, 14, -1, 16, 17, 14, -1, 9, 7, 14, -1, 12, 15, 14, -1, 21, 13, 14, -1, 18, 19, 14, -1, 19, 20, 14, -1, 13, 11, 14, -1, 23, 22, 14, -1, 27, 29, 14, -1, 71, 68, 179, -1, 28, 82, 26, -1, 97, 107, 104, -1, 27, 102, 29, -1, 180, 19, 18, -1, 168, 17, 16, -1, 29, 110, 31, -1, 143, 140, 119, -1, 17, 168, 172, -1, 162, 16, 15, -1, 66, 24, 25, -1, 64, 67, 81, -1, 22, 50, 40, -1, 61, 65, 63, -1, 157, 47, 45, -1, 13, 48, 156, -1, 94, 3, 84, -1, 30, 96, 28, -1, 72, 6, 4, -1, 176, 6, 72, -1, 74, 72, 4, -1, 23, 60, 50, -1, 60, 23, 24, -1, 96, 30, 108, -1, 110, 29, 102, -1, 150, 15, 12, -1, 10, 150, 12, -1, 144, 13, 156, -1, 8, 128, 9, -1, 150, 10, 134, -1, 126, 9, 128, -1, 16, 162, 168, -1, 138, 5, 148, -1, 31, 108, 30, -1, 131, 129, 117, -1, 174, 6, 176, -1, 89, 87, 99, -1, 82, 28, 96, -1, 1, 32, 5, -1, 32, 1, 33, -1, 34, 4, 35, -1, 4, 34, 3, -1, 145, 155, 152, -1, 127, 130, 133, -1, 13, 144, 11, -1, 15, 150, 162, -1, 36, 1, 2, -1, 1, 36, 33, -1, 34, 2, 3, -1, 2, 34, 36, -1, 36, 32, 33, -1, 32, 36, 37, -1, 37, 36, 34, -1, 37, 34, 35, -1, 37, 4, 6, -1, 4, 37, 35, -1, 32, 6, 5, -1, 6, 32, 37, -1, 120, 1, 132, -1, 118, 11, 144, -1, 58, 2, 54, -1, 48, 13, 21, -1, 29, 31, 14, -1, 7, 10, 14, -1, 15, 16, 14, -1, 22, 21, 14, -1, 11, 8, 14, -1, 26, 25, 14, -1, 31, 30, 14, -1, 28, 26, 14, -1, 8, 9, 14, -1, 20, 70, 78, -1, 21, 40, 48, -1, 124, 132, 5, -1, 128, 8, 118, -1, 7, 134, 10, -1, 44, 2, 1, -1, 74, 4, 86, -1, 40, 21, 22, -1, 106, 114, 3, -1, 18, 172, 180, -1, 106, 3, 94, -1, 148, 5, 158, -1, 62, 3, 2, -1, 86, 4, 100, -1, 158, 5, 6, -1, 154, 1, 142, -1, 124, 5, 138, -1, 70, 20, 19, -1, 58, 62, 2, -1, 100, 4, 114, -1, 164, 6, 174, -1, 82, 25, 26, -1, 50, 22, 23, -1, 11, 118, 8, -1, 52, 55, 41, -1, 38, 39, 40, -1, 41, 42, 43, -1, 44, 45, 46, -1, 47, 48, 49, -1, 50, 51, 52, -1, 53, 54, 55, -1, 56, 57, 58, -1, 59, 60, 61, -1, 62, 63, 64, -1, 65, 66, 67, -1, 68, 69, 70, -1, 71, 72, 73, -1, 74, 75, 76, -1, 77, 78, 79, -1, 80, 81, 82, -1, 83, 84, 85, -1, 86, 87, 88, -1, 89, 90, 91, -1, 92, 93, 94, -1, 95, 96, 97, -1, 98, 99, 100, -1, 101, 102, 103, -1, 104, 105, 106, -1, 107, 108, 109, -1, 110, 111, 112, -1, 113, 114, 115, -1, 116, 117, 118, -1, 119, 120, 121, -1, 122, 123, 124, -1, 125, 126, 127, -1, 128, 129, 130, -1, 131, 132, 133, -1, 134, 135, 136, -1, 137, 138, 139, -1, 140, 141, 142, -1, 143, 144, 145, -1, 146, 147, 148, -1, 149, 150, 151, -1, 152, 153, 154, -1, 155, 156, 157, -1, 158, 159, 160, -1, 161, 162, 163, -1, 164, 165, 166, -1, 167, 168, 169, -1, 170, 171, 172, -1, 173, 174, 175, -1, 176, 177, 178, -1, 179, 180, 181, -1, 68, 71, 73, -1, 72, 74, 76, -1, 77, 79, 76, -1, 78, 70, 69, -1, 38, 41, 43, -1, 44, 46, 43, -1, 47, 49, 46, -1, 40, 39, 49, -1, 125, 127, 123, -1, 126, 128, 130, -1, 129, 131, 133, -1, 132, 124, 123, -1, 116, 119, 121, -1, 132, 131, 121, -1, 118, 117, 129, -1, 146, 149, 151, -1, 134, 136, 151, -1, 137, 139, 136, -1, 148, 147, 139, -1, 155, 157, 153, -1, 156, 48, 47, -1, 44, 154, 153, -1, 74, 86, 88, -1, 89, 91, 88, -1, 90, 78, 77, -1, 50, 52, 38, -1, 53, 55, 52, -1, 42, 41, 55, -1, 107, 109, 105, -1, 108, 110, 112, -1, 113, 115, 112, -1, 114, 106, 105, -1, 173, 175, 171, -1, 176, 178, 175, -1, 177, 179, 181, -1, 172, 171, 181, -1, 92, 95, 97, -1, 96, 108, 107, -1, 106, 94, 93, -1, 158, 160, 146, -1, 161, 163, 160, -1, 150, 149, 163, -1, 80, 83, 85, -1, 62, 64, 85, -1, 63, 65, 67, -1, 82, 81, 67, -1, 98, 101, 103, -1, 90, 89, 103, -1, 100, 99, 87, -1, 158, 164, 166, -1, 167, 169, 166, -1, 168, 162, 161, -1, 143, 145, 141, -1, 144, 156, 155, -1, 154, 142, 141, -1, 124, 138, 137, -1, 134, 126, 125, -1, 72, 71, 177, -1, 180, 179, 68, -1, 59, 61, 57, -1, 60, 66, 65, -1, 62, 58, 57, -1, 102, 101, 111, -1, 114, 113, 98, -1, 164, 174, 173, -1, 172, 168, 167, -1, 96, 95, 80, -1, 84, 83, 92, -1, 58, 54, 53, -1, 50, 60, 59, -1, 144, 143, 116, -1, 120, 119, 140, -1, 46, 49, 39, -1, 77, 75, 91, -1, 175, 178, 171, -1, 167, 165, 170, -1, 161, 159, 169, -1, 151, 136, 147, -1, 125, 122, 135, -1, 146, 160, 149, -1, 59, 56, 51, -1, 69, 73, 79, -1, 111, 101, 113, -1, 105, 109, 115, -1, 80, 95, 83, -1, 177, 71, 179, -1, 93, 97, 104, -1, 116, 143, 119, -1, 85, 64, 81, -1, 57, 61, 63, -1, 153, 157, 45, -1, 121, 131, 117, -1, 103, 89, 99, -1, 141, 145, 152, -1, 123, 127, 133, -1, 38, 52, 41, -1, 69, 68, 73, -1, 73, 72, 76, -1, 75, 77, 76, -1, 79, 78, 69, -1, 39, 38, 43, -1, 42, 44, 43, -1, 45, 47, 46, -1, 48, 40, 49, -1, 122, 125, 123, -1, 127, 126, 130, -1, 130, 129, 133, -1, 133, 132, 123, -1, 117, 116, 121, -1, 120, 132, 121, -1, 128, 118, 129, -1, 147, 146, 151, -1, 150, 134, 151, -1, 135, 137, 136, -1, 138, 148, 139, -1, 152, 155, 153, -1, 157, 156, 47, -1, 45, 44, 153, -1, 75, 74, 88, -1, 87, 89, 88, -1, 91, 90, 77, -1, 40, 50, 38, -1, 51, 53, 52, -1, 54, 42, 55, -1, 104, 107, 105, -1, 109, 108, 112, -1, 111, 113, 112, -1, 115, 114, 105, -1, 170, 173, 171, -1, 174, 176, 175, -1, 178, 177, 181, -1, 180, 172, 181, -1, 93, 92, 97, -1, 97, 96, 107, -1, 104, 106, 93, -1, 148, 158, 146, -1, 159, 161, 160, -1, 162, 150, 163, -1, 81, 80, 85, -1, 84, 62, 85, -1, 64, 63, 67, -1, 66, 82, 67, -1, 99, 98, 103, -1, 102, 90, 103, -1, 86, 100, 87, -1, 159, 158, 166, -1, 165, 167, 166, -1, 169, 168, 161, -1, 140, 143, 141, -1, 145, 144, 155, -1, 152, 154, 141, -1, 122, 124, 137, -1, 135, 134, 125, -1, 176, 72, 177, -1, 70, 180, 68, -1, 56, 59, 57, -1, 61, 60, 65, -1, 63, 62, 57, -1, 110, 102, 111, -1, 100, 114, 98, -1, 165, 164, 173, -1, 170, 172, 167, -1, 82, 96, 80, -1, 94, 84, 92, -1, 56, 58, 53, -1, 51, 50, 59, -1, 118, 144, 116, -1, 142, 120, 140, -1, 43, 46, 39, -1
+                        ]
+                        texCoordIndex [
+                          0, 1, 2, -1, 3, 4, 5, -1, 6, 7, 8, -1, 9, 10, 11, -1, 12, 13, 14, -1, 15, 16, 17, -1, 18, 19, 20, -1, 21, 22, 23, -1, 24, 25, 26, -1, 27, 28, 29, -1, 30, 31, 32, -1, 33, 34, 35, -1, 36, 37, 38, -1, 39, 40, 41, -1, 42, 43, 44, -1, 45, 46, 47, -1, 48, 49, 50, -1, 51, 52, 53, -1, 54, 55, 56, -1, 57, 58, 59, -1, 60, 61, 62, -1, 63, 64, 65, -1, 66, 67, 68, -1, 69, 70, 71, -1, 72, 73, 74, -1, 75, 76, 77, -1, 78, 79, 80, -1, 81, 82, 83, -1, 84, 85, 86, -1, 87, 88, 89, -1, 90, 91, 92, -1, 93, 94, 95, -1, 96, 97, 98, -1, 99, 100, 101, -1, 102, 103, 104, -1, 105, 106, 107, -1, 108, 109, 110, -1, 111, 112, 113, -1, 114, 115, 116, -1, 117, 118, 119, -1, 120, 121, 122, -1, 123, 124, 125, -1, 126, 127, 128, -1, 129, 130, 131, -1, 132, 133, 134, -1, 135, 136, 137, -1, 138, 139, 140, -1, 141, 142, 143, -1, 144, 145, 146, -1, 147, 148, 149, -1, 150, 151, 152, -1, 153, 154, 155, -1, 156, 157, 158, -1, 159, 160, 161, -1, 162, 163, 164, -1, 165, 166, 167, -1, 168, 169, 170, -1, 171, 172, 173, -1, 174, 175, 176, -1, 177, 178, 179, -1, 180, 181, 182, -1, 183, 184, 185, -1, 186, 187, 188, -1, 189, 190, 191, -1, 192, 193, 194, -1, 195, 196, 197, -1, 198, 199, 200, -1, 201, 202, 203, -1, 204, 205, 206, -1, 207, 208, 209, -1, 210, 211, 212, -1, 213, 214, 215, -1, 216, 217, 218, -1, 219, 220, 221, -1, 222, 223, 224, -1, 225, 226, 227, -1, 228, 229, 230, -1, 231, 232, 233, -1, 234, 235, 236, -1, 237, 238, 239, -1, 240, 241, 242, -1, 243, 244, 245, -1, 246, 247, 248, -1, 249, 250, 251, -1, 252, 253, 254, -1, 255, 256, 257, -1, 258, 259, 260, -1, 261, 262, 263, -1, 264, 265, 266, -1, 267, 268, 269, -1, 270, 271, 272, -1, 273, 274, 275, -1, 276, 277, 278, -1, 279, 280, 281, -1, 282, 283, 284, -1, 285, 286, 287, -1, 288, 289, 290, -1, 291, 292, 293, -1, 294, 295, 296, -1, 297, 298, 299, -1, 300, 301, 302, -1, 303, 304, 305, -1, 306, 307, 308, -1, 309, 310, 311, -1, 312, 313, 314, -1, 315, 316, 317, -1, 318, 319, 320, -1, 321, 322, 323, -1, 324, 325, 326, -1, 327, 328, 329, -1, 330, 331, 332, -1, 333, 334, 335, -1, 336, 337, 338, -1, 339, 340, 341, -1, 342, 343, 344, -1, 345, 346, 347, -1, 348, 349, 350, -1, 351, 352, 353, -1, 354, 355, 356, -1, 357, 358, 359, -1, 360, 361, 362, -1, 363, 364, 365, -1, 366, 367, 368, -1, 369, 370, 371, -1, 372, 373, 374, -1, 375, 376, 377, -1, 378, 379, 380, -1, 381, 382, 383, -1, 384, 385, 386, -1, 387, 388, 389, -1, 390, 391, 392, -1, 393, 394, 395, -1, 396, 397, 398, -1, 399, 400, 401, -1, 402, 403, 404, -1, 405, 406, 407, -1, 408, 409, 410, -1, 411, 412, 413, -1, 414, 415, 416, -1, 417, 418, 419, -1, 420, 421, 422, -1, 423, 424, 425, -1, 426, 427, 428, -1, 429, 430, 431, -1, 432, 433, 434, -1, 435, 436, 437, -1, 438, 439, 440, -1, 441, 442, 443, -1, 444, 445, 446, -1, 447, 448, 449, -1, 450, 451, 452, -1, 453, 454, 455, -1, 456, 457, 458, -1, 459, 460, 461, -1, 462, 463, 464, -1, 465, 466, 467, -1, 468, 469, 470, -1, 471, 472, 473, -1, 474, 475, 476, -1, 477, 478, 479, -1, 480, 481, 482, -1, 483, 484, 485, -1, 486, 487, 488, -1, 489, 490, 491, -1, 492, 493, 494, -1, 495, 496, 497, -1, 498, 499, 500, -1, 501, 502, 503, -1, 504, 505, 506, -1, 507, 508, 509, -1, 510, 511, 512, -1, 513, 514, 515, -1, 516, 517, 518, -1, 519, 520, 521, -1, 522, 523, 524, -1, 525, 526, 527, -1, 528, 529, 530, -1, 531, 532, 533, -1, 534, 535, 536, -1, 537, 538, 539, -1, 540, 541, 542, -1, 543, 544, 545, -1, 546, 547, 548, -1, 549, 550, 551, -1, 552, 553, 554, -1, 555, 556, 557, -1, 558, 559, 560, -1, 561, 562, 563, -1, 564, 565, 566, -1, 567, 568, 569, -1, 570, 571, 572, -1, 573, 574, 575, -1, 576, 577, 578, -1, 579, 580, 581, -1, 582, 583, 584, -1, 585, 586, 587, -1, 588, 589, 590, -1, 591, 592, 593, -1, 594, 595, 596, -1, 597, 598, 599, -1, 600, 601, 602, -1, 603, 604, 605, -1, 606, 607, 608, -1, 609, 610, 611, -1, 612, 613, 614, -1, 615, 616, 617, -1, 618, 619, 620, -1, 621, 622, 623, -1, 624, 625, 626, -1, 627, 628, 629, -1, 630, 631, 632, -1, 633, 634, 635, -1, 636, 637, 638, -1, 639, 640, 641, -1, 642, 643, 644, -1, 645, 646, 647, -1, 648, 649, 650, -1, 651, 652, 653, -1, 654, 655, 656, -1, 657, 658, 659, -1, 660, 661, 662, -1, 663, 664, 665, -1, 666, 667, 668, -1, 669, 670, 671, -1, 672, 673, 674, -1, 675, 676, 677, -1, 678, 679, 680, -1, 681, 682, 683, -1, 684, 685, 686, -1, 687, 688, 689, -1, 690, 691, 692, -1, 693, 694, 695, -1, 696, 697, 698, -1, 699, 700, 701, -1, 702, 703, 704, -1, 705, 706, 707, -1, 708, 709, 710, -1, 711, 712, 713, -1, 714, 715, 716, -1, 717, 718, 719, -1, 720, 721, 722, -1, 723, 724, 725, -1, 726, 727, 728, -1, 729, 730, 731, -1, 732, 733, 734, -1, 735, 736, 737, -1, 738, 739, 740, -1, 741, 742, 743, -1, 744, 745, 746, -1, 747, 748, 749, -1, 750, 751, 752, -1, 753, 754, 755, -1, 756, 757, 758, -1, 759, 760, 761, -1, 762, 763, 764, -1, 765, 766, 767, -1, 768, 769, 770, -1, 771, 772, 773, -1, 774, 775, 776, -1, 777, 778, 779, -1, 780, 781, 782, -1, 783, 784, 785, -1, 786, 787, 788, -1, 789, 790, 791, -1, 792, 793, 794, -1, 795, 796, 797, -1, 798, 799, 800, -1, 801, 802, 803, -1, 804, 805, 806, -1, 807, 808, 809, -1, 810, 811, 812, -1, 813, 814, 815, -1, 816, 817, 818, -1, 819, 820, 821, -1, 822, 823, 824, -1, 825, 826, 827, -1, 828, 829, 830, -1, 831, 832, 833, -1, 834, 835, 836, -1, 837, 838, 839, -1, 840, 841, 842, -1, 843, 844, 845, -1, 846, 847, 848, -1, 849, 850, 851, -1, 852, 853, 854, -1, 855, 856, 857, -1, 858, 859, 860, -1, 861, 862, 863, -1, 864, 865, 866, -1, 867, 868, 869, -1, 870, 871, 872, -1, 873, 874, 875, -1, 876, 877, 878, -1, 879, 880, 881, -1, 882, 883, 884, -1, 885, 886, 887, -1, 888, 889, 890, -1, 891, 892, 893, -1, 894, 895, 896, -1, 897, 898, 899, -1, 900, 901, 902, -1, 903, 904, 905, -1, 906, 907, 908, -1, 909, 910, 911, -1, 912, 913, 914, -1, 915, 916, 917, -1, 918, 919, 920, -1, 921, 922, 923, -1, 924, 925, 926, -1, 927, 928, 929, -1, 930, 931, 932, -1, 933, 934, 935, -1, 936, 937, 938, -1, 939, 940, 941, -1, 942, 943, 944, -1, 945, 946, 947, -1, 948, 949, 950, -1, 951, 952, 953, -1, 954, 955, 956, -1, 957, 958, 959, -1, 960, 961, 962, -1, 963, 964, 965, -1, 966, 967, 968, -1, 969, 970, 971, -1, 972, 973, 974, -1, 975, 976, 977, -1, 978, 979, 980, -1, 981, 982, 983, -1, 984, 985, 986, -1, 987, 988, 989, -1, 990, 991, 992, -1, 993, 994, 995, -1, 996, 997, 998, -1, 999, 1000, 1001, -1, 1002, 1003, 1004, -1, 1005, 1006, 1007, -1, 1008, 1009, 1010, -1, 1011, 1012, 1013, -1, 1014, 1015, 1016, -1, 1017, 1018, 1019, -1, 1020, 1021, 1022, -1, 1023, 1024, 1025, -1, 1026, 1027, 1028, -1, 1029, 1030, 1031, -1, 1032, 1033, 1034, -1, 1035, 1036, 1037, -1, 1038, 1039, 1040, -1, 1041, 1042, 1043, -1, 1044, 1045, 1046, -1, 1047, 1048, 1049, -1, 1050, 1051, 1052, -1, 1053, 1054, 1055, -1, 1056, 1057, 1058, -1, 1059, 1060, 1061, -1, 1062, 1063, 1064, -1, 1065, 1066, 1067, -1, 1068, 1069, 1070, -1, 1071, 1072, 1073, -1
+                        ]
+                        creaseAngle 0.57
+                      }
+                    }
+                  ]
+                }
+                DEF CYLINDER Pose {
+                  translation 0.01 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg"
+                          ]
+                        }
+                        occlusionMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg"
+                          ]
+                        }
+                        textureTransform TextureTransform {
+                          rotation 1.5708
+                          scale 0.8 2
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.0015
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "screw1"
+              model "cap screw"
+              boundingObject Group {
+                children [
+                  USE CYLINDER
+                  Pose {
+                    translation -0.0015 0 0
+                    rotation 0 1 0 1.5708
+                    children [
+                      Cylinder {
+                        height 0.003
+                        radius 0.0025
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density 8050
+              }
+            }
+            Solid {
+              translation 0.035 0.0245 -0.0105
+              rotation 0 -1 0 -1.570787
+              children [
+                Transform {
+                  scale 0.375 0.375 0.375
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg"
+                          ]
+                        }
+                        metalnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_normal.jpg"
+                          ]
+                        }
+                      }
+                      geometry IndexedFaceSet {
+                        coord Coordinate {
+                          point [
+                            -0.00798 0 0, -0.00798 0.001732 0.003, -0.00798 0.003464 0, -0.00798 0.001732 -0.003, -0.00798 -0.001732 -0.003, -0.00798 -0.001732 0.003, -0.00798 -0.003464 0, 0 -0.001682 0.006279, 0 0.001682 0.006279, 0 0 0.0065, 0 -0.00325 0.005629, 0 0.00325 0.005629, 0 -0.004596 0.004596, 0 0.004596 0.004596, 0 0 0, 0 -0.005629 0.00325, 0 -0.006279 0.001682, 0 -0.0065 0, 0 -0.006279 -0.001682, 0 -0.005629 -0.00325, 0 -0.004596 -0.004596, 0 0.005629 0.00325, 0 0.006279 0.001682, 0 0.0065 0, 0 0.006279 -0.001682, 0 0.005629 -0.00325, 0 0.004596 -0.004596, 0 -0.00325 -0.005629, 0 0.00325 -0.005629, 0 -0.001682 -0.006279, 0 0.001682 -0.006279, 0 0 -0.0065, -0.00398 -0.001732 0.003, -0.00398 0.001732 0.003, -0.00398 0.001732 -0.003, -0.00398 -0.001732 -0.003, -0.00398 0.003464 0, -0.00398 -0.003464 0, -0.007566 0.006179 0.001406, -0.007561 0.006083 0.00179, -0.007232 0.006279 0.001682, -0.00784 0.005933 0.001259, -0.00798 0.005607 0.001281, -0.007845 0.005828 0.001638, -0.00798 0.004913 0.002955, -0.007842 0.00511 0.003243, -0.007845 0.005302 0.002906, -0.007563 0.005377 0.003353, -0.007232 0.005629 0.00325, -0.007561 0.005574 0.003018, -0.007232 0.0065 0, -0.007566 0.006339 -0.000193, -0.007566 0.006339 0.000193, -0.00784 0.006074 -0.000193, -0.00798 0.005775 0, -0.00784 0.006074 0.000193, -0.00784 0.005933 -0.001259, -0.007845 0.005828 -0.001638, -0.00798 0.005607 -0.001281, -0.007566 0.006179 -0.001406, -0.007232 0.006279 -0.001682, -0.007561 0.006083 -0.00179, -0.00798 0.004913 -0.002955, -0.007845 0.005302 -0.002906, -0.007842 0.00511 -0.003243, -0.007561 0.005574 -0.003018, -0.007232 0.005629 -0.00325, -0.007563 0.005377 -0.003353, -0.007563 -0.005584 -0.003001, -0.007563 -0.005391 -0.003335, -0.007232 -0.005629 -0.00325, -0.007842 -0.00534 -0.00286, -0.00798 -0.004976 -0.002873, -0.007842 -0.005147 -0.003195, -0.00798 -0.003936 -0.004228, -0.007837 -0.004073 -0.004517, -0.007842 -0.004348 -0.004237, -0.007569 -0.00431 -0.004649, -0.007232 -0.004596 -0.004596, -0.007563 -0.004594 -0.004374, -0.007569 0.00431 -0.004649, -0.007563 0.004594 -0.004374, -0.007232 0.004596 -0.004596, -0.007837 0.004073 -0.004517, -0.00798 0.003936 -0.004228, -0.007842 0.004348 -0.004237, -0.00798 -0.0029 -0.005023, -0.007837 -0.002878 -0.005371, -0.007837 -0.003212 -0.005177, -0.007569 -0.003003 -0.005588, -0.007232 -0.00325 -0.005629, -0.007569 -0.003338 -0.005395, -0.007837 0.003212 -0.005177, -0.007837 0.002878 -0.005371, -0.00798 0.0029 -0.005023, -0.007569 0.003338 -0.005395, -0.007232 0.00325 -0.005629, -0.007569 0.003003 -0.005588, -0.007842 -0.001495 -0.005883, -0.007837 -0.001876 -0.005786, -0.00798 -0.001694 -0.005523, -0.007563 -0.001491 -0.006165, -0.007232 -0.001682 -0.006279, -0.007569 -0.001871 -0.006057, -0.007837 0.001876 -0.005786, -0.007842 0.001495 -0.005883, -0.00798 0.001694 -0.005523, -0.007569 0.001871 -0.006057, -0.007232 0.001682 -0.006279, -0.007563 0.001491 -0.006165, -0.007232 0 -0.0065, -0.007563 -0.000193 -0.006336, -0.007563 0.000193 -0.006336, -0.007842 -0.000193 -0.006055, -0.00798 0 -0.005746, -0.007842 0.000193 -0.006055, -0.007569 0.001871 0.006057, -0.007563 0.001491 0.006165, -0.007232 0.001682 0.006279, -0.007837 0.001876 0.005786, -0.00798 0.001694 0.005523, -0.007842 0.001495 0.005883, -0.00784 -0.001876 0.005768, -0.007845 -0.001495 0.005866, -0.00798 -0.001694 0.005496, -0.007566 -0.001872 0.006055, -0.007232 -0.001682 0.006279, -0.007561 -0.001491 0.006163, -0.007232 0 0.0065, -0.007563 0.000215 0.006333, -0.007561 -0.000174 0.006336, -0.007842 0.000253 0.006047, -0.00798 0.000103 0.005733, -0.007845 -0.000135 0.006045, -0.007232 -0.00325 0.005629, -0.007566 -0.003002 0.005586, -0.007566 -0.003337 0.005393, -0.00784 -0.00287 0.005357, -0.00798 -0.002888 0.005002, -0.00784 -0.003204 0.005163, -0.007837 0.002878 0.005371, -0.007837 0.003212 0.005177, -0.00798 0.0029 0.005023, -0.007569 0.003003 0.005588, -0.007232 0.00325 0.005629, -0.007569 0.003338 0.005395, -0.007845 -0.004332 0.004228, -0.00784 -0.004057 0.004509, -0.00798 -0.003912 0.004215, -0.007561 -0.004592 0.004373, -0.007232 -0.004596 0.004596, -0.007566 -0.004307 0.004648, -0.007837 0.004073 0.004517, -0.007842 0.004348 0.004237, -0.00798 0.003936 0.004228, -0.007569 0.00431 0.004649, -0.007232 0.004596 0.004596, -0.007563 0.004594 0.004374, -0.00798 -0.005016 0.002777, -0.007842 -0.005363 0.002804, -0.007845 -0.005168 0.003139, -0.007563 -0.005592 0.002981, -0.007232 -0.005629 0.00325, -0.007561 -0.0054 0.003319, -0.00798 -0.00563 0.001295, -0.007837 -0.005948 0.001269, -0.007842 -0.005843 0.001647, -0.007569 -0.006181 0.001408, -0.007232 -0.006279 0.001682, -0.007563 -0.006085 0.001791, -0.007569 -0.006341 0.000193, -0.007569 -0.006341 -0.000193, -0.007232 -0.0065 0, -0.007837 -0.00609 0.000193, -0.00798 -0.0058 0, -0.007837 -0.00609 -0.000193, -0.00798 -0.00563 -0.001295, -0.007842 -0.005843 -0.001647, -0.007837 -0.005948 -0.001269, -0.007563 -0.006085 -0.001791, -0.007232 -0.006279 -0.001682, -0.007569 -0.006181 -0.001408
+                          ]
+                        }
+                        texCoord TextureCoordinate {
+                          point [
+                            0.6664 0.6845, 0.4572 0.6418, 0.6636 0.6418, 0.4776 0.132, 0.5495 0.1403, 0.4656 0.1759, 0.5704 0.3533, 0.5306 0.3306, 0.6154 0.2973, 0.3758 0.488, 0.1762 0.4499, 0.381 0.4499, 0.7918 0.1729, 0.7918 0.2183, 0.7202 0.1625, 0.6826 0.5142, 0.6814 0.5435, 0.6729 0.5422, 0.4613 0.4606, 0.6723 0.4283, 0.6678 0.4606, 0.6626 0.5468, 0.458 0.501, 0.6645 0.501, 0.3758 0.6721, 0.1762 0.7102, 0.1709 0.6721, 0.3985 0.6954, 0.3902 0.7021, 0.3865 0.6746, 0.3921 0.6332, 0.3942 0.6616, 0.3855 0.6651, 0.3909 0.5872, 0.3917 0.6224, 0.3824 0.6223, 0.3854 0.4951, 0.3943 0.4988, 0.3922 0.5269, 0.7438 0.927, 0.9532 0.9688, 0.7467 0.9697, 0.6885 0.3511, 0.6154 0.2973, 0.7072 0.2597, 0.6066 0.3629, 0.6154 0.2973, 0.6441 0.3629, 0.7414 0.3306, 0.7632 0.309, 0.7692 0.3136, 0.391 0.5763, 0.3815 0.5751, 0.3824 0.5378, 0.9677 0.5738, 0.9688 0.6031, 0.9601 0.6061, 0.4938 0.2943, 0.5365 0.2376, 0.5306 0.3306, 0.4752 0.2626, 0.5365 0.2376, 0.4938 0.2943, 0.7423 0.5664, 0.9486 0.5186, 0.9487 0.5667, 0.7423 0.5183, 0.9502 0.472, 0.9486 0.5186, 0.7297 0.0606, 0.6971 0.0421, 0.7021 0.0358, 0.6623 0.5948, 0.4562 0.5468, 0.6626 0.5468, 0.6724 0.5988, 0.6813 0.596, 0.6823 0.6323, 0.5652 0.0497, 0.6413 0.1028, 0.5495 0.1403, 0.676 0.6783, 0.6738 0.6453, 0.6827 0.6426, 0.458 0.501, 0.6626 0.5468, 0.4562 0.5468, 0.9629 0.4371, 0.9713 0.4414, 0.9693 0.4682, 0.0413 0.2812, 0.0287 0.2348, 0.2136 0.2108, 0.3271 0.3568, 0.285 0.3809, 0.2136 0.2108, 0.3271 0.0648, 0.3615 0.0988, 0.2136 0.2108, 0.3985 0.2348, 0.3859 0.2812, 0.2136 0.2108, 0.1422 0.3809, 0.1001 0.3568, 0.2136 0.2108, 0.0287 0.2348, 0.0287 0.1868, 0.2136 0.2108, 0.3985 0.1868, 0.3985 0.2348, 0.2136 0.2108, 0.2379 0.0283, 0.285 0.0408, 0.2136 0.2108, 0.3615 0.0988, 0.3859 0.1404, 0.2136 0.2108, 0.0656 0.0988, 0.1001 0.0648, 0.2136 0.2108, 0.3859 0.2812, 0.3615 0.3229, 0.2136 0.2108, 0.3615 0.3229, 0.3271 0.3568, 0.2136 0.2108, 0.1001 0.0648, 0.1422 0.0408, 0.2136 0.2108, 0.0287 0.1868, 0.0413 0.1404, 0.2136 0.2108, 0.285 0.3809, 0.2379 0.3933, 0.2136 0.2108, 0.7385 0.0673, 0.7434 0.061, 0.77 0.0872, 0.7469 0.4297, 0.9502 0.472, 0.7439 0.4717, 0.4874 0.0863, 0.5122 0.0618, 0.5151 0.069, 0.4562 0.5468, 0.6623 0.5948, 0.4559 0.5948, 0.6723 0.4283, 0.4613 0.4606, 0.4658 0.4283, 0.3725 0.6277, 0.1709 0.6721, 0.1677 0.6277, 0.4559 0.5948, 0.6636 0.6418, 0.4572 0.6418, 0.9588 0.8373, 0.9674 0.8385, 0.9673 0.8692, 0.1709 0.6721, 0.3725 0.6277, 0.3758 0.6721, 0.3714 0.5801, 0.1677 0.6277, 0.1665 0.5801, 0.9486 0.5186, 0.7423 0.5664, 0.7423 0.5183, 0.9678 0.513, 0.9588 0.5131, 0.96 0.4778, 0.7471 0.6538, 0.9503 0.6129, 0.9535 0.6541, 0.9585 0.5617, 0.9585 0.5241, 0.9677 0.5239, 0.5546 0.3642, 0.5226 0.346, 0.5285 0.3402, 0.744 0.7863, 0.9536 0.745, 0.9505 0.7854, 0.4963 0.1, 0.5495 0.1403, 0.4776 0.132, 0.4599 0.6845, 0.6705 0.72, 0.464 0.72, 0.7287 0.0709, 0.7202 0.1625, 0.6413 0.1028, 0.7634 0.1051, 0.7202 0.1625, 0.7287 0.0709, 0.6862 0.0467, 0.7287 0.0709, 0.6413 0.1028, 0.7439 0.6126, 0.9487 0.5667, 0.9503 0.6129, 0.9487 0.5667, 0.7439 0.6126, 0.7423 0.5664, 0.6705 0.72, 0.4599 0.6845, 0.6664 0.6845, 0.6636 0.6418, 0.4559 0.5948, 0.6623 0.5948, 0.3725 0.5324, 0.1665 0.5801, 0.1677 0.5324, 0.171 0.488, 0.3725 0.5324, 0.1677 0.5324, 0.9488 0.8312, 0.744 0.7863, 0.9505 0.7854, 0.7423 0.88, 0.9502 0.9261, 0.7438 0.927, 0.3725 0.5324, 0.171 0.488, 0.3758 0.488, 0.9532 0.9688, 0.7438 0.927, 0.9502 0.9261, 0.1677 0.6277, 0.3714 0.5801, 0.3725 0.6277, 0.7598 0.2996, 0.7072 0.2597, 0.7783 0.2679, 0.4572 0.6418, 0.6664 0.6845, 0.4599 0.6845, 0.9688 0.915, 0.9599 0.9188, 0.9588 0.8831, 0.7821 0.1372, 0.7202 0.1625, 0.7634 0.1051, 0.6726 0.553, 0.6812 0.5543, 0.681 0.5849, 0.9502 0.472, 0.7469 0.4297, 0.9533 0.43, 0.6849 0.869, 0.5668 0.7767, 0.6807 0.7767, 0.5668 0.7767, 0.6849 0.869, 0.571 0.869, 0.0509 0.7669, 0.169 0.8592, 0.0551 0.8592, 0.169 0.8592, 0.0509 0.7669, 0.1648 0.7669, 0.959 0.8265, 0.9602 0.7935, 0.9686 0.7985, 0.7355 0.3451, 0.7025 0.3639, 0.6983 0.3567, 0.744 0.7863, 0.9488 0.8312, 0.7423 0.8321, 0.1665 0.5801, 0.3725 0.5324, 0.3714 0.5801, 0.563 0.9439, 0.6849 0.869, 0.6769 0.9439, 0.6849 0.869, 0.563 0.9439, 0.571 0.869, 0.8587 0.0283, 0.9581 0.1398, 0.8587 0.1398, 0.9581 0.1398, 0.8587 0.0283, 0.9581 0.0283, 0.3985 0.914, 0.3124 0.7669, 0.3985 0.8159, 0.3124 0.7669, 0.3985 0.914, 0.2263 0.8159, 0.2263 0.8159, 0.3985 0.914, 0.3124 0.9631, 0.2263 0.8159, 0.3124 0.9631, 0.2263 0.914, 0.0471 0.9341, 0.169 0.8592, 0.1609 0.9341, 0.169 0.8592, 0.0471 0.9341, 0.0551 0.8592, 0.8587 0.2579, 0.9574 0.3717, 0.8587 0.3703, 0.9574 0.3717, 0.8587 0.2579, 0.9574 0.2594, 0.6441 0.3629, 0.6154 0.2973, 0.6885 0.3511, 0.9487 0.8792, 0.7423 0.8321, 0.9488 0.8312, 0.4656 0.2273, 0.5365 0.2376, 0.4752 0.2626, 0.9536 0.745, 0.744 0.7863, 0.7471 0.7459, 0.2379 0.3933, 0.1892 0.3933, 0.2136 0.2108, 0.285 0.0408, 0.3271 0.0648, 0.2136 0.2108, 0.3859 0.1404, 0.3985 0.1868, 0.2136 0.2108, 0.0413 0.1404, 0.0656 0.0988, 0.2136 0.2108, 0.1422 0.0408, 0.1892 0.0283, 0.2136 0.2108, 0.0656 0.3229, 0.0413 0.2812, 0.2136 0.2108, 0.1892 0.3933, 0.1422 0.3809, 0.2136 0.2108, 0.1001 0.3568, 0.0656 0.3229, 0.2136 0.2108, 0.1892 0.0283, 0.2379 0.0283, 0.2136 0.2108, 0.458 0.501, 0.6678 0.4606, 0.6645 0.501, 0.7515 0.6872, 0.9535 0.6541, 0.9579 0.6875, 0.7336 0.3254, 0.6885 0.3511, 0.7072 0.2597, 0.9502 0.9261, 0.7423 0.88, 0.9487 0.8792, 0.1762 0.4499, 0.3758 0.488, 0.171 0.488, 0.5306 0.3306, 0.5365 0.2376, 0.6154 0.2973, 0.6862 0.0467, 0.6413 0.1028, 0.6501 0.0372, 0.9535 0.6541, 0.7515 0.6872, 0.7471 0.6538, 0.5228 0.0739, 0.5652 0.0497, 0.5495 0.1403, 0.1762 0.7102, 0.3758 0.6721, 0.381 0.7102, 0.5228 0.0739, 0.5495 0.1403, 0.4963 0.1, 0.7783 0.2679, 0.7072 0.2597, 0.7918 0.2183, 0.4656 0.1759, 0.5495 0.1403, 0.5365 0.2376, 0.6501 0.0372, 0.6413 0.1028, 0.6126 0.0372, 0.7918 0.2183, 0.7072 0.2597, 0.7202 0.1625, 0.5704 0.3533, 0.6154 0.2973, 0.6066 0.3629, 0.7336 0.3254, 0.7072 0.2597, 0.7598 0.2996, 0.6678 0.4606, 0.458 0.501, 0.4613 0.4606, 0.4656 0.2273, 0.4656 0.1759, 0.5365 0.2376, 0.6126 0.0372, 0.6413 0.1028, 0.5652 0.0497, 0.7918 0.1729, 0.7202 0.1625, 0.7821 0.1372, 0.9502 0.472, 0.7423 0.5183, 0.7439 0.4717, 0.9503 0.6129, 0.7471 0.6538, 0.7439 0.6126, 0.7423 0.8321, 0.9487 0.8792, 0.7423 0.88, 0.9606 0.6161, 0.9693 0.6131, 0.9713 0.6393, 0.9629 0.6458, 0.9636 0.6547, 0.9535 0.6541, 0.4849 0.2972, 0.4938 0.2943, 0.4918 0.306, 0.5306 0.3306, 0.5285 0.3402, 0.5197 0.3335, 0.963 0.7526, 0.9536 0.745, 0.9638 0.7442, 0.9503 0.6129, 0.9601 0.6061, 0.9606 0.6161, 0.4652 0.2608, 0.4752 0.2626, 0.4695 0.2709, 0.4572 0.2314, 0.4559 0.2203, 0.4656 0.2273, 0.9589 0.5727, 0.9487 0.5667, 0.9585 0.5617, 0.4656 0.1759, 0.4559 0.1814, 0.4573 0.1705, 0.9585 0.5241, 0.9486 0.5186, 0.9588 0.5131, 0.6781 0.4595, 0.6772 0.4678, 0.6678 0.4606, 0.7385 0.0673, 0.7287 0.0709, 0.7297 0.0606, 0.6862 0.0467, 0.6867 0.0377, 0.6971 0.0421, 0.6742 0.5092, 0.6645 0.501, 0.6747 0.499, 0.9607 0.4674, 0.96 0.4778, 0.9502 0.472, 0.4708 0.126, 0.4776 0.132, 0.4666 0.1363, 0.6501 0.0372, 0.6456 0.0283, 0.6566 0.0297, 0.6726 0.553, 0.6626 0.5468, 0.6729 0.5422, 0.4863 0.0994, 0.4931 0.0907, 0.4963 0.1, 0.9629 0.4371, 0.9533 0.43, 0.9638 0.4283, 0.6034 0.0299, 0.6145 0.0283, 0.6126 0.0372, 0.6724 0.5988, 0.6623 0.5948, 0.6724 0.5876, 0.5151 0.069, 0.5241 0.0623, 0.5228 0.0739, 0.677 0.6874, 0.6664 0.6845, 0.676 0.6783, 0.6636 0.6418, 0.6734 0.635, 0.6738 0.6453, 0.567 0.0395, 0.5652 0.0497, 0.5567 0.0437, 0.9588 0.872, 0.9588 0.8831, 0.9487 0.8792, 0.6421 0.3717, 0.6441 0.3629, 0.6533 0.3701, 0.7414 0.3306, 0.7324 0.3373, 0.7336 0.3254, 0.9637 0.9717, 0.9532 0.9688, 0.9627 0.9626, 0.9502 0.9261, 0.9599 0.9188, 0.9604 0.9291, 0.688 0.3609, 0.6885 0.3511, 0.6983 0.3567, 0.3758 0.488, 0.3864 0.4856, 0.3854 0.4951, 0.7632 0.309, 0.7598 0.2996, 0.77 0.3004, 0.611 0.3717, 0.6 0.3703, 0.6066 0.3629, 0.9588 0.8373, 0.9488 0.8312, 0.959 0.8265, 0.7896 0.2637, 0.7854 0.274, 0.7783 0.2679, 0.3824 0.5378, 0.3725 0.5324, 0.3831 0.5271, 0.57 0.3623, 0.5596 0.358, 0.5704 0.3533, 0.9602 0.7935, 0.9505 0.7854, 0.9606 0.7833, 0.7918 0.2183, 0.8013 0.2152, 0.7998 0.2261, 0.3816 0.5862, 0.3714 0.5801, 0.3815 0.5751, 0.7918 0.1729, 0.7999 0.1687, 0.8013 0.1798, 0.3831 0.6331, 0.3725 0.6277, 0.3824 0.6223, 0.3855 0.6651, 0.3865 0.6746, 0.3758 0.6721, 0.7919 0.1391, 0.7821 0.1372, 0.7876 0.129, 0.7634 0.1051, 0.7651 0.0936, 0.7721 0.1024, 0.3915 0.7102, 0.381 0.7102, 0.3902 0.7021, 0.7434 0.061, 0.7385 0.0673, 0.7297 0.0606, 0.7287 0.0709, 0.6862 0.0467, 0.6971 0.0421, 0.6742 0.5092, 0.6747 0.499, 0.6834 0.5042, 0.6645 0.501, 0.6678 0.4606, 0.6772 0.4678, 0.48 0.3037, 0.4849 0.2972, 0.4918 0.306, 0.5306 0.3306, 0.5197 0.3335, 0.4918 0.306, 0.5226 0.346, 0.5137 0.3393, 0.5197 0.3335, 0.9535 0.6541, 0.9636 0.6547, 0.9671 0.6809, 0.7444 0.3381, 0.7355 0.3451, 0.7324 0.3373, 0.9532 0.9688, 0.9502 0.9261, 0.9604 0.9291, 0.9599 0.9188, 0.9688 0.915, 0.9694 0.9253, 0.6885 0.3511, 0.7336 0.3254, 0.7324 0.3373, 0.9588 0.872, 0.9673 0.8692, 0.9677 0.8803, 0.6885 0.3511, 0.688 0.3609, 0.6533 0.3701, 0.9487 0.8792, 0.9588 0.8831, 0.9599 0.9188, 0.3919 0.5377, 0.3824 0.5378, 0.3831 0.5271, 0.3758 0.488, 0.3854 0.4951, 0.3831 0.5271, 0.3953 0.4893, 0.3943 0.4988, 0.3854 0.4951, 0.7783 0.2679, 0.7854 0.274, 0.77 0.3004, 0.9602 0.7935, 0.9606 0.7833, 0.9694 0.7885, 0.9505 0.7854, 0.9536 0.745, 0.963 0.7526, 0.5306 0.3306, 0.5704 0.3533, 0.5596 0.358, 0.6862 0.0467, 0.6501 0.0372, 0.6566 0.0297, 0.6726 0.553, 0.6729 0.5422, 0.6814 0.5435, 0.6626 0.5468, 0.6645 0.501, 0.6742 0.5092, 0.9503 0.6129, 0.9606 0.6161, 0.9629 0.6458, 0.9688 0.6031, 0.9693 0.6131, 0.9606 0.6161, 0.4938 0.2943, 0.4849 0.2972, 0.4695 0.2709, 0.5122 0.0618, 0.5211 0.0549, 0.5241 0.0623, 0.6664 0.6845, 0.6636 0.6418, 0.6738 0.6453, 0.6823 0.6323, 0.6827 0.6426, 0.6738 0.6453, 0.5652 0.0497, 0.5228 0.0739, 0.5241 0.0623, 0.3942 0.6616, 0.3952 0.671, 0.3865 0.6746, 0.7634 0.1051, 0.7721 0.1024, 0.7876 0.129, 0.7651 0.0936, 0.77 0.0872, 0.7767 0.0962, 0.3758 0.6721, 0.3865 0.6746, 0.3902 0.7021, 0.4863 0.0994, 0.4806 0.095, 0.4874 0.0863, 0.6705 0.72, 0.6664 0.6845, 0.677 0.6874, 0.5228 0.0739, 0.4963 0.1, 0.4931 0.0907, 0.7918 0.2183, 0.7998 0.2261, 0.7896 0.2637, 0.3816 0.5862, 0.3815 0.5751, 0.391 0.5763, 0.3725 0.5324, 0.3824 0.5378, 0.3815 0.5751, 0.9607 0.4674, 0.9693 0.4682, 0.9689 0.4786, 0.4656 0.1759, 0.4573 0.1705, 0.4666 0.1363, 0.9677 0.5239, 0.9585 0.5241, 0.9588 0.5131, 0.9502 0.472, 0.96 0.4778, 0.9588 0.5131, 0.6813 0.596, 0.6724 0.5988, 0.6724 0.5876, 0.6626 0.5468, 0.6726 0.553, 0.6724 0.5876, 0.6126 0.0372, 0.6145 0.0283, 0.6456 0.0283, 0.7918 0.2183, 0.7918 0.1729, 0.8013 0.1798, 0.3831 0.6331, 0.3824 0.6223, 0.3917 0.6224, 0.3725 0.6277, 0.3714 0.5801, 0.3816 0.5862, 0.9588 0.8373, 0.959 0.8265, 0.9676 0.8278, 0.9488 0.8312, 0.9505 0.7854, 0.9602 0.7935, 0.5704 0.3533, 0.6066 0.3629, 0.6 0.3703, 0.7336 0.3254, 0.7598 0.2996, 0.7632 0.309, 0.3758 0.488, 0.381 0.4499, 0.3902 0.4581, 0.7287 0.0709, 0.7385 0.0673, 0.7651 0.0936, 0.6723 0.4283, 0.6816 0.4345, 0.6781 0.4595, 0.9589 0.5727, 0.9585 0.5617, 0.9677 0.5628, 0.9487 0.5667, 0.9486 0.5186, 0.9585 0.5241, 0.4656 0.1759, 0.4656 0.2273, 0.4559 0.2203, 0.6623 0.5948, 0.6724 0.5988, 0.6734 0.635, 0.5652 0.0497, 0.567 0.0395, 0.6034 0.0299, 0.7918 0.1729, 0.7821 0.1372, 0.7919 0.1391, 0.3758 0.6721, 0.3725 0.6277, 0.3831 0.6331, 0.9533 0.43, 0.9629 0.4371, 0.9607 0.4674, 0.4776 0.132, 0.4708 0.126, 0.4863 0.0994, 0.4656 0.2273, 0.4752 0.2626, 0.4652 0.2608, 0.9503 0.6129, 0.9487 0.5667, 0.9589 0.5727, 0.9488 0.8312, 0.9588 0.8373, 0.9588 0.872, 0.6441 0.3629, 0.6421 0.3717, 0.611 0.3717, 0.5197 0.3335, 0.5137 0.3393, 0.4868 0.3127, 0.6742 0.5092, 0.6826 0.5142, 0.6729 0.5422, 0.3952 0.671, 0.3985 0.6954, 0.3865 0.6746, 0.3831 0.6331, 0.3921 0.6332, 0.3855 0.6651, 0.3816 0.5862, 0.3909 0.5872, 0.3824 0.6223, 0.3831 0.5271, 0.3854 0.4951, 0.3922 0.5269, 0.7444 0.3381, 0.7414 0.3306, 0.7692 0.3136, 0.3919 0.5377, 0.391 0.5763, 0.3824 0.5378, 0.9589 0.5727, 0.9677 0.5738, 0.9601 0.6061, 0.7346 0.0543, 0.7297 0.0606, 0.7021 0.0358, 0.6734 0.635, 0.6724 0.5988, 0.6823 0.6323, 0.6849 0.6757, 0.676 0.6783, 0.6827 0.6426, 0.9607 0.4674, 0.9629 0.4371, 0.9693 0.4682, 0.7651 0.0936, 0.7385 0.0673, 0.77 0.0872, 0.4931 0.0907, 0.4874 0.0863, 0.5151 0.069, 0.9588 0.872, 0.9588 0.8373, 0.9673 0.8692, 0.9689 0.4786, 0.9678 0.513, 0.96 0.4778, 0.9677 0.5628, 0.9585 0.5617, 0.9677 0.5239, 0.5596 0.358, 0.5546 0.3642, 0.5285 0.3402, 0.9677 0.8803, 0.9688 0.915, 0.9588 0.8831, 0.6724 0.5876, 0.6726 0.553, 0.681 0.5849, 0.9676 0.8278, 0.959 0.8265, 0.9686 0.7985, 0.7324 0.3373, 0.7355 0.3451, 0.6983 0.3567, 0.9629 0.6458, 0.9606 0.6161, 0.9713 0.6393, 0.7346 0.0543, 0.7434 0.061, 0.7297 0.0606, 0.7297 0.0606, 0.7287 0.0709, 0.6971 0.0421, 0.6826 0.5142, 0.6742 0.5092, 0.6834 0.5042, 0.6747 0.499, 0.6645 0.501, 0.6772 0.4678, 0.4868 0.3127, 0.48 0.3037, 0.4918 0.306, 0.4938 0.2943, 0.5306 0.3306, 0.4918 0.306, 0.5285 0.3402, 0.5226 0.346, 0.5197 0.3335, 0.9579 0.6875, 0.9535 0.6541, 0.9671 0.6809, 0.7414 0.3306, 0.7444 0.3381, 0.7324 0.3373, 0.9627 0.9626, 0.9532 0.9688, 0.9604 0.9291, 0.9604 0.9291, 0.9599 0.9188, 0.9694 0.9253, 0.6983 0.3567, 0.6885 0.3511, 0.7324 0.3373, 0.9588 0.8831, 0.9588 0.872, 0.9677 0.8803, 0.6441 0.3629, 0.6885 0.3511, 0.6533 0.3701, 0.9502 0.9261, 0.9487 0.8792, 0.9599 0.9188, 0.3922 0.5269, 0.3919 0.5377, 0.3831 0.5271, 0.3725 0.5324, 0.3758 0.488, 0.3831 0.5271, 0.3864 0.4856, 0.3953 0.4893, 0.3854 0.4951, 0.7598 0.2996, 0.7783 0.2679, 0.77 0.3004, 0.9686 0.7985, 0.9602 0.7935, 0.9694 0.7885, 0.9606 0.7833, 0.9505 0.7854, 0.963 0.7526, 0.5285 0.3402, 0.5306 0.3306, 0.5596 0.358, 0.6867 0.0377, 0.6862 0.0467, 0.6566 0.0297, 0.6812 0.5543, 0.6726 0.553, 0.6814 0.5435, 0.6729 0.5422, 0.6626 0.5468, 0.6742 0.5092, 0.9535 0.6541, 0.9503 0.6129, 0.9629 0.6458, 0.9601 0.6061, 0.9688 0.6031, 0.9606 0.6161, 0.4752 0.2626, 0.4938 0.2943, 0.4695 0.2709, 0.5151 0.069, 0.5122 0.0618, 0.5241 0.0623, 0.676 0.6783, 0.6664 0.6845, 0.6738 0.6453, 0.6734 0.635, 0.6823 0.6323, 0.6738 0.6453, 0.5567 0.0437, 0.5652 0.0497, 0.5241 0.0623, 0.3855 0.6651, 0.3942 0.6616, 0.3865 0.6746, 0.7821 0.1372, 0.7634 0.1051, 0.7876 0.129, 0.7721 0.1024, 0.7651 0.0936, 0.7767 0.0962, 0.381 0.7102, 0.3758 0.6721, 0.3902 0.7021, 0.4931 0.0907, 0.4863 0.0994, 0.4874 0.0863, 0.6799 0.7131, 0.6705 0.72, 0.677 0.6874, 0.5151 0.069, 0.5228 0.0739, 0.4931 0.0907, 0.7783 0.2679, 0.7918 0.2183, 0.7896 0.2637, 0.3909 0.5872, 0.3816 0.5862, 0.391 0.5763, 0.3714 0.5801, 0.3725 0.5324, 0.3815 0.5751, 0.96 0.4778, 0.9607 0.4674, 0.9689 0.4786, 0.4776 0.132, 0.4656 0.1759, 0.4666 0.1363, 0.9678 0.513, 0.9677 0.5239, 0.9588 0.5131, 0.9486 0.5186, 0.9502 0.472, 0.9588 0.5131, 0.681 0.5849, 0.6813 0.596, 0.6724 0.5876, 0.6623 0.5948, 0.6626 0.5468, 0.6724 0.5876, 0.6501 0.0372, 0.6126 0.0372, 0.6456 0.0283, 0.8013 0.2152, 0.7918 0.2183, 0.8013 0.1798, 0.3921 0.6332, 0.3831 0.6331, 0.3917 0.6224, 0.3824 0.6223, 0.3725 0.6277, 0.3816 0.5862, 0.9674 0.8385, 0.9588 0.8373, 0.9676 0.8278, 0.959 0.8265, 0.9488 0.8312, 0.9602 0.7935, 0.57 0.3623, 0.5704 0.3533, 0.6 0.3703, 0.7414 0.3306, 0.7336 0.3254, 0.7632 0.309, 0.3864 0.4856, 0.3758 0.488, 0.3902 0.4581, 0.7634 0.1051, 0.7287 0.0709, 0.7651 0.0936, 0.6678 0.4606, 0.6723 0.4283, 0.6781 0.4595, 0.9677 0.5738, 0.9589 0.5727, 0.9677 0.5628, 0.9585 0.5617, 0.9487 0.5667, 0.9585 0.5241, 0.4559 0.1814, 0.4656 0.1759, 0.4559 0.2203, 0.6636 0.6418, 0.6623 0.5948, 0.6734 0.635, 0.6126 0.0372, 0.5652 0.0497, 0.6034 0.0299, 0.7999 0.1687, 0.7918 0.1729, 0.7919 0.1391, 0.3855 0.6651, 0.3758 0.6721, 0.3831 0.6331, 0.9502 0.472, 0.9533 0.43, 0.9607 0.4674, 0.4963 0.1, 0.4776 0.132, 0.4863 0.0994, 0.4572 0.2314, 0.4656 0.2273, 0.4652 0.2608, 0.9601 0.6061, 0.9503 0.6129, 0.9589 0.5727, 0.9487 0.8792, 0.9488 0.8312, 0.9588 0.872, 0.6066 0.3629, 0.6441 0.3629, 0.611 0.3717, 0.4918 0.306, 0.5197 0.3335, 0.4868 0.3127
+                          ]
+                        }
+                        coordIndex [
+                          108, 31, 110, -1, 84, 3, 62, -1, 154, 44, 1, -1, 134, 7, 126, -1, 164, 158, 6, -1, 75, 88, 91, -1, 19, 180, 70, -1, 90, 20, 78, -1, 172, 18, 17, -1, 178, 181, 171, -1, 165, 173, 170, -1, 159, 166, 169, -1, 136, 139, 147, -1, 9, 126, 7, -1, 132, 1, 5, -1, 142, 1, 120, -1, 122, 137, 135, -1, 160, 163, 149, -1, 56, 53, 51, -1, 42, 2, 44, -1, 54, 2, 42, -1, 24, 66, 60, -1, 25, 82, 66, -1, 73, 76, 79, -1, 102, 27, 90, -1, 101, 98, 113, -1, 114, 4, 3, -1, 109, 112, 115, -1, 20, 90, 27, -1, 95, 92, 83, -1, 25, 24, 14, -1, 20, 27, 14, -1, 10, 12, 14, -1, 17, 18, 14, -1, 30, 28, 14, -1, 24, 23, 14, -1, 16, 17, 14, -1, 9, 7, 14, -1, 12, 15, 14, -1, 21, 13, 14, -1, 18, 19, 14, -1, 19, 20, 14, -1, 13, 11, 14, -1, 23, 22, 14, -1, 27, 29, 14, -1, 71, 68, 179, -1, 28, 82, 26, -1, 97, 107, 104, -1, 27, 102, 29, -1, 180, 19, 18, -1, 168, 17, 16, -1, 29, 110, 31, -1, 143, 140, 119, -1, 17, 168, 172, -1, 162, 16, 15, -1, 66, 24, 25, -1, 64, 67, 81, -1, 22, 50, 40, -1, 61, 65, 63, -1, 157, 47, 45, -1, 13, 48, 156, -1, 94, 3, 84, -1, 30, 96, 28, -1, 72, 6, 4, -1, 176, 6, 72, -1, 74, 72, 4, -1, 23, 60, 50, -1, 60, 23, 24, -1, 96, 30, 108, -1, 110, 29, 102, -1, 150, 15, 12, -1, 10, 150, 12, -1, 144, 13, 156, -1, 8, 128, 9, -1, 150, 10, 134, -1, 126, 9, 128, -1, 16, 162, 168, -1, 138, 5, 148, -1, 31, 108, 30, -1, 131, 129, 117, -1, 174, 6, 176, -1, 89, 87, 99, -1, 82, 28, 96, -1, 1, 32, 5, -1, 32, 1, 33, -1, 34, 4, 35, -1, 4, 34, 3, -1, 145, 155, 152, -1, 127, 130, 133, -1, 13, 144, 11, -1, 15, 150, 162, -1, 36, 1, 2, -1, 1, 36, 33, -1, 34, 2, 3, -1, 2, 34, 36, -1, 36, 32, 33, -1, 32, 36, 37, -1, 37, 36, 34, -1, 37, 34, 35, -1, 37, 4, 6, -1, 4, 37, 35, -1, 32, 6, 5, -1, 6, 32, 37, -1, 120, 1, 132, -1, 118, 11, 144, -1, 58, 2, 54, -1, 48, 13, 21, -1, 29, 31, 14, -1, 7, 10, 14, -1, 15, 16, 14, -1, 22, 21, 14, -1, 11, 8, 14, -1, 26, 25, 14, -1, 31, 30, 14, -1, 28, 26, 14, -1, 8, 9, 14, -1, 20, 70, 78, -1, 21, 40, 48, -1, 124, 132, 5, -1, 128, 8, 118, -1, 7, 134, 10, -1, 44, 2, 1, -1, 74, 4, 86, -1, 40, 21, 22, -1, 106, 114, 3, -1, 18, 172, 180, -1, 106, 3, 94, -1, 148, 5, 158, -1, 62, 3, 2, -1, 86, 4, 100, -1, 158, 5, 6, -1, 154, 1, 142, -1, 124, 5, 138, -1, 70, 20, 19, -1, 58, 62, 2, -1, 100, 4, 114, -1, 164, 6, 174, -1, 82, 25, 26, -1, 50, 22, 23, -1, 11, 118, 8, -1, 52, 55, 41, -1, 38, 39, 40, -1, 41, 42, 43, -1, 44, 45, 46, -1, 47, 48, 49, -1, 50, 51, 52, -1, 53, 54, 55, -1, 56, 57, 58, -1, 59, 60, 61, -1, 62, 63, 64, -1, 65, 66, 67, -1, 68, 69, 70, -1, 71, 72, 73, -1, 74, 75, 76, -1, 77, 78, 79, -1, 80, 81, 82, -1, 83, 84, 85, -1, 86, 87, 88, -1, 89, 90, 91, -1, 92, 93, 94, -1, 95, 96, 97, -1, 98, 99, 100, -1, 101, 102, 103, -1, 104, 105, 106, -1, 107, 108, 109, -1, 110, 111, 112, -1, 113, 114, 115, -1, 116, 117, 118, -1, 119, 120, 121, -1, 122, 123, 124, -1, 125, 126, 127, -1, 128, 129, 130, -1, 131, 132, 133, -1, 134, 135, 136, -1, 137, 138, 139, -1, 140, 141, 142, -1, 143, 144, 145, -1, 146, 147, 148, -1, 149, 150, 151, -1, 152, 153, 154, -1, 155, 156, 157, -1, 158, 159, 160, -1, 161, 162, 163, -1, 164, 165, 166, -1, 167, 168, 169, -1, 170, 171, 172, -1, 173, 174, 175, -1, 176, 177, 178, -1, 179, 180, 181, -1, 68, 71, 73, -1, 72, 74, 76, -1, 77, 79, 76, -1, 78, 70, 69, -1, 38, 41, 43, -1, 44, 46, 43, -1, 47, 49, 46, -1, 40, 39, 49, -1, 125, 127, 123, -1, 126, 128, 130, -1, 129, 131, 133, -1, 132, 124, 123, -1, 116, 119, 121, -1, 132, 131, 121, -1, 118, 117, 129, -1, 146, 149, 151, -1, 134, 136, 151, -1, 137, 139, 136, -1, 148, 147, 139, -1, 155, 157, 153, -1, 156, 48, 47, -1, 44, 154, 153, -1, 74, 86, 88, -1, 89, 91, 88, -1, 90, 78, 77, -1, 50, 52, 38, -1, 53, 55, 52, -1, 42, 41, 55, -1, 107, 109, 105, -1, 108, 110, 112, -1, 113, 115, 112, -1, 114, 106, 105, -1, 173, 175, 171, -1, 176, 178, 175, -1, 177, 179, 181, -1, 172, 171, 181, -1, 92, 95, 97, -1, 96, 108, 107, -1, 106, 94, 93, -1, 158, 160, 146, -1, 161, 163, 160, -1, 150, 149, 163, -1, 80, 83, 85, -1, 62, 64, 85, -1, 63, 65, 67, -1, 82, 81, 67, -1, 98, 101, 103, -1, 90, 89, 103, -1, 100, 99, 87, -1, 158, 164, 166, -1, 167, 169, 166, -1, 168, 162, 161, -1, 143, 145, 141, -1, 144, 156, 155, -1, 154, 142, 141, -1, 124, 138, 137, -1, 134, 126, 125, -1, 72, 71, 177, -1, 180, 179, 68, -1, 59, 61, 57, -1, 60, 66, 65, -1, 62, 58, 57, -1, 102, 101, 111, -1, 114, 113, 98, -1, 164, 174, 173, -1, 172, 168, 167, -1, 96, 95, 80, -1, 84, 83, 92, -1, 58, 54, 53, -1, 50, 60, 59, -1, 144, 143, 116, -1, 120, 119, 140, -1, 46, 49, 39, -1, 77, 75, 91, -1, 175, 178, 171, -1, 167, 165, 170, -1, 161, 159, 169, -1, 151, 136, 147, -1, 125, 122, 135, -1, 146, 160, 149, -1, 59, 56, 51, -1, 69, 73, 79, -1, 111, 101, 113, -1, 105, 109, 115, -1, 80, 95, 83, -1, 177, 71, 179, -1, 93, 97, 104, -1, 116, 143, 119, -1, 85, 64, 81, -1, 57, 61, 63, -1, 153, 157, 45, -1, 121, 131, 117, -1, 103, 89, 99, -1, 141, 145, 152, -1, 123, 127, 133, -1, 38, 52, 41, -1, 69, 68, 73, -1, 73, 72, 76, -1, 75, 77, 76, -1, 79, 78, 69, -1, 39, 38, 43, -1, 42, 44, 43, -1, 45, 47, 46, -1, 48, 40, 49, -1, 122, 125, 123, -1, 127, 126, 130, -1, 130, 129, 133, -1, 133, 132, 123, -1, 117, 116, 121, -1, 120, 132, 121, -1, 128, 118, 129, -1, 147, 146, 151, -1, 150, 134, 151, -1, 135, 137, 136, -1, 138, 148, 139, -1, 152, 155, 153, -1, 157, 156, 47, -1, 45, 44, 153, -1, 75, 74, 88, -1, 87, 89, 88, -1, 91, 90, 77, -1, 40, 50, 38, -1, 51, 53, 52, -1, 54, 42, 55, -1, 104, 107, 105, -1, 109, 108, 112, -1, 111, 113, 112, -1, 115, 114, 105, -1, 170, 173, 171, -1, 174, 176, 175, -1, 178, 177, 181, -1, 180, 172, 181, -1, 93, 92, 97, -1, 97, 96, 107, -1, 104, 106, 93, -1, 148, 158, 146, -1, 159, 161, 160, -1, 162, 150, 163, -1, 81, 80, 85, -1, 84, 62, 85, -1, 64, 63, 67, -1, 66, 82, 67, -1, 99, 98, 103, -1, 102, 90, 103, -1, 86, 100, 87, -1, 159, 158, 166, -1, 165, 167, 166, -1, 169, 168, 161, -1, 140, 143, 141, -1, 145, 144, 155, -1, 152, 154, 141, -1, 122, 124, 137, -1, 135, 134, 125, -1, 176, 72, 177, -1, 70, 180, 68, -1, 56, 59, 57, -1, 61, 60, 65, -1, 63, 62, 57, -1, 110, 102, 111, -1, 100, 114, 98, -1, 165, 164, 173, -1, 170, 172, 167, -1, 82, 96, 80, -1, 94, 84, 92, -1, 56, 58, 53, -1, 51, 50, 59, -1, 118, 144, 116, -1, 142, 120, 140, -1, 43, 46, 39, -1
+                        ]
+                        texCoordIndex [
+                          0, 1, 2, -1, 3, 4, 5, -1, 6, 7, 8, -1, 9, 10, 11, -1, 12, 13, 14, -1, 15, 16, 17, -1, 18, 19, 20, -1, 21, 22, 23, -1, 24, 25, 26, -1, 27, 28, 29, -1, 30, 31, 32, -1, 33, 34, 35, -1, 36, 37, 38, -1, 39, 40, 41, -1, 42, 43, 44, -1, 45, 46, 47, -1, 48, 49, 50, -1, 51, 52, 53, -1, 54, 55, 56, -1, 57, 58, 59, -1, 60, 61, 62, -1, 63, 64, 65, -1, 66, 67, 68, -1, 69, 70, 71, -1, 72, 73, 74, -1, 75, 76, 77, -1, 78, 79, 80, -1, 81, 82, 83, -1, 84, 85, 86, -1, 87, 88, 89, -1, 90, 91, 92, -1, 93, 94, 95, -1, 96, 97, 98, -1, 99, 100, 101, -1, 102, 103, 104, -1, 105, 106, 107, -1, 108, 109, 110, -1, 111, 112, 113, -1, 114, 115, 116, -1, 117, 118, 119, -1, 120, 121, 122, -1, 123, 124, 125, -1, 126, 127, 128, -1, 129, 130, 131, -1, 132, 133, 134, -1, 135, 136, 137, -1, 138, 139, 140, -1, 141, 142, 143, -1, 144, 145, 146, -1, 147, 148, 149, -1, 150, 151, 152, -1, 153, 154, 155, -1, 156, 157, 158, -1, 159, 160, 161, -1, 162, 163, 164, -1, 165, 166, 167, -1, 168, 169, 170, -1, 171, 172, 173, -1, 174, 175, 176, -1, 177, 178, 179, -1, 180, 181, 182, -1, 183, 184, 185, -1, 186, 187, 188, -1, 189, 190, 191, -1, 192, 193, 194, -1, 195, 196, 197, -1, 198, 199, 200, -1, 201, 202, 203, -1, 204, 205, 206, -1, 207, 208, 209, -1, 210, 211, 212, -1, 213, 214, 215, -1, 216, 217, 218, -1, 219, 220, 221, -1, 222, 223, 224, -1, 225, 226, 227, -1, 228, 229, 230, -1, 231, 232, 233, -1, 234, 235, 236, -1, 237, 238, 239, -1, 240, 241, 242, -1, 243, 244, 245, -1, 246, 247, 248, -1, 249, 250, 251, -1, 252, 253, 254, -1, 255, 256, 257, -1, 258, 259, 260, -1, 261, 262, 263, -1, 264, 265, 266, -1, 267, 268, 269, -1, 270, 271, 272, -1, 273, 274, 275, -1, 276, 277, 278, -1, 279, 280, 281, -1, 282, 283, 284, -1, 285, 286, 287, -1, 288, 289, 290, -1, 291, 292, 293, -1, 294, 295, 296, -1, 297, 298, 299, -1, 300, 301, 302, -1, 303, 304, 305, -1, 306, 307, 308, -1, 309, 310, 311, -1, 312, 313, 314, -1, 315, 316, 317, -1, 318, 319, 320, -1, 321, 322, 323, -1, 324, 325, 326, -1, 327, 328, 329, -1, 330, 331, 332, -1, 333, 334, 335, -1, 336, 337, 338, -1, 339, 340, 341, -1, 342, 343, 344, -1, 345, 346, 347, -1, 348, 349, 350, -1, 351, 352, 353, -1, 354, 355, 356, -1, 357, 358, 359, -1, 360, 361, 362, -1, 363, 364, 365, -1, 366, 367, 368, -1, 369, 370, 371, -1, 372, 373, 374, -1, 375, 376, 377, -1, 378, 379, 380, -1, 381, 382, 383, -1, 384, 385, 386, -1, 387, 388, 389, -1, 390, 391, 392, -1, 393, 394, 395, -1, 396, 397, 398, -1, 399, 400, 401, -1, 402, 403, 404, -1, 405, 406, 407, -1, 408, 409, 410, -1, 411, 412, 413, -1, 414, 415, 416, -1, 417, 418, 419, -1, 420, 421, 422, -1, 423, 424, 425, -1, 426, 427, 428, -1, 429, 430, 431, -1, 432, 433, 434, -1, 435, 436, 437, -1, 438, 439, 440, -1, 441, 442, 443, -1, 444, 445, 446, -1, 447, 448, 449, -1, 450, 451, 452, -1, 453, 454, 455, -1, 456, 457, 458, -1, 459, 460, 461, -1, 462, 463, 464, -1, 465, 466, 467, -1, 468, 469, 470, -1, 471, 472, 473, -1, 474, 475, 476, -1, 477, 478, 479, -1, 480, 481, 482, -1, 483, 484, 485, -1, 486, 487, 488, -1, 489, 490, 491, -1, 492, 493, 494, -1, 495, 496, 497, -1, 498, 499, 500, -1, 501, 502, 503, -1, 504, 505, 506, -1, 507, 508, 509, -1, 510, 511, 512, -1, 513, 514, 515, -1, 516, 517, 518, -1, 519, 520, 521, -1, 522, 523, 524, -1, 525, 526, 527, -1, 528, 529, 530, -1, 531, 532, 533, -1, 534, 535, 536, -1, 537, 538, 539, -1, 540, 541, 542, -1, 543, 544, 545, -1, 546, 547, 548, -1, 549, 550, 551, -1, 552, 553, 554, -1, 555, 556, 557, -1, 558, 559, 560, -1, 561, 562, 563, -1, 564, 565, 566, -1, 567, 568, 569, -1, 570, 571, 572, -1, 573, 574, 575, -1, 576, 577, 578, -1, 579, 580, 581, -1, 582, 583, 584, -1, 585, 586, 587, -1, 588, 589, 590, -1, 591, 592, 593, -1, 594, 595, 596, -1, 597, 598, 599, -1, 600, 601, 602, -1, 603, 604, 605, -1, 606, 607, 608, -1, 609, 610, 611, -1, 612, 613, 614, -1, 615, 616, 617, -1, 618, 619, 620, -1, 621, 622, 623, -1, 624, 625, 626, -1, 627, 628, 629, -1, 630, 631, 632, -1, 633, 634, 635, -1, 636, 637, 638, -1, 639, 640, 641, -1, 642, 643, 644, -1, 645, 646, 647, -1, 648, 649, 650, -1, 651, 652, 653, -1, 654, 655, 656, -1, 657, 658, 659, -1, 660, 661, 662, -1, 663, 664, 665, -1, 666, 667, 668, -1, 669, 670, 671, -1, 672, 673, 674, -1, 675, 676, 677, -1, 678, 679, 680, -1, 681, 682, 683, -1, 684, 685, 686, -1, 687, 688, 689, -1, 690, 691, 692, -1, 693, 694, 695, -1, 696, 697, 698, -1, 699, 700, 701, -1, 702, 703, 704, -1, 705, 706, 707, -1, 708, 709, 710, -1, 711, 712, 713, -1, 714, 715, 716, -1, 717, 718, 719, -1, 720, 721, 722, -1, 723, 724, 725, -1, 726, 727, 728, -1, 729, 730, 731, -1, 732, 733, 734, -1, 735, 736, 737, -1, 738, 739, 740, -1, 741, 742, 743, -1, 744, 745, 746, -1, 747, 748, 749, -1, 750, 751, 752, -1, 753, 754, 755, -1, 756, 757, 758, -1, 759, 760, 761, -1, 762, 763, 764, -1, 765, 766, 767, -1, 768, 769, 770, -1, 771, 772, 773, -1, 774, 775, 776, -1, 777, 778, 779, -1, 780, 781, 782, -1, 783, 784, 785, -1, 786, 787, 788, -1, 789, 790, 791, -1, 792, 793, 794, -1, 795, 796, 797, -1, 798, 799, 800, -1, 801, 802, 803, -1, 804, 805, 806, -1, 807, 808, 809, -1, 810, 811, 812, -1, 813, 814, 815, -1, 816, 817, 818, -1, 819, 820, 821, -1, 822, 823, 824, -1, 825, 826, 827, -1, 828, 829, 830, -1, 831, 832, 833, -1, 834, 835, 836, -1, 837, 838, 839, -1, 840, 841, 842, -1, 843, 844, 845, -1, 846, 847, 848, -1, 849, 850, 851, -1, 852, 853, 854, -1, 855, 856, 857, -1, 858, 859, 860, -1, 861, 862, 863, -1, 864, 865, 866, -1, 867, 868, 869, -1, 870, 871, 872, -1, 873, 874, 875, -1, 876, 877, 878, -1, 879, 880, 881, -1, 882, 883, 884, -1, 885, 886, 887, -1, 888, 889, 890, -1, 891, 892, 893, -1, 894, 895, 896, -1, 897, 898, 899, -1, 900, 901, 902, -1, 903, 904, 905, -1, 906, 907, 908, -1, 909, 910, 911, -1, 912, 913, 914, -1, 915, 916, 917, -1, 918, 919, 920, -1, 921, 922, 923, -1, 924, 925, 926, -1, 927, 928, 929, -1, 930, 931, 932, -1, 933, 934, 935, -1, 936, 937, 938, -1, 939, 940, 941, -1, 942, 943, 944, -1, 945, 946, 947, -1, 948, 949, 950, -1, 951, 952, 953, -1, 954, 955, 956, -1, 957, 958, 959, -1, 960, 961, 962, -1, 963, 964, 965, -1, 966, 967, 968, -1, 969, 970, 971, -1, 972, 973, 974, -1, 975, 976, 977, -1, 978, 979, 980, -1, 981, 982, 983, -1, 984, 985, 986, -1, 987, 988, 989, -1, 990, 991, 992, -1, 993, 994, 995, -1, 996, 997, 998, -1, 999, 1000, 1001, -1, 1002, 1003, 1004, -1, 1005, 1006, 1007, -1, 1008, 1009, 1010, -1, 1011, 1012, 1013, -1, 1014, 1015, 1016, -1, 1017, 1018, 1019, -1, 1020, 1021, 1022, -1, 1023, 1024, 1025, -1, 1026, 1027, 1028, -1, 1029, 1030, 1031, -1, 1032, 1033, 1034, -1, 1035, 1036, 1037, -1, 1038, 1039, 1040, -1, 1041, 1042, 1043, -1, 1044, 1045, 1046, -1, 1047, 1048, 1049, -1, 1050, 1051, 1052, -1, 1053, 1054, 1055, -1, 1056, 1057, 1058, -1, 1059, 1060, 1061, -1, 1062, 1063, 1064, -1, 1065, 1066, 1067, -1, 1068, 1069, 1070, -1, 1071, 1072, 1073, -1
+                        ]
+                        creaseAngle 0.57
+                      }
+                    }
+                  ]
+                }
+                DEF CYLINDER Pose {
+                  translation 0.01 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg"
+                          ]
+                        }
+                        occlusionMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg"
+                          ]
+                        }
+                        textureTransform TextureTransform {
+                          rotation 1.5708
+                          scale 0.8 2
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.0015
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "screw2"
+              model "cap screw"
+              boundingObject Group {
+                children [
+                  USE CYLINDER
+                  Pose {
+                    translation -0.0015 0 0
+                    rotation 0 1 0 1.5708
+                    children [
+                      Cylinder {
+                        height 0.003
+                        radius 0.0025
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density 8050
+              }
+            }
+            Solid {
+              translation 0.035 0.0245 -0.0105
+              rotation 0 -1 0 -1.570787
+              children [
+                Transform {
+                  scale 0.375 0.375 0.375
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_roughness.jpg"
+                          ]
+                        }
+                        metalnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_metalness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/old_steel/old_steel_normal.jpg"
+                          ]
+                        }
+                      }
+                      geometry IndexedFaceSet {
+                        coord Coordinate {
+                          point [
+                            -0.00798 0 0, -0.00798 0.001732 0.003, -0.00798 0.003464 0, -0.00798 0.001732 -0.003, -0.00798 -0.001732 -0.003, -0.00798 -0.001732 0.003, -0.00798 -0.003464 0, 0 -0.001682 0.006279, 0 0.001682 0.006279, 0 0 0.0065, 0 -0.00325 0.005629, 0 0.00325 0.005629, 0 -0.004596 0.004596, 0 0.004596 0.004596, 0 0 0, 0 -0.005629 0.00325, 0 -0.006279 0.001682, 0 -0.0065 0, 0 -0.006279 -0.001682, 0 -0.005629 -0.00325, 0 -0.004596 -0.004596, 0 0.005629 0.00325, 0 0.006279 0.001682, 0 0.0065 0, 0 0.006279 -0.001682, 0 0.005629 -0.00325, 0 0.004596 -0.004596, 0 -0.00325 -0.005629, 0 0.00325 -0.005629, 0 -0.001682 -0.006279, 0 0.001682 -0.006279, 0 0 -0.0065, -0.00398 -0.001732 0.003, -0.00398 0.001732 0.003, -0.00398 0.001732 -0.003, -0.00398 -0.001732 -0.003, -0.00398 0.003464 0, -0.00398 -0.003464 0, -0.007566 0.006179 0.001406, -0.007561 0.006083 0.00179, -0.007232 0.006279 0.001682, -0.00784 0.005933 0.001259, -0.00798 0.005607 0.001281, -0.007845 0.005828 0.001638, -0.00798 0.004913 0.002955, -0.007842 0.00511 0.003243, -0.007845 0.005302 0.002906, -0.007563 0.005377 0.003353, -0.007232 0.005629 0.00325, -0.007561 0.005574 0.003018, -0.007232 0.0065 0, -0.007566 0.006339 -0.000193, -0.007566 0.006339 0.000193, -0.00784 0.006074 -0.000193, -0.00798 0.005775 0, -0.00784 0.006074 0.000193, -0.00784 0.005933 -0.001259, -0.007845 0.005828 -0.001638, -0.00798 0.005607 -0.001281, -0.007566 0.006179 -0.001406, -0.007232 0.006279 -0.001682, -0.007561 0.006083 -0.00179, -0.00798 0.004913 -0.002955, -0.007845 0.005302 -0.002906, -0.007842 0.00511 -0.003243, -0.007561 0.005574 -0.003018, -0.007232 0.005629 -0.00325, -0.007563 0.005377 -0.003353, -0.007563 -0.005584 -0.003001, -0.007563 -0.005391 -0.003335, -0.007232 -0.005629 -0.00325, -0.007842 -0.00534 -0.00286, -0.00798 -0.004976 -0.002873, -0.007842 -0.005147 -0.003195, -0.00798 -0.003936 -0.004228, -0.007837 -0.004073 -0.004517, -0.007842 -0.004348 -0.004237, -0.007569 -0.00431 -0.004649, -0.007232 -0.004596 -0.004596, -0.007563 -0.004594 -0.004374, -0.007569 0.00431 -0.004649, -0.007563 0.004594 -0.004374, -0.007232 0.004596 -0.004596, -0.007837 0.004073 -0.004517, -0.00798 0.003936 -0.004228, -0.007842 0.004348 -0.004237, -0.00798 -0.0029 -0.005023, -0.007837 -0.002878 -0.005371, -0.007837 -0.003212 -0.005177, -0.007569 -0.003003 -0.005588, -0.007232 -0.00325 -0.005629, -0.007569 -0.003338 -0.005395, -0.007837 0.003212 -0.005177, -0.007837 0.002878 -0.005371, -0.00798 0.0029 -0.005023, -0.007569 0.003338 -0.005395, -0.007232 0.00325 -0.005629, -0.007569 0.003003 -0.005588, -0.007842 -0.001495 -0.005883, -0.007837 -0.001876 -0.005786, -0.00798 -0.001694 -0.005523, -0.007563 -0.001491 -0.006165, -0.007232 -0.001682 -0.006279, -0.007569 -0.001871 -0.006057, -0.007837 0.001876 -0.005786, -0.007842 0.001495 -0.005883, -0.00798 0.001694 -0.005523, -0.007569 0.001871 -0.006057, -0.007232 0.001682 -0.006279, -0.007563 0.001491 -0.006165, -0.007232 0 -0.0065, -0.007563 -0.000193 -0.006336, -0.007563 0.000193 -0.006336, -0.007842 -0.000193 -0.006055, -0.00798 0 -0.005746, -0.007842 0.000193 -0.006055, -0.007569 0.001871 0.006057, -0.007563 0.001491 0.006165, -0.007232 0.001682 0.006279, -0.007837 0.001876 0.005786, -0.00798 0.001694 0.005523, -0.007842 0.001495 0.005883, -0.00784 -0.001876 0.005768, -0.007845 -0.001495 0.005866, -0.00798 -0.001694 0.005496, -0.007566 -0.001872 0.006055, -0.007232 -0.001682 0.006279, -0.007561 -0.001491 0.006163, -0.007232 0 0.0065, -0.007563 0.000215 0.006333, -0.007561 -0.000174 0.006336, -0.007842 0.000253 0.006047, -0.00798 0.000103 0.005733, -0.007845 -0.000135 0.006045, -0.007232 -0.00325 0.005629, -0.007566 -0.003002 0.005586, -0.007566 -0.003337 0.005393, -0.00784 -0.00287 0.005357, -0.00798 -0.002888 0.005002, -0.00784 -0.003204 0.005163, -0.007837 0.002878 0.005371, -0.007837 0.003212 0.005177, -0.00798 0.0029 0.005023, -0.007569 0.003003 0.005588, -0.007232 0.00325 0.005629, -0.007569 0.003338 0.005395, -0.007845 -0.004332 0.004228, -0.00784 -0.004057 0.004509, -0.00798 -0.003912 0.004215, -0.007561 -0.004592 0.004373, -0.007232 -0.004596 0.004596, -0.007566 -0.004307 0.004648, -0.007837 0.004073 0.004517, -0.007842 0.004348 0.004237, -0.00798 0.003936 0.004228, -0.007569 0.00431 0.004649, -0.007232 0.004596 0.004596, -0.007563 0.004594 0.004374, -0.00798 -0.005016 0.002777, -0.007842 -0.005363 0.002804, -0.007845 -0.005168 0.003139, -0.007563 -0.005592 0.002981, -0.007232 -0.005629 0.00325, -0.007561 -0.0054 0.003319, -0.00798 -0.00563 0.001295, -0.007837 -0.005948 0.001269, -0.007842 -0.005843 0.001647, -0.007569 -0.006181 0.001408, -0.007232 -0.006279 0.001682, -0.007563 -0.006085 0.001791, -0.007569 -0.006341 0.000193, -0.007569 -0.006341 -0.000193, -0.007232 -0.0065 0, -0.007837 -0.00609 0.000193, -0.00798 -0.0058 0, -0.007837 -0.00609 -0.000193, -0.00798 -0.00563 -0.001295, -0.007842 -0.005843 -0.001647, -0.007837 -0.005948 -0.001269, -0.007563 -0.006085 -0.001791, -0.007232 -0.006279 -0.001682, -0.007569 -0.006181 -0.001408
+                          ]
+                        }
+                        texCoord TextureCoordinate {
+                          point [
+                            0.6664 0.6845, 0.4572 0.6418, 0.6636 0.6418, 0.4776 0.132, 0.5495 0.1403, 0.4656 0.1759, 0.5704 0.3533, 0.5306 0.3306, 0.6154 0.2973, 0.3758 0.488, 0.1762 0.4499, 0.381 0.4499, 0.7918 0.1729, 0.7918 0.2183, 0.7202 0.1625, 0.6826 0.5142, 0.6814 0.5435, 0.6729 0.5422, 0.4613 0.4606, 0.6723 0.4283, 0.6678 0.4606, 0.6626 0.5468, 0.458 0.501, 0.6645 0.501, 0.3758 0.6721, 0.1762 0.7102, 0.1709 0.6721, 0.3985 0.6954, 0.3902 0.7021, 0.3865 0.6746, 0.3921 0.6332, 0.3942 0.6616, 0.3855 0.6651, 0.3909 0.5872, 0.3917 0.6224, 0.3824 0.6223, 0.3854 0.4951, 0.3943 0.4988, 0.3922 0.5269, 0.7438 0.927, 0.9532 0.9688, 0.7467 0.9697, 0.6885 0.3511, 0.6154 0.2973, 0.7072 0.2597, 0.6066 0.3629, 0.6154 0.2973, 0.6441 0.3629, 0.7414 0.3306, 0.7632 0.309, 0.7692 0.3136, 0.391 0.5763, 0.3815 0.5751, 0.3824 0.5378, 0.9677 0.5738, 0.9688 0.6031, 0.9601 0.6061, 0.4938 0.2943, 0.5365 0.2376, 0.5306 0.3306, 0.4752 0.2626, 0.5365 0.2376, 0.4938 0.2943, 0.7423 0.5664, 0.9486 0.5186, 0.9487 0.5667, 0.7423 0.5183, 0.9502 0.472, 0.9486 0.5186, 0.7297 0.0606, 0.6971 0.0421, 0.7021 0.0358, 0.6623 0.5948, 0.4562 0.5468, 0.6626 0.5468, 0.6724 0.5988, 0.6813 0.596, 0.6823 0.6323, 0.5652 0.0497, 0.6413 0.1028, 0.5495 0.1403, 0.676 0.6783, 0.6738 0.6453, 0.6827 0.6426, 0.458 0.501, 0.6626 0.5468, 0.4562 0.5468, 0.9629 0.4371, 0.9713 0.4414, 0.9693 0.4682, 0.0413 0.2812, 0.0287 0.2348, 0.2136 0.2108, 0.3271 0.3568, 0.285 0.3809, 0.2136 0.2108, 0.3271 0.0648, 0.3615 0.0988, 0.2136 0.2108, 0.3985 0.2348, 0.3859 0.2812, 0.2136 0.2108, 0.1422 0.3809, 0.1001 0.3568, 0.2136 0.2108, 0.0287 0.2348, 0.0287 0.1868, 0.2136 0.2108, 0.3985 0.1868, 0.3985 0.2348, 0.2136 0.2108, 0.2379 0.0283, 0.285 0.0408, 0.2136 0.2108, 0.3615 0.0988, 0.3859 0.1404, 0.2136 0.2108, 0.0656 0.0988, 0.1001 0.0648, 0.2136 0.2108, 0.3859 0.2812, 0.3615 0.3229, 0.2136 0.2108, 0.3615 0.3229, 0.3271 0.3568, 0.2136 0.2108, 0.1001 0.0648, 0.1422 0.0408, 0.2136 0.2108, 0.0287 0.1868, 0.0413 0.1404, 0.2136 0.2108, 0.285 0.3809, 0.2379 0.3933, 0.2136 0.2108, 0.7385 0.0673, 0.7434 0.061, 0.77 0.0872, 0.7469 0.4297, 0.9502 0.472, 0.7439 0.4717, 0.4874 0.0863, 0.5122 0.0618, 0.5151 0.069, 0.4562 0.5468, 0.6623 0.5948, 0.4559 0.5948, 0.6723 0.4283, 0.4613 0.4606, 0.4658 0.4283, 0.3725 0.6277, 0.1709 0.6721, 0.1677 0.6277, 0.4559 0.5948, 0.6636 0.6418, 0.4572 0.6418, 0.9588 0.8373, 0.9674 0.8385, 0.9673 0.8692, 0.1709 0.6721, 0.3725 0.6277, 0.3758 0.6721, 0.3714 0.5801, 0.1677 0.6277, 0.1665 0.5801, 0.9486 0.5186, 0.7423 0.5664, 0.7423 0.5183, 0.9678 0.513, 0.9588 0.5131, 0.96 0.4778, 0.7471 0.6538, 0.9503 0.6129, 0.9535 0.6541, 0.9585 0.5617, 0.9585 0.5241, 0.9677 0.5239, 0.5546 0.3642, 0.5226 0.346, 0.5285 0.3402, 0.744 0.7863, 0.9536 0.745, 0.9505 0.7854, 0.4963 0.1, 0.5495 0.1403, 0.4776 0.132, 0.4599 0.6845, 0.6705 0.72, 0.464 0.72, 0.7287 0.0709, 0.7202 0.1625, 0.6413 0.1028, 0.7634 0.1051, 0.7202 0.1625, 0.7287 0.0709, 0.6862 0.0467, 0.7287 0.0709, 0.6413 0.1028, 0.7439 0.6126, 0.9487 0.5667, 0.9503 0.6129, 0.9487 0.5667, 0.7439 0.6126, 0.7423 0.5664, 0.6705 0.72, 0.4599 0.6845, 0.6664 0.6845, 0.6636 0.6418, 0.4559 0.5948, 0.6623 0.5948, 0.3725 0.5324, 0.1665 0.5801, 0.1677 0.5324, 0.171 0.488, 0.3725 0.5324, 0.1677 0.5324, 0.9488 0.8312, 0.744 0.7863, 0.9505 0.7854, 0.7423 0.88, 0.9502 0.9261, 0.7438 0.927, 0.3725 0.5324, 0.171 0.488, 0.3758 0.488, 0.9532 0.9688, 0.7438 0.927, 0.9502 0.9261, 0.1677 0.6277, 0.3714 0.5801, 0.3725 0.6277, 0.7598 0.2996, 0.7072 0.2597, 0.7783 0.2679, 0.4572 0.6418, 0.6664 0.6845, 0.4599 0.6845, 0.9688 0.915, 0.9599 0.9188, 0.9588 0.8831, 0.7821 0.1372, 0.7202 0.1625, 0.7634 0.1051, 0.6726 0.553, 0.6812 0.5543, 0.681 0.5849, 0.9502 0.472, 0.7469 0.4297, 0.9533 0.43, 0.6849 0.869, 0.5668 0.7767, 0.6807 0.7767, 0.5668 0.7767, 0.6849 0.869, 0.571 0.869, 0.0509 0.7669, 0.169 0.8592, 0.0551 0.8592, 0.169 0.8592, 0.0509 0.7669, 0.1648 0.7669, 0.959 0.8265, 0.9602 0.7935, 0.9686 0.7985, 0.7355 0.3451, 0.7025 0.3639, 0.6983 0.3567, 0.744 0.7863, 0.9488 0.8312, 0.7423 0.8321, 0.1665 0.5801, 0.3725 0.5324, 0.3714 0.5801, 0.563 0.9439, 0.6849 0.869, 0.6769 0.9439, 0.6849 0.869, 0.563 0.9439, 0.571 0.869, 0.8587 0.0283, 0.9581 0.1398, 0.8587 0.1398, 0.9581 0.1398, 0.8587 0.0283, 0.9581 0.0283, 0.3985 0.914, 0.3124 0.7669, 0.3985 0.8159, 0.3124 0.7669, 0.3985 0.914, 0.2263 0.8159, 0.2263 0.8159, 0.3985 0.914, 0.3124 0.9631, 0.2263 0.8159, 0.3124 0.9631, 0.2263 0.914, 0.0471 0.9341, 0.169 0.8592, 0.1609 0.9341, 0.169 0.8592, 0.0471 0.9341, 0.0551 0.8592, 0.8587 0.2579, 0.9574 0.3717, 0.8587 0.3703, 0.9574 0.3717, 0.8587 0.2579, 0.9574 0.2594, 0.6441 0.3629, 0.6154 0.2973, 0.6885 0.3511, 0.9487 0.8792, 0.7423 0.8321, 0.9488 0.8312, 0.4656 0.2273, 0.5365 0.2376, 0.4752 0.2626, 0.9536 0.745, 0.744 0.7863, 0.7471 0.7459, 0.2379 0.3933, 0.1892 0.3933, 0.2136 0.2108, 0.285 0.0408, 0.3271 0.0648, 0.2136 0.2108, 0.3859 0.1404, 0.3985 0.1868, 0.2136 0.2108, 0.0413 0.1404, 0.0656 0.0988, 0.2136 0.2108, 0.1422 0.0408, 0.1892 0.0283, 0.2136 0.2108, 0.0656 0.3229, 0.0413 0.2812, 0.2136 0.2108, 0.1892 0.3933, 0.1422 0.3809, 0.2136 0.2108, 0.1001 0.3568, 0.0656 0.3229, 0.2136 0.2108, 0.1892 0.0283, 0.2379 0.0283, 0.2136 0.2108, 0.458 0.501, 0.6678 0.4606, 0.6645 0.501, 0.7515 0.6872, 0.9535 0.6541, 0.9579 0.6875, 0.7336 0.3254, 0.6885 0.3511, 0.7072 0.2597, 0.9502 0.9261, 0.7423 0.88, 0.9487 0.8792, 0.1762 0.4499, 0.3758 0.488, 0.171 0.488, 0.5306 0.3306, 0.5365 0.2376, 0.6154 0.2973, 0.6862 0.0467, 0.6413 0.1028, 0.6501 0.0372, 0.9535 0.6541, 0.7515 0.6872, 0.7471 0.6538, 0.5228 0.0739, 0.5652 0.0497, 0.5495 0.1403, 0.1762 0.7102, 0.3758 0.6721, 0.381 0.7102, 0.5228 0.0739, 0.5495 0.1403, 0.4963 0.1, 0.7783 0.2679, 0.7072 0.2597, 0.7918 0.2183, 0.4656 0.1759, 0.5495 0.1403, 0.5365 0.2376, 0.6501 0.0372, 0.6413 0.1028, 0.6126 0.0372, 0.7918 0.2183, 0.7072 0.2597, 0.7202 0.1625, 0.5704 0.3533, 0.6154 0.2973, 0.6066 0.3629, 0.7336 0.3254, 0.7072 0.2597, 0.7598 0.2996, 0.6678 0.4606, 0.458 0.501, 0.4613 0.4606, 0.4656 0.2273, 0.4656 0.1759, 0.5365 0.2376, 0.6126 0.0372, 0.6413 0.1028, 0.5652 0.0497, 0.7918 0.1729, 0.7202 0.1625, 0.7821 0.1372, 0.9502 0.472, 0.7423 0.5183, 0.7439 0.4717, 0.9503 0.6129, 0.7471 0.6538, 0.7439 0.6126, 0.7423 0.8321, 0.9487 0.8792, 0.7423 0.88, 0.9606 0.6161, 0.9693 0.6131, 0.9713 0.6393, 0.9629 0.6458, 0.9636 0.6547, 0.9535 0.6541, 0.4849 0.2972, 0.4938 0.2943, 0.4918 0.306, 0.5306 0.3306, 0.5285 0.3402, 0.5197 0.3335, 0.963 0.7526, 0.9536 0.745, 0.9638 0.7442, 0.9503 0.6129, 0.9601 0.6061, 0.9606 0.6161, 0.4652 0.2608, 0.4752 0.2626, 0.4695 0.2709, 0.4572 0.2314, 0.4559 0.2203, 0.4656 0.2273, 0.9589 0.5727, 0.9487 0.5667, 0.9585 0.5617, 0.4656 0.1759, 0.4559 0.1814, 0.4573 0.1705, 0.9585 0.5241, 0.9486 0.5186, 0.9588 0.5131, 0.6781 0.4595, 0.6772 0.4678, 0.6678 0.4606, 0.7385 0.0673, 0.7287 0.0709, 0.7297 0.0606, 0.6862 0.0467, 0.6867 0.0377, 0.6971 0.0421, 0.6742 0.5092, 0.6645 0.501, 0.6747 0.499, 0.9607 0.4674, 0.96 0.4778, 0.9502 0.472, 0.4708 0.126, 0.4776 0.132, 0.4666 0.1363, 0.6501 0.0372, 0.6456 0.0283, 0.6566 0.0297, 0.6726 0.553, 0.6626 0.5468, 0.6729 0.5422, 0.4863 0.0994, 0.4931 0.0907, 0.4963 0.1, 0.9629 0.4371, 0.9533 0.43, 0.9638 0.4283, 0.6034 0.0299, 0.6145 0.0283, 0.6126 0.0372, 0.6724 0.5988, 0.6623 0.5948, 0.6724 0.5876, 0.5151 0.069, 0.5241 0.0623, 0.5228 0.0739, 0.677 0.6874, 0.6664 0.6845, 0.676 0.6783, 0.6636 0.6418, 0.6734 0.635, 0.6738 0.6453, 0.567 0.0395, 0.5652 0.0497, 0.5567 0.0437, 0.9588 0.872, 0.9588 0.8831, 0.9487 0.8792, 0.6421 0.3717, 0.6441 0.3629, 0.6533 0.3701, 0.7414 0.3306, 0.7324 0.3373, 0.7336 0.3254, 0.9637 0.9717, 0.9532 0.9688, 0.9627 0.9626, 0.9502 0.9261, 0.9599 0.9188, 0.9604 0.9291, 0.688 0.3609, 0.6885 0.3511, 0.6983 0.3567, 0.3758 0.488, 0.3864 0.4856, 0.3854 0.4951, 0.7632 0.309, 0.7598 0.2996, 0.77 0.3004, 0.611 0.3717, 0.6 0.3703, 0.6066 0.3629, 0.9588 0.8373, 0.9488 0.8312, 0.959 0.8265, 0.7896 0.2637, 0.7854 0.274, 0.7783 0.2679, 0.3824 0.5378, 0.3725 0.5324, 0.3831 0.5271, 0.57 0.3623, 0.5596 0.358, 0.5704 0.3533, 0.9602 0.7935, 0.9505 0.7854, 0.9606 0.7833, 0.7918 0.2183, 0.8013 0.2152, 0.7998 0.2261, 0.3816 0.5862, 0.3714 0.5801, 0.3815 0.5751, 0.7918 0.1729, 0.7999 0.1687, 0.8013 0.1798, 0.3831 0.6331, 0.3725 0.6277, 0.3824 0.6223, 0.3855 0.6651, 0.3865 0.6746, 0.3758 0.6721, 0.7919 0.1391, 0.7821 0.1372, 0.7876 0.129, 0.7634 0.1051, 0.7651 0.0936, 0.7721 0.1024, 0.3915 0.7102, 0.381 0.7102, 0.3902 0.7021, 0.7434 0.061, 0.7385 0.0673, 0.7297 0.0606, 0.7287 0.0709, 0.6862 0.0467, 0.6971 0.0421, 0.6742 0.5092, 0.6747 0.499, 0.6834 0.5042, 0.6645 0.501, 0.6678 0.4606, 0.6772 0.4678, 0.48 0.3037, 0.4849 0.2972, 0.4918 0.306, 0.5306 0.3306, 0.5197 0.3335, 0.4918 0.306, 0.5226 0.346, 0.5137 0.3393, 0.5197 0.3335, 0.9535 0.6541, 0.9636 0.6547, 0.9671 0.6809, 0.7444 0.3381, 0.7355 0.3451, 0.7324 0.3373, 0.9532 0.9688, 0.9502 0.9261, 0.9604 0.9291, 0.9599 0.9188, 0.9688 0.915, 0.9694 0.9253, 0.6885 0.3511, 0.7336 0.3254, 0.7324 0.3373, 0.9588 0.872, 0.9673 0.8692, 0.9677 0.8803, 0.6885 0.3511, 0.688 0.3609, 0.6533 0.3701, 0.9487 0.8792, 0.9588 0.8831, 0.9599 0.9188, 0.3919 0.5377, 0.3824 0.5378, 0.3831 0.5271, 0.3758 0.488, 0.3854 0.4951, 0.3831 0.5271, 0.3953 0.4893, 0.3943 0.4988, 0.3854 0.4951, 0.7783 0.2679, 0.7854 0.274, 0.77 0.3004, 0.9602 0.7935, 0.9606 0.7833, 0.9694 0.7885, 0.9505 0.7854, 0.9536 0.745, 0.963 0.7526, 0.5306 0.3306, 0.5704 0.3533, 0.5596 0.358, 0.6862 0.0467, 0.6501 0.0372, 0.6566 0.0297, 0.6726 0.553, 0.6729 0.5422, 0.6814 0.5435, 0.6626 0.5468, 0.6645 0.501, 0.6742 0.5092, 0.9503 0.6129, 0.9606 0.6161, 0.9629 0.6458, 0.9688 0.6031, 0.9693 0.6131, 0.9606 0.6161, 0.4938 0.2943, 0.4849 0.2972, 0.4695 0.2709, 0.5122 0.0618, 0.5211 0.0549, 0.5241 0.0623, 0.6664 0.6845, 0.6636 0.6418, 0.6738 0.6453, 0.6823 0.6323, 0.6827 0.6426, 0.6738 0.6453, 0.5652 0.0497, 0.5228 0.0739, 0.5241 0.0623, 0.3942 0.6616, 0.3952 0.671, 0.3865 0.6746, 0.7634 0.1051, 0.7721 0.1024, 0.7876 0.129, 0.7651 0.0936, 0.77 0.0872, 0.7767 0.0962, 0.3758 0.6721, 0.3865 0.6746, 0.3902 0.7021, 0.4863 0.0994, 0.4806 0.095, 0.4874 0.0863, 0.6705 0.72, 0.6664 0.6845, 0.677 0.6874, 0.5228 0.0739, 0.4963 0.1, 0.4931 0.0907, 0.7918 0.2183, 0.7998 0.2261, 0.7896 0.2637, 0.3816 0.5862, 0.3815 0.5751, 0.391 0.5763, 0.3725 0.5324, 0.3824 0.5378, 0.3815 0.5751, 0.9607 0.4674, 0.9693 0.4682, 0.9689 0.4786, 0.4656 0.1759, 0.4573 0.1705, 0.4666 0.1363, 0.9677 0.5239, 0.9585 0.5241, 0.9588 0.5131, 0.9502 0.472, 0.96 0.4778, 0.9588 0.5131, 0.6813 0.596, 0.6724 0.5988, 0.6724 0.5876, 0.6626 0.5468, 0.6726 0.553, 0.6724 0.5876, 0.6126 0.0372, 0.6145 0.0283, 0.6456 0.0283, 0.7918 0.2183, 0.7918 0.1729, 0.8013 0.1798, 0.3831 0.6331, 0.3824 0.6223, 0.3917 0.6224, 0.3725 0.6277, 0.3714 0.5801, 0.3816 0.5862, 0.9588 0.8373, 0.959 0.8265, 0.9676 0.8278, 0.9488 0.8312, 0.9505 0.7854, 0.9602 0.7935, 0.5704 0.3533, 0.6066 0.3629, 0.6 0.3703, 0.7336 0.3254, 0.7598 0.2996, 0.7632 0.309, 0.3758 0.488, 0.381 0.4499, 0.3902 0.4581, 0.7287 0.0709, 0.7385 0.0673, 0.7651 0.0936, 0.6723 0.4283, 0.6816 0.4345, 0.6781 0.4595, 0.9589 0.5727, 0.9585 0.5617, 0.9677 0.5628, 0.9487 0.5667, 0.9486 0.5186, 0.9585 0.5241, 0.4656 0.1759, 0.4656 0.2273, 0.4559 0.2203, 0.6623 0.5948, 0.6724 0.5988, 0.6734 0.635, 0.5652 0.0497, 0.567 0.0395, 0.6034 0.0299, 0.7918 0.1729, 0.7821 0.1372, 0.7919 0.1391, 0.3758 0.6721, 0.3725 0.6277, 0.3831 0.6331, 0.9533 0.43, 0.9629 0.4371, 0.9607 0.4674, 0.4776 0.132, 0.4708 0.126, 0.4863 0.0994, 0.4656 0.2273, 0.4752 0.2626, 0.4652 0.2608, 0.9503 0.6129, 0.9487 0.5667, 0.9589 0.5727, 0.9488 0.8312, 0.9588 0.8373, 0.9588 0.872, 0.6441 0.3629, 0.6421 0.3717, 0.611 0.3717, 0.5197 0.3335, 0.5137 0.3393, 0.4868 0.3127, 0.6742 0.5092, 0.6826 0.5142, 0.6729 0.5422, 0.3952 0.671, 0.3985 0.6954, 0.3865 0.6746, 0.3831 0.6331, 0.3921 0.6332, 0.3855 0.6651, 0.3816 0.5862, 0.3909 0.5872, 0.3824 0.6223, 0.3831 0.5271, 0.3854 0.4951, 0.3922 0.5269, 0.7444 0.3381, 0.7414 0.3306, 0.7692 0.3136, 0.3919 0.5377, 0.391 0.5763, 0.3824 0.5378, 0.9589 0.5727, 0.9677 0.5738, 0.9601 0.6061, 0.7346 0.0543, 0.7297 0.0606, 0.7021 0.0358, 0.6734 0.635, 0.6724 0.5988, 0.6823 0.6323, 0.6849 0.6757, 0.676 0.6783, 0.6827 0.6426, 0.9607 0.4674, 0.9629 0.4371, 0.9693 0.4682, 0.7651 0.0936, 0.7385 0.0673, 0.77 0.0872, 0.4931 0.0907, 0.4874 0.0863, 0.5151 0.069, 0.9588 0.872, 0.9588 0.8373, 0.9673 0.8692, 0.9689 0.4786, 0.9678 0.513, 0.96 0.4778, 0.9677 0.5628, 0.9585 0.5617, 0.9677 0.5239, 0.5596 0.358, 0.5546 0.3642, 0.5285 0.3402, 0.9677 0.8803, 0.9688 0.915, 0.9588 0.8831, 0.6724 0.5876, 0.6726 0.553, 0.681 0.5849, 0.9676 0.8278, 0.959 0.8265, 0.9686 0.7985, 0.7324 0.3373, 0.7355 0.3451, 0.6983 0.3567, 0.9629 0.6458, 0.9606 0.6161, 0.9713 0.6393, 0.7346 0.0543, 0.7434 0.061, 0.7297 0.0606, 0.7297 0.0606, 0.7287 0.0709, 0.6971 0.0421, 0.6826 0.5142, 0.6742 0.5092, 0.6834 0.5042, 0.6747 0.499, 0.6645 0.501, 0.6772 0.4678, 0.4868 0.3127, 0.48 0.3037, 0.4918 0.306, 0.4938 0.2943, 0.5306 0.3306, 0.4918 0.306, 0.5285 0.3402, 0.5226 0.346, 0.5197 0.3335, 0.9579 0.6875, 0.9535 0.6541, 0.9671 0.6809, 0.7414 0.3306, 0.7444 0.3381, 0.7324 0.3373, 0.9627 0.9626, 0.9532 0.9688, 0.9604 0.9291, 0.9604 0.9291, 0.9599 0.9188, 0.9694 0.9253, 0.6983 0.3567, 0.6885 0.3511, 0.7324 0.3373, 0.9588 0.8831, 0.9588 0.872, 0.9677 0.8803, 0.6441 0.3629, 0.6885 0.3511, 0.6533 0.3701, 0.9502 0.9261, 0.9487 0.8792, 0.9599 0.9188, 0.3922 0.5269, 0.3919 0.5377, 0.3831 0.5271, 0.3725 0.5324, 0.3758 0.488, 0.3831 0.5271, 0.3864 0.4856, 0.3953 0.4893, 0.3854 0.4951, 0.7598 0.2996, 0.7783 0.2679, 0.77 0.3004, 0.9686 0.7985, 0.9602 0.7935, 0.9694 0.7885, 0.9606 0.7833, 0.9505 0.7854, 0.963 0.7526, 0.5285 0.3402, 0.5306 0.3306, 0.5596 0.358, 0.6867 0.0377, 0.6862 0.0467, 0.6566 0.0297, 0.6812 0.5543, 0.6726 0.553, 0.6814 0.5435, 0.6729 0.5422, 0.6626 0.5468, 0.6742 0.5092, 0.9535 0.6541, 0.9503 0.6129, 0.9629 0.6458, 0.9601 0.6061, 0.9688 0.6031, 0.9606 0.6161, 0.4752 0.2626, 0.4938 0.2943, 0.4695 0.2709, 0.5151 0.069, 0.5122 0.0618, 0.5241 0.0623, 0.676 0.6783, 0.6664 0.6845, 0.6738 0.6453, 0.6734 0.635, 0.6823 0.6323, 0.6738 0.6453, 0.5567 0.0437, 0.5652 0.0497, 0.5241 0.0623, 0.3855 0.6651, 0.3942 0.6616, 0.3865 0.6746, 0.7821 0.1372, 0.7634 0.1051, 0.7876 0.129, 0.7721 0.1024, 0.7651 0.0936, 0.7767 0.0962, 0.381 0.7102, 0.3758 0.6721, 0.3902 0.7021, 0.4931 0.0907, 0.4863 0.0994, 0.4874 0.0863, 0.6799 0.7131, 0.6705 0.72, 0.677 0.6874, 0.5151 0.069, 0.5228 0.0739, 0.4931 0.0907, 0.7783 0.2679, 0.7918 0.2183, 0.7896 0.2637, 0.3909 0.5872, 0.3816 0.5862, 0.391 0.5763, 0.3714 0.5801, 0.3725 0.5324, 0.3815 0.5751, 0.96 0.4778, 0.9607 0.4674, 0.9689 0.4786, 0.4776 0.132, 0.4656 0.1759, 0.4666 0.1363, 0.9678 0.513, 0.9677 0.5239, 0.9588 0.5131, 0.9486 0.5186, 0.9502 0.472, 0.9588 0.5131, 0.681 0.5849, 0.6813 0.596, 0.6724 0.5876, 0.6623 0.5948, 0.6626 0.5468, 0.6724 0.5876, 0.6501 0.0372, 0.6126 0.0372, 0.6456 0.0283, 0.8013 0.2152, 0.7918 0.2183, 0.8013 0.1798, 0.3921 0.6332, 0.3831 0.6331, 0.3917 0.6224, 0.3824 0.6223, 0.3725 0.6277, 0.3816 0.5862, 0.9674 0.8385, 0.9588 0.8373, 0.9676 0.8278, 0.959 0.8265, 0.9488 0.8312, 0.9602 0.7935, 0.57 0.3623, 0.5704 0.3533, 0.6 0.3703, 0.7414 0.3306, 0.7336 0.3254, 0.7632 0.309, 0.3864 0.4856, 0.3758 0.488, 0.3902 0.4581, 0.7634 0.1051, 0.7287 0.0709, 0.7651 0.0936, 0.6678 0.4606, 0.6723 0.4283, 0.6781 0.4595, 0.9677 0.5738, 0.9589 0.5727, 0.9677 0.5628, 0.9585 0.5617, 0.9487 0.5667, 0.9585 0.5241, 0.4559 0.1814, 0.4656 0.1759, 0.4559 0.2203, 0.6636 0.6418, 0.6623 0.5948, 0.6734 0.635, 0.6126 0.0372, 0.5652 0.0497, 0.6034 0.0299, 0.7999 0.1687, 0.7918 0.1729, 0.7919 0.1391, 0.3855 0.6651, 0.3758 0.6721, 0.3831 0.6331, 0.9502 0.472, 0.9533 0.43, 0.9607 0.4674, 0.4963 0.1, 0.4776 0.132, 0.4863 0.0994, 0.4572 0.2314, 0.4656 0.2273, 0.4652 0.2608, 0.9601 0.6061, 0.9503 0.6129, 0.9589 0.5727, 0.9487 0.8792, 0.9488 0.8312, 0.9588 0.872, 0.6066 0.3629, 0.6441 0.3629, 0.611 0.3717, 0.4918 0.306, 0.5197 0.3335, 0.4868 0.3127
+                          ]
+                        }
+                        coordIndex [
+                          108, 31, 110, -1, 84, 3, 62, -1, 154, 44, 1, -1, 134, 7, 126, -1, 164, 158, 6, -1, 75, 88, 91, -1, 19, 180, 70, -1, 90, 20, 78, -1, 172, 18, 17, -1, 178, 181, 171, -1, 165, 173, 170, -1, 159, 166, 169, -1, 136, 139, 147, -1, 9, 126, 7, -1, 132, 1, 5, -1, 142, 1, 120, -1, 122, 137, 135, -1, 160, 163, 149, -1, 56, 53, 51, -1, 42, 2, 44, -1, 54, 2, 42, -1, 24, 66, 60, -1, 25, 82, 66, -1, 73, 76, 79, -1, 102, 27, 90, -1, 101, 98, 113, -1, 114, 4, 3, -1, 109, 112, 115, -1, 20, 90, 27, -1, 95, 92, 83, -1, 25, 24, 14, -1, 20, 27, 14, -1, 10, 12, 14, -1, 17, 18, 14, -1, 30, 28, 14, -1, 24, 23, 14, -1, 16, 17, 14, -1, 9, 7, 14, -1, 12, 15, 14, -1, 21, 13, 14, -1, 18, 19, 14, -1, 19, 20, 14, -1, 13, 11, 14, -1, 23, 22, 14, -1, 27, 29, 14, -1, 71, 68, 179, -1, 28, 82, 26, -1, 97, 107, 104, -1, 27, 102, 29, -1, 180, 19, 18, -1, 168, 17, 16, -1, 29, 110, 31, -1, 143, 140, 119, -1, 17, 168, 172, -1, 162, 16, 15, -1, 66, 24, 25, -1, 64, 67, 81, -1, 22, 50, 40, -1, 61, 65, 63, -1, 157, 47, 45, -1, 13, 48, 156, -1, 94, 3, 84, -1, 30, 96, 28, -1, 72, 6, 4, -1, 176, 6, 72, -1, 74, 72, 4, -1, 23, 60, 50, -1, 60, 23, 24, -1, 96, 30, 108, -1, 110, 29, 102, -1, 150, 15, 12, -1, 10, 150, 12, -1, 144, 13, 156, -1, 8, 128, 9, -1, 150, 10, 134, -1, 126, 9, 128, -1, 16, 162, 168, -1, 138, 5, 148, -1, 31, 108, 30, -1, 131, 129, 117, -1, 174, 6, 176, -1, 89, 87, 99, -1, 82, 28, 96, -1, 1, 32, 5, -1, 32, 1, 33, -1, 34, 4, 35, -1, 4, 34, 3, -1, 145, 155, 152, -1, 127, 130, 133, -1, 13, 144, 11, -1, 15, 150, 162, -1, 36, 1, 2, -1, 1, 36, 33, -1, 34, 2, 3, -1, 2, 34, 36, -1, 36, 32, 33, -1, 32, 36, 37, -1, 37, 36, 34, -1, 37, 34, 35, -1, 37, 4, 6, -1, 4, 37, 35, -1, 32, 6, 5, -1, 6, 32, 37, -1, 120, 1, 132, -1, 118, 11, 144, -1, 58, 2, 54, -1, 48, 13, 21, -1, 29, 31, 14, -1, 7, 10, 14, -1, 15, 16, 14, -1, 22, 21, 14, -1, 11, 8, 14, -1, 26, 25, 14, -1, 31, 30, 14, -1, 28, 26, 14, -1, 8, 9, 14, -1, 20, 70, 78, -1, 21, 40, 48, -1, 124, 132, 5, -1, 128, 8, 118, -1, 7, 134, 10, -1, 44, 2, 1, -1, 74, 4, 86, -1, 40, 21, 22, -1, 106, 114, 3, -1, 18, 172, 180, -1, 106, 3, 94, -1, 148, 5, 158, -1, 62, 3, 2, -1, 86, 4, 100, -1, 158, 5, 6, -1, 154, 1, 142, -1, 124, 5, 138, -1, 70, 20, 19, -1, 58, 62, 2, -1, 100, 4, 114, -1, 164, 6, 174, -1, 82, 25, 26, -1, 50, 22, 23, -1, 11, 118, 8, -1, 52, 55, 41, -1, 38, 39, 40, -1, 41, 42, 43, -1, 44, 45, 46, -1, 47, 48, 49, -1, 50, 51, 52, -1, 53, 54, 55, -1, 56, 57, 58, -1, 59, 60, 61, -1, 62, 63, 64, -1, 65, 66, 67, -1, 68, 69, 70, -1, 71, 72, 73, -1, 74, 75, 76, -1, 77, 78, 79, -1, 80, 81, 82, -1, 83, 84, 85, -1, 86, 87, 88, -1, 89, 90, 91, -1, 92, 93, 94, -1, 95, 96, 97, -1, 98, 99, 100, -1, 101, 102, 103, -1, 104, 105, 106, -1, 107, 108, 109, -1, 110, 111, 112, -1, 113, 114, 115, -1, 116, 117, 118, -1, 119, 120, 121, -1, 122, 123, 124, -1, 125, 126, 127, -1, 128, 129, 130, -1, 131, 132, 133, -1, 134, 135, 136, -1, 137, 138, 139, -1, 140, 141, 142, -1, 143, 144, 145, -1, 146, 147, 148, -1, 149, 150, 151, -1, 152, 153, 154, -1, 155, 156, 157, -1, 158, 159, 160, -1, 161, 162, 163, -1, 164, 165, 166, -1, 167, 168, 169, -1, 170, 171, 172, -1, 173, 174, 175, -1, 176, 177, 178, -1, 179, 180, 181, -1, 68, 71, 73, -1, 72, 74, 76, -1, 77, 79, 76, -1, 78, 70, 69, -1, 38, 41, 43, -1, 44, 46, 43, -1, 47, 49, 46, -1, 40, 39, 49, -1, 125, 127, 123, -1, 126, 128, 130, -1, 129, 131, 133, -1, 132, 124, 123, -1, 116, 119, 121, -1, 132, 131, 121, -1, 118, 117, 129, -1, 146, 149, 151, -1, 134, 136, 151, -1, 137, 139, 136, -1, 148, 147, 139, -1, 155, 157, 153, -1, 156, 48, 47, -1, 44, 154, 153, -1, 74, 86, 88, -1, 89, 91, 88, -1, 90, 78, 77, -1, 50, 52, 38, -1, 53, 55, 52, -1, 42, 41, 55, -1, 107, 109, 105, -1, 108, 110, 112, -1, 113, 115, 112, -1, 114, 106, 105, -1, 173, 175, 171, -1, 176, 178, 175, -1, 177, 179, 181, -1, 172, 171, 181, -1, 92, 95, 97, -1, 96, 108, 107, -1, 106, 94, 93, -1, 158, 160, 146, -1, 161, 163, 160, -1, 150, 149, 163, -1, 80, 83, 85, -1, 62, 64, 85, -1, 63, 65, 67, -1, 82, 81, 67, -1, 98, 101, 103, -1, 90, 89, 103, -1, 100, 99, 87, -1, 158, 164, 166, -1, 167, 169, 166, -1, 168, 162, 161, -1, 143, 145, 141, -1, 144, 156, 155, -1, 154, 142, 141, -1, 124, 138, 137, -1, 134, 126, 125, -1, 72, 71, 177, -1, 180, 179, 68, -1, 59, 61, 57, -1, 60, 66, 65, -1, 62, 58, 57, -1, 102, 101, 111, -1, 114, 113, 98, -1, 164, 174, 173, -1, 172, 168, 167, -1, 96, 95, 80, -1, 84, 83, 92, -1, 58, 54, 53, -1, 50, 60, 59, -1, 144, 143, 116, -1, 120, 119, 140, -1, 46, 49, 39, -1, 77, 75, 91, -1, 175, 178, 171, -1, 167, 165, 170, -1, 161, 159, 169, -1, 151, 136, 147, -1, 125, 122, 135, -1, 146, 160, 149, -1, 59, 56, 51, -1, 69, 73, 79, -1, 111, 101, 113, -1, 105, 109, 115, -1, 80, 95, 83, -1, 177, 71, 179, -1, 93, 97, 104, -1, 116, 143, 119, -1, 85, 64, 81, -1, 57, 61, 63, -1, 153, 157, 45, -1, 121, 131, 117, -1, 103, 89, 99, -1, 141, 145, 152, -1, 123, 127, 133, -1, 38, 52, 41, -1, 69, 68, 73, -1, 73, 72, 76, -1, 75, 77, 76, -1, 79, 78, 69, -1, 39, 38, 43, -1, 42, 44, 43, -1, 45, 47, 46, -1, 48, 40, 49, -1, 122, 125, 123, -1, 127, 126, 130, -1, 130, 129, 133, -1, 133, 132, 123, -1, 117, 116, 121, -1, 120, 132, 121, -1, 128, 118, 129, -1, 147, 146, 151, -1, 150, 134, 151, -1, 135, 137, 136, -1, 138, 148, 139, -1, 152, 155, 153, -1, 157, 156, 47, -1, 45, 44, 153, -1, 75, 74, 88, -1, 87, 89, 88, -1, 91, 90, 77, -1, 40, 50, 38, -1, 51, 53, 52, -1, 54, 42, 55, -1, 104, 107, 105, -1, 109, 108, 112, -1, 111, 113, 112, -1, 115, 114, 105, -1, 170, 173, 171, -1, 174, 176, 175, -1, 178, 177, 181, -1, 180, 172, 181, -1, 93, 92, 97, -1, 97, 96, 107, -1, 104, 106, 93, -1, 148, 158, 146, -1, 159, 161, 160, -1, 162, 150, 163, -1, 81, 80, 85, -1, 84, 62, 85, -1, 64, 63, 67, -1, 66, 82, 67, -1, 99, 98, 103, -1, 102, 90, 103, -1, 86, 100, 87, -1, 159, 158, 166, -1, 165, 167, 166, -1, 169, 168, 161, -1, 140, 143, 141, -1, 145, 144, 155, -1, 152, 154, 141, -1, 122, 124, 137, -1, 135, 134, 125, -1, 176, 72, 177, -1, 70, 180, 68, -1, 56, 59, 57, -1, 61, 60, 65, -1, 63, 62, 57, -1, 110, 102, 111, -1, 100, 114, 98, -1, 165, 164, 173, -1, 170, 172, 167, -1, 82, 96, 80, -1, 94, 84, 92, -1, 56, 58, 53, -1, 51, 50, 59, -1, 118, 144, 116, -1, 142, 120, 140, -1, 43, 46, 39, -1
+                        ]
+                        texCoordIndex [
+                          0, 1, 2, -1, 3, 4, 5, -1, 6, 7, 8, -1, 9, 10, 11, -1, 12, 13, 14, -1, 15, 16, 17, -1, 18, 19, 20, -1, 21, 22, 23, -1, 24, 25, 26, -1, 27, 28, 29, -1, 30, 31, 32, -1, 33, 34, 35, -1, 36, 37, 38, -1, 39, 40, 41, -1, 42, 43, 44, -1, 45, 46, 47, -1, 48, 49, 50, -1, 51, 52, 53, -1, 54, 55, 56, -1, 57, 58, 59, -1, 60, 61, 62, -1, 63, 64, 65, -1, 66, 67, 68, -1, 69, 70, 71, -1, 72, 73, 74, -1, 75, 76, 77, -1, 78, 79, 80, -1, 81, 82, 83, -1, 84, 85, 86, -1, 87, 88, 89, -1, 90, 91, 92, -1, 93, 94, 95, -1, 96, 97, 98, -1, 99, 100, 101, -1, 102, 103, 104, -1, 105, 106, 107, -1, 108, 109, 110, -1, 111, 112, 113, -1, 114, 115, 116, -1, 117, 118, 119, -1, 120, 121, 122, -1, 123, 124, 125, -1, 126, 127, 128, -1, 129, 130, 131, -1, 132, 133, 134, -1, 135, 136, 137, -1, 138, 139, 140, -1, 141, 142, 143, -1, 144, 145, 146, -1, 147, 148, 149, -1, 150, 151, 152, -1, 153, 154, 155, -1, 156, 157, 158, -1, 159, 160, 161, -1, 162, 163, 164, -1, 165, 166, 167, -1, 168, 169, 170, -1, 171, 172, 173, -1, 174, 175, 176, -1, 177, 178, 179, -1, 180, 181, 182, -1, 183, 184, 185, -1, 186, 187, 188, -1, 189, 190, 191, -1, 192, 193, 194, -1, 195, 196, 197, -1, 198, 199, 200, -1, 201, 202, 203, -1, 204, 205, 206, -1, 207, 208, 209, -1, 210, 211, 212, -1, 213, 214, 215, -1, 216, 217, 218, -1, 219, 220, 221, -1, 222, 223, 224, -1, 225, 226, 227, -1, 228, 229, 230, -1, 231, 232, 233, -1, 234, 235, 236, -1, 237, 238, 239, -1, 240, 241, 242, -1, 243, 244, 245, -1, 246, 247, 248, -1, 249, 250, 251, -1, 252, 253, 254, -1, 255, 256, 257, -1, 258, 259, 260, -1, 261, 262, 263, -1, 264, 265, 266, -1, 267, 268, 269, -1, 270, 271, 272, -1, 273, 274, 275, -1, 276, 277, 278, -1, 279, 280, 281, -1, 282, 283, 284, -1, 285, 286, 287, -1, 288, 289, 290, -1, 291, 292, 293, -1, 294, 295, 296, -1, 297, 298, 299, -1, 300, 301, 302, -1, 303, 304, 305, -1, 306, 307, 308, -1, 309, 310, 311, -1, 312, 313, 314, -1, 315, 316, 317, -1, 318, 319, 320, -1, 321, 322, 323, -1, 324, 325, 326, -1, 327, 328, 329, -1, 330, 331, 332, -1, 333, 334, 335, -1, 336, 337, 338, -1, 339, 340, 341, -1, 342, 343, 344, -1, 345, 346, 347, -1, 348, 349, 350, -1, 351, 352, 353, -1, 354, 355, 356, -1, 357, 358, 359, -1, 360, 361, 362, -1, 363, 364, 365, -1, 366, 367, 368, -1, 369, 370, 371, -1, 372, 373, 374, -1, 375, 376, 377, -1, 378, 379, 380, -1, 381, 382, 383, -1, 384, 385, 386, -1, 387, 388, 389, -1, 390, 391, 392, -1, 393, 394, 395, -1, 396, 397, 398, -1, 399, 400, 401, -1, 402, 403, 404, -1, 405, 406, 407, -1, 408, 409, 410, -1, 411, 412, 413, -1, 414, 415, 416, -1, 417, 418, 419, -1, 420, 421, 422, -1, 423, 424, 425, -1, 426, 427, 428, -1, 429, 430, 431, -1, 432, 433, 434, -1, 435, 436, 437, -1, 438, 439, 440, -1, 441, 442, 443, -1, 444, 445, 446, -1, 447, 448, 449, -1, 450, 451, 452, -1, 453, 454, 455, -1, 456, 457, 458, -1, 459, 460, 461, -1, 462, 463, 464, -1, 465, 466, 467, -1, 468, 469, 470, -1, 471, 472, 473, -1, 474, 475, 476, -1, 477, 478, 479, -1, 480, 481, 482, -1, 483, 484, 485, -1, 486, 487, 488, -1, 489, 490, 491, -1, 492, 493, 494, -1, 495, 496, 497, -1, 498, 499, 500, -1, 501, 502, 503, -1, 504, 505, 506, -1, 507, 508, 509, -1, 510, 511, 512, -1, 513, 514, 515, -1, 516, 517, 518, -1, 519, 520, 521, -1, 522, 523, 524, -1, 525, 526, 527, -1, 528, 529, 530, -1, 531, 532, 533, -1, 534, 535, 536, -1, 537, 538, 539, -1, 540, 541, 542, -1, 543, 544, 545, -1, 546, 547, 548, -1, 549, 550, 551, -1, 552, 553, 554, -1, 555, 556, 557, -1, 558, 559, 560, -1, 561, 562, 563, -1, 564, 565, 566, -1, 567, 568, 569, -1, 570, 571, 572, -1, 573, 574, 575, -1, 576, 577, 578, -1, 579, 580, 581, -1, 582, 583, 584, -1, 585, 586, 587, -1, 588, 589, 590, -1, 591, 592, 593, -1, 594, 595, 596, -1, 597, 598, 599, -1, 600, 601, 602, -1, 603, 604, 605, -1, 606, 607, 608, -1, 609, 610, 611, -1, 612, 613, 614, -1, 615, 616, 617, -1, 618, 619, 620, -1, 621, 622, 623, -1, 624, 625, 626, -1, 627, 628, 629, -1, 630, 631, 632, -1, 633, 634, 635, -1, 636, 637, 638, -1, 639, 640, 641, -1, 642, 643, 644, -1, 645, 646, 647, -1, 648, 649, 650, -1, 651, 652, 653, -1, 654, 655, 656, -1, 657, 658, 659, -1, 660, 661, 662, -1, 663, 664, 665, -1, 666, 667, 668, -1, 669, 670, 671, -1, 672, 673, 674, -1, 675, 676, 677, -1, 678, 679, 680, -1, 681, 682, 683, -1, 684, 685, 686, -1, 687, 688, 689, -1, 690, 691, 692, -1, 693, 694, 695, -1, 696, 697, 698, -1, 699, 700, 701, -1, 702, 703, 704, -1, 705, 706, 707, -1, 708, 709, 710, -1, 711, 712, 713, -1, 714, 715, 716, -1, 717, 718, 719, -1, 720, 721, 722, -1, 723, 724, 725, -1, 726, 727, 728, -1, 729, 730, 731, -1, 732, 733, 734, -1, 735, 736, 737, -1, 738, 739, 740, -1, 741, 742, 743, -1, 744, 745, 746, -1, 747, 748, 749, -1, 750, 751, 752, -1, 753, 754, 755, -1, 756, 757, 758, -1, 759, 760, 761, -1, 762, 763, 764, -1, 765, 766, 767, -1, 768, 769, 770, -1, 771, 772, 773, -1, 774, 775, 776, -1, 777, 778, 779, -1, 780, 781, 782, -1, 783, 784, 785, -1, 786, 787, 788, -1, 789, 790, 791, -1, 792, 793, 794, -1, 795, 796, 797, -1, 798, 799, 800, -1, 801, 802, 803, -1, 804, 805, 806, -1, 807, 808, 809, -1, 810, 811, 812, -1, 813, 814, 815, -1, 816, 817, 818, -1, 819, 820, 821, -1, 822, 823, 824, -1, 825, 826, 827, -1, 828, 829, 830, -1, 831, 832, 833, -1, 834, 835, 836, -1, 837, 838, 839, -1, 840, 841, 842, -1, 843, 844, 845, -1, 846, 847, 848, -1, 849, 850, 851, -1, 852, 853, 854, -1, 855, 856, 857, -1, 858, 859, 860, -1, 861, 862, 863, -1, 864, 865, 866, -1, 867, 868, 869, -1, 870, 871, 872, -1, 873, 874, 875, -1, 876, 877, 878, -1, 879, 880, 881, -1, 882, 883, 884, -1, 885, 886, 887, -1, 888, 889, 890, -1, 891, 892, 893, -1, 894, 895, 896, -1, 897, 898, 899, -1, 900, 901, 902, -1, 903, 904, 905, -1, 906, 907, 908, -1, 909, 910, 911, -1, 912, 913, 914, -1, 915, 916, 917, -1, 918, 919, 920, -1, 921, 922, 923, -1, 924, 925, 926, -1, 927, 928, 929, -1, 930, 931, 932, -1, 933, 934, 935, -1, 936, 937, 938, -1, 939, 940, 941, -1, 942, 943, 944, -1, 945, 946, 947, -1, 948, 949, 950, -1, 951, 952, 953, -1, 954, 955, 956, -1, 957, 958, 959, -1, 960, 961, 962, -1, 963, 964, 965, -1, 966, 967, 968, -1, 969, 970, 971, -1, 972, 973, 974, -1, 975, 976, 977, -1, 978, 979, 980, -1, 981, 982, 983, -1, 984, 985, 986, -1, 987, 988, 989, -1, 990, 991, 992, -1, 993, 994, 995, -1, 996, 997, 998, -1, 999, 1000, 1001, -1, 1002, 1003, 1004, -1, 1005, 1006, 1007, -1, 1008, 1009, 1010, -1, 1011, 1012, 1013, -1, 1014, 1015, 1016, -1, 1017, 1018, 1019, -1, 1020, 1021, 1022, -1, 1023, 1024, 1025, -1, 1026, 1027, 1028, -1, 1029, 1030, 1031, -1, 1032, 1033, 1034, -1, 1035, 1036, 1037, -1, 1038, 1039, 1040, -1, 1041, 1042, 1043, -1, 1044, 1045, 1046, -1, 1047, 1048, 1049, -1, 1050, 1051, 1052, -1, 1053, 1054, 1055, -1, 1056, 1057, 1058, -1, 1059, 1060, 1061, -1, 1062, 1063, 1064, -1, 1065, 1066, 1067, -1, 1068, 1069, 1070, -1, 1071, 1072, 1073, -1
+                        ]
+                        creaseAngle 0.57
+                      }
+                    }
+                  ]
+                }
+                DEF CYLINDER Pose {
+                  translation 0.01 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColorMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_base_color.jpg"
+                          ]
+                        }
+                        roughnessMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_roughness.jpg"
+                          ]
+                        }
+                        normalMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_normal.jpg"
+                          ]
+                        }
+                        occlusionMap ImageTexture {
+                          url [
+                            "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/screw_thread/screw_thread_occlusion.jpg"
+                          ]
+                        }
+                        textureTransform TextureTransform {
+                          rotation 1.5708
+                          scale 0.8 2
+                        }
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.0015
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "screw3"
+              model "cap screw"
+              boundingObject Group {
+                children [
+                  USE CYLINDER
+                  Pose {
+                    translation -0.0015 0 0
+                    rotation 0 1 0 1.5708
+                    children [
+                      Cylinder {
+                        height 0.003
+                        radius 0.0025
+                      }
+                    ]
+                  }
+                ]
+              }
+              physics Physics {
+                density 8050
+              }
+            }
+          ]
+          name "LDS-01"
+          boundingObject Group {
+            children [
+              Pose {
+                translation 0.014 0 -0.014
+                rotation -0.5773516025189619 0.5773476025217157 0.5773516025189619 -2.094405
+                children [
+                  Box {
+                    size 0.07 0.01 0.1
+                  }
+                ]
+              }
+              Pose {
+                children [
+                  Cylinder {
+                    height 0.021
+                    radius 0.032
+                  }
+                ]
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 0.125
+          }
+          horizontalResolution 360
+          fieldOfView 6.28318
+          numberOfLayers 1
+          near 0.07
+          minRange 0.12
+          maxRange 10
+          noise 0.0043
+        }
+      ]
+    }
+    DEF RIGHT_JOINT HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2612.831438627662
+        axis 0 1 0
+        anchor 0 -0.08 0.033
+      }
+      device [
+        RotationalMotor {
+          name "right wheel motor"
+          consumptionFactor -0.001
+          maxVelocity 40
+        }
+        PositionSensor {
+          name "right wheel sensor"
+          resolution 0.00628
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.08 0.033
+        rotation 0 1 0 6.10237333360609
+        children [
+          DEF RIGHT_WHEEL Pose {
+            rotation 1 0 0 -1.5708003061004252
+            children [
+              DEF WHEEL_SHAPE Group {
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0 0
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/wheel_shape.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0 0
+                      roughness 1
+                      metalness 0
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/inner_wheel.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColorMap ImageTexture {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/tire_rubber/bike_tire_rubber_base_color.jpg"
+                        ]
+                      }
+                      roughnessMap ImageTexture {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/tire_rubber/bike_tire_rubber_roughness.jpg"
+                        ]
+                      }
+                      metalness 0
+                      normalMap ImageTexture {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/tire_rubber/bike_tire_rubber_normal.jpg"
+                        ]
+                      }
+                      normalMapFactor 8
+                      occlusionMap ImageTexture {
+                        url [
+                          "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/tire_rubber/bike_tire_rubber_occlusion.jpg"
+                        ]
+                      }
+                      occlusionMapStrength 8
+                      textureTransform TextureTransform {
+                        scale 1.7 0.76
+                        translation 0 0.164
+                      }
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/tire.obj"
+                      ]
+                    }
+                  }
+                  Shape {
+                    appearance PBRAppearance {
+                    }
+                    geometry Mesh {
+                      url [
+                        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/wheel_support.obj"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+        name "right wheel"
+        boundingObject Pose {
+          rotation 1 0 0 -1.570796
+          children [
+            Cylinder {
+              height 0.018
+              radius 0.033
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.028499
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    DEF LEFT_JOINT HingeJoint {
+      jointParameters HingeJointParameters {
+        position 2463.3839093588076
+        axis 0 1 0
+        anchor 0 0.08 0.033
+      }
+      device [
+        RotationalMotor {
+          name "left wheel motor"
+          consumptionFactor -0.001
+          maxVelocity 40
+        }
+        PositionSensor {
+          name "left wheel sensor"
+          resolution 0.00628
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.08 0.033
+        rotation 0.9989845135557388 -1.7177545616989643e-06 -0.045054874018837426 3.1415957925665423
+        children [
+          DEF RIGHT_WHEEL Pose {
+            rotation 1 0 0 -1.5708003061004252
+            children [
+              USE WHEEL_SHAPE
+            ]
+          }
+        ]
+        name "left wheel"
+        boundingObject Pose {
+          rotation 1 0 0 -1.570796
+          children [
+            Cylinder {
+              height 0.018
+              radius 0.033
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.028499
+          centerOfMass [
+            0 0 0
+          ]
+        }
+      }
+    }
+    DEF CASTER_JOINT BallJoint {
+      jointParameters BallJointParameters {
+        position -1798.7726237575553
+        anchor -0.081 0 0.004
+      }
+      endPoint Solid {
+        translation -0.08100089408562727 7.08959851625204e-06 0.004008519631119107
+        rotation -0.6060582966693101 0.5367090445604479 0.5870576994855834 2.5257698308295615
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry DEF CASTER_SPHERE Sphere {
+              radius 0.004
+              subdivision 2
+            }
+          }
+        ]
+        boundingObject USE CASTER_SPHERE
+        physics Physics {
+        }
+      }
+    }
+    DEF BODY Pose {
+      translation 0 0 0.01
+      children [
+        DEF MOTORS Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+            roughness 0.8
+            metalness 0
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/motors.obj"
+            ]
+          }
+        }
+        DEF CARDS Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/pcb/pcb_base_color.jpg"
+              ]
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/pcb/pcb_roughness.jpg"
+              ]
+            }
+            metalnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/pcb/pcb_metalness.jpg"
+              ]
+            }
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/pcb/pcb_normal.jpg"
+              ]
+            }
+            normalMapFactor 3
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/pcb/pcb_occlusion.jpg"
+              ]
+            }
+            occlusionMapStrength 3
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/cards.obj"
+            ]
+          }
+        }
+        DEF HOLDERS Shape {
+          appearance DEF MAIN_APP PBRAppearance {
+            baseColor 0 0 0
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_roughness.jpg"
+              ]
+            }
+            metalness 0
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_normal.jpg"
+              ]
+            }
+            normalMapFactor 2
+            occlusionMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/rough_polymer/rough_polymer_occlusion.jpg"
+              ]
+            }
+            occlusionMapStrength 2
+            textureTransform TextureTransform {
+              scale 3 3
+            }
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/holders.obj"
+            ]
+          }
+        }
+        DEF BODY_FLOOR_0 Shape {
+          appearance USE MAIN_APP
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/body_floor.obj"
+            ]
+          }
+        }
+        DEF BODY_FLOOR_1 Pose {
+          translation 0 0 0.0376
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BODY_FLOOR_2 Pose {
+          translation 0 0 0.085
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BODY_FLOOR_3 Pose {
+          translation 0 0 0.1325
+          children [
+            USE BODY_FLOOR_0
+          ]
+        }
+        DEF BATTERY Shape {
+          appearance PBRAppearance {
+            baseColor 0.054902 0.121569 0.356863
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_base_color.jpg"
+              ]
+              filtering 5
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/matte_car_paint/matte_car_paint_roughness.jpg"
+              ]
+              filtering 5
+            }
+            metalness 0
+            normalMapFactor 0.5
+            textureTransform TextureTransform {
+              scale 10 10
+            }
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/battery.obj"
+            ]
+          }
+        }
+        DEF SCREWS Shape {
+          appearance PBRAppearance {
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/screws.obj"
+            ]
+          }
+        }
+        DEF BARS Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_base_color.jpg"
+              ]
+            }
+            roughnessMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_roughness.jpg"
+              ]
+            }
+            normalMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/brushed_aluminium/brushed_aluminium_normal.jpg"
+              ]
+            }
+            textureTransform TextureTransform {
+              scale 3 2
+            }
+          }
+          geometry Mesh {
+            url [
+              "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/robotis/turtlebot/protos/meshes/bars.obj"
+            ]
+          }
+        }
+      ]
+    }
+    Accelerometer {
+      translation -0.032 0 0.078
+    }
+    Gyro {
+      translation -0.032 0 0.078
+    }
+    Compass {
+      translation -0.032 0 0.078
+    }
+  ]
+  name "TURTLEBOT3_BURGER"
+  boundingObject Group {
+    children [
+      Pose {
+        translation -0.032 0 0.08
+        children [
+          Box {
+            size 0.097 0.137 0.1425
+          }
+        ]
+      }
+      Pose {
+        translation -0.032 0 0.08
+        children [
+          Box {
+            size 0.135 0.095 0.143
+          }
+        ]
+      }
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 0.825735
+    centerOfMass [
+      -0.035 0 0.03
+    ]
+  }
+  controller "caretaker"
+  controllerArgs [
+    ""
+  ]
+  supervisor TRUE
+}
