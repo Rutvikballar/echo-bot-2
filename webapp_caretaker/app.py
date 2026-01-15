@@ -12,7 +12,8 @@ from flask_socketio import SocketIO, emit
 import paho.mqtt.client as mqtt
 import json
 import threading
-
+import json
+import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'echo-robot-secret-key'
 CORS(app)
@@ -26,7 +27,8 @@ robot_state = {
     'temperature': 42,
     'speed': 15,
     'task': 'Idle',
-    'position': {'x': 0, 'y': 0}
+    'position': {'x': 0, 'y': 0},
+    'schedule_enabled': True # Default state matches robot default
 }
 
 # MQTT Client (using paho-mqtt directly for better control)
@@ -39,7 +41,8 @@ def on_mqtt_connect(client, userdata, flags, rc):
         client.subscribe("robot/status")
         client.subscribe("robot/camera")
         client.subscribe("robot/map")
-        print("[OK] Subscribed to: robot/status, robot/camera, robot/map")
+        client.subscribe("robot/schedule_status")
+        print("[OK] Subscribed to: robot/status, robot/camera, robot/map, robot/schedule_status")
     else:
         print(f"[ERROR] MQTT connection failed with code: {rc}")
 
@@ -62,6 +65,13 @@ def on_mqtt_message(client, userdata, message):
         elif topic == 'robot/map':
             socketio.emit('map_update', {'data': payload})
             print("[MAP] Update sent to clients")
+
+        elif topic == 'robot/schedule_status':
+            schedule_data = json.loads(payload)
+            # FIX: Update global state so new clients get the correct value on connect
+            robot_state['schedule_enabled'] = schedule_data.get('enabled', True)
+            socketio.emit('schedule_status', schedule_data)
+            print(f"[SCHEDULE] Update sent: {schedule_data}")
             
     except Exception as e:
         print(f"[ERROR] Processing MQTT message on {topic}: {e}")
@@ -81,8 +91,8 @@ def setup_mqtt():
         mqtt_client.on_message = on_mqtt_message
         mqtt_client.on_disconnect = on_mqtt_disconnect
         
-        print("Connecting to MQTT broker at localhost:1883...")
-        mqtt_client.connect("localhost", 1883, 60)
+        print("Connecting to MQTT broker at 127.0.0.1:1883...")
+        mqtt_client.connect("127.0.0.1", 1883, 60)
         mqtt_client.loop_start()
         print("MQTT client loop started")
         return True
@@ -115,6 +125,26 @@ def elder(elder_id):
         elder_id = 1
     return render_template('elder.html', elder_id=elder_id)
 
+# Medication Schedule API
+SCHEDULE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'medication_schedule.json')
+@app.route('/api/medication_schedule', methods=['GET'])
+def get_medication_schedule():
+    if os.path.exists(SCHEDULE_FILE):
+        with open(SCHEDULE_FILE, 'r') as f:
+            return jsonify(json.load(f))
+    else:
+        # Default empty structure if file missing
+        return jsonify({
+            "elder_1": {"morning": [], "afternoon": [], "evening": []},
+            "elder_2": {"morning": [], "afternoon": [], "evening": []},
+            "elder_3": {"morning": [], "afternoon": [], "evening": []}
+        })
+@app.route('/api/medication_schedule', methods=['POST'])
+def save_medication_schedule():
+    data = request.json
+    with open(SCHEDULE_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+    return jsonify({"status": "success"})
 
 # ==================== REST API ====================
 

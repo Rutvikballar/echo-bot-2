@@ -31,7 +31,30 @@ function initSocket() {
     });
 
     socket.on('map_update', (data) => {
-        updateMapCanvas(data.data);
+        if (data && data.data) {
+            updateMapCanvas(data.data);
+        }
+    });
+
+    // Listen for schedule status updates from robot
+    socket.on('schedule_status', function (data) {
+        console.log("[DEBUG] Received schedule_status payload:", data); // RAW PAYLOAD
+        const toggle = document.getElementById('card-schedule-toggle');
+
+        if (toggle) {
+            console.log("[DEBUG] Current toggle state:", toggle.checked);
+            console.log("[DEBUG] Setting toggle to:", data.enabled);
+            toggle.checked = data.enabled;
+            console.log("[DEBUG] New toggle state:", toggle.checked);
+
+            // Force redraw/status text update if needed
+            // (Optional: Add visual feedback logic here if slider needs class update)
+            // Force redraw/status text update if needed
+            // (Optional: Add visual feedback logic here if slider needs class update)
+        } else {
+            // Harmless on Admin page
+            console.log("[INFO] Schedule toggle not present on this page (normal for Admin view).");
+        }
     });
 
     socket.on('elder_alert', (data) => {
@@ -83,9 +106,26 @@ function updateRobotStatus(data) {
     }
 
     // Update speed
-    const speedValue = document.getElementById('speed-value');
-    if (speedValue && data.speed !== undefined) {
-        speedValue.textContent = data.speed;
+    const speedValue = document.getElementById('speed-value'); // Stats card
+    const speedSlider = document.getElementById('speed-slider'); // Control slider
+    const speedDisplay = document.getElementById('speed-display'); // Slider label
+
+    if (data.speed !== undefined) {
+        if (speedValue) speedValue.textContent = data.speed;
+
+        // Update slider if it exists and isn't being dragged (simple check: active element)
+        if (speedSlider && document.activeElement !== speedSlider) {
+            speedSlider.value = data.speed;
+        }
+        if (speedDisplay && document.activeElement !== speedSlider) {
+            speedDisplay.textContent = data.speed;
+        }
+    }
+
+    // Update simulation time
+    const timeValue = document.getElementById('sim-time-value');
+    if (timeValue && data.time !== undefined) {
+        timeValue.textContent = data.time;
     }
 
     // Update task
@@ -94,13 +134,22 @@ function updateRobotStatus(data) {
         taskValue.textContent = data.task;
     }
 
-    // Low battery warning popup
-    if (data.low_battery && !lowBatteryShown) {
-        showLowBatteryPopup(data.battery);
-        lowBatteryShown = true;
-    } else if (!data.low_battery) {
-        lowBatteryShown = false; // Reset when battery is above 20%
+    // FIX: Update Schedule Toggle on Connection/Status Update
+    // This allows the toggle to be correct even if changed on another tab (Admin)
+    if (data.schedule_enabled !== undefined) {
+        const toggle = document.getElementById('card-schedule-toggle');
+        if (toggle) {
+            // Only update if different to avoid infinite loops if we were the one clicking it?
+            // Actually, for display purposes, we should always match server state.
+            if (toggle.checked !== data.schedule_enabled) {
+                console.log("[DEBUG] Syncing toggle on load/status:", data.schedule_enabled);
+                toggle.checked = data.schedule_enabled;
+            }
+        }
     }
+
+    // Low battery warning popup REMOVED as per request
+    // if (data.low_battery && !lowBatteryShown) { ... }
 
     // Update last update time
     const lastUpdate = document.getElementById('last-update');
@@ -286,7 +335,8 @@ function initAdminPage() {
     const btnBackward = document.getElementById('btn-backward');
     const btnLeft = document.getElementById('btn-left');
     const btnRight = document.getElementById('btn-right');
-    const btnStop = document.getElementById('btn-stop');
+    // btnStop removed
+    const btnAdminStop = document.getElementById('btn-admin-stop');
     const btnDock = document.getElementById('btn-dock');
 
     // Helper to setup hold-to-move buttons
@@ -327,7 +377,7 @@ function initAdminPage() {
     setupHoldButton(btnLeft, 'manual_left');
     setupHoldButton(btnRight, 'manual_right');
 
-    if (btnStop) btnStop.addEventListener('click', () => sendCommand('stop'));
+    if (btnAdminStop) btnAdminStop.addEventListener('click', () => sendCommand('admin_stop'));
     if (btnDock) btnDock.addEventListener('click', () => sendCommand('goto_dock'));
 
     // Speed slider - load saved value from localStorage
@@ -336,13 +386,11 @@ function initAdminPage() {
     const applySpeed = document.getElementById('apply-speed');
 
     if (speedSlider && speedDisplay) {
-        // Load saved speed from localStorage
-        const savedSpeed = localStorage.getItem('echoRobotSpeed');
-        if (savedSpeed) {
-            speedSlider.value = savedSpeed;
-            speedDisplay.textContent = savedSpeed;
-        }
+        // REMOVED: Load saved speed from localStorage to prevent overwriting robot default (15)
+        // const savedSpeed = localStorage.getItem('echoRobotSpeed');
+        // if (savedSpeed) { ... }
 
+        // Update display while dragging
         speedSlider.addEventListener('input', (e) => {
             speedDisplay.textContent = e.target.value;
         });
@@ -407,8 +455,8 @@ function handleKeyDown(e) {
             break;
         case ' ': // Space for stop
             e.preventDefault();
+            // Regular spacebar stop (Nurse Stop behavior - auto-dock still works)
             sendCommand('stop');
-            highlightButton('btn-stop');
             break;
     }
 }
@@ -423,7 +471,7 @@ function handleKeyUp(e) {
     }
 
     // Remove highlight from all buttons
-    ['btn-forward', 'btn-backward', 'btn-left', 'btn-right', 'btn-stop'].forEach(id => {
+    ['btn-forward', 'btn-backward', 'btn-left', 'btn-right'].forEach(id => {
         const btn = document.getElementById(id);
         if (btn) btn.classList.remove('active');
     });
@@ -458,12 +506,26 @@ function showElderOptions(elderId) {
 }
 
 function handleElderOption(option) {
+    console.log('[DEBUG] handleElderOption called with:', option);
     closeModal('elder-options-modal');
 
     if (option === 'monitor') {
-        sendCommand(`goto_elder_${selectedElderForAction}`);
+        sendCommand(`monitor_elder_${selectedElderForAction}`);
     } else if (option === 'medicine') {
-        sendCommand(`goto_medicine_elder_${selectedElderForAction}`);
+        // Show custom modal instead of prompt
+        const modal = document.getElementById('medicine-input-modal');
+        const input = document.getElementById('medicine-name-input');
+
+        if (modal && input) {
+            input.value = ''; // Reset input
+            input.focus();
+            modal.classList.add('active');
+
+            // Allow Enter key to submit
+            input.onkeydown = (e) => {
+                if (e.key === 'Enter') confirmMedicine();
+            };
+        }
     }
 }
 
@@ -516,7 +578,101 @@ function sendNurseReply() {
         input.value = '';
     }
 }
+// ==================== MEDICATION SCHEDULE ====================
+let medicationData = null;
+function openMedicationSchedule() {
+    const modal = document.getElementById('medication-modal');
+    if (!modal) return;
 
+    // Fetch data if not loaded
+    fetch('/api/medication_schedule')
+        .then(response => response.json())
+        .then(data => {
+            medicationData = data;
+            renderScheduleTable();
+            modal.classList.add('active');
+        })
+        .catch(err => console.error('Error loading schedule:', err));
+}
+
+// FIXED: Use dark theme for input fields and table cells
+function renderScheduleTable() {
+    const tbody = document.getElementById('schedule-body');
+    if (!tbody || !medicationData) return;
+
+    const times = ['morning', 'afternoon', 'evening'];
+    const timeLabels = { 'morning': '🌅 Morning (7-12)', 'afternoon': '☀️ Afternoon (12-18)', 'evening': '🌙 Evening (18-22)' };
+
+    tbody.innerHTML = times.map(time => `
+        <tr>
+            <td style="padding: 1rem; border: 1px solid #374151; font-weight: bold; background: rgba(255,255,255,0.05);">${timeLabels[time]}</td>
+            <td style="padding: 1rem; border: 1px solid #374151;">
+                <input type="text" class="med-input" data-elder="elder_1" data-time="${time}" value="${medicationData.elder_1[time].join(', ')}" 
+                style="width: 100%; padding: 0.5rem; background: #374151; color: white; border: 1px solid #4b5563; border-radius: 0.25rem;">
+            </td>
+            <td style="padding: 1rem; border: 1px solid #374151;">
+                <input type="text" class="med-input" data-elder="elder_2" data-time="${time}" value="${medicationData.elder_2[time].join(', ')}" 
+                style="width: 100%; padding: 0.5rem; background: #374151; color: white; border: 1px solid #4b5563; border-radius: 0.25rem;">
+            </td>
+            <td style="padding: 1rem; border: 1px solid #374151;">
+                <input type="text" class="med-input" data-elder="elder_3" data-time="${time}" value="${medicationData.elder_3[time].join(', ')}" 
+                style="width: 100%; padding: 0.5rem; background: #374151; color: white; border: 1px solid #4b5563; border-radius: 0.25rem;">
+            </td>
+        </tr>
+    `).join('');
+}
+
+function saveMedicationSchedule() {
+    // Gather data from inputs
+    const inputs = document.querySelectorAll('.med-input');
+    const newData = { elder_1: {}, elder_2: {}, elder_3: {} };
+
+    // Initialize structure
+    ['morning', 'afternoon', 'evening'].forEach(time => {
+        newData.elder_1[time] = [];
+        newData.elder_2[time] = [];
+        newData.elder_3[time] = [];
+    });
+
+    inputs.forEach(input => {
+        const elder = input.dataset.elder;
+        const time = input.dataset.time;
+        // Split by comma and trim
+        const meds = input.value.split(',').map(s => s.trim()).filter(s => s);
+        newData[elder][time] = meds;
+    });
+
+    // Send to server
+    fetch('/api/medication_schedule', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Schedule saved:', data);
+            medicationData = newData;
+            closeModal('medication-modal');
+            alert('Schedule saved successfully!');
+        })
+        .catch(err => console.error('Error saving schedule:', err));
+}
+// ==================== MEDICINE INPUT ====================
+function confirmMedicine() {
+    const input = document.getElementById('medicine-name-input');
+    const modal = document.getElementById('medicine-input-modal');
+
+    if (input && input.value.trim()) {
+        const medName = input.value.trim();
+        // Send command
+        sendCommand(`give_medicine_${selectedElderForAction}_${medName}`);
+        // Close modal
+        closeModal('medicine-input-modal');
+    } else {
+        alert("Please enter a medicine name");
+        input.focus();
+    }
+}
 // ==================== ELDER PAGE ====================
 function initElderPage(elderId) {
     currentElderId = elderId;
@@ -561,6 +717,14 @@ function sendNurseRequest(requestType) {
         }, 2000);
     }
 }
+
+// Toggle medication schedule enablement
+function toggleSchedule(enabled) {
+    const command = enabled ? 'enable_schedule' : 'disable_schedule';
+    sendCommand(command);
+    console.log(`Schedule ${enabled ? 'Enabled' : 'Disabled'}`);
+}
+
 
 function showCustomMessage() {
     const customInput = document.getElementById('custom-message-input');

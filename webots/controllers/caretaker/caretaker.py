@@ -3,7 +3,46 @@ ECHO Robot Caretaker Controller
 Extended with MQTT integration for web application communication
 """
 
-from controller import Supervisor
+import sys
+import os
+
+# ==================== WEBOTS RUNTIME CONFIGURATION ====================
+# This allows running the script directly without a launcher
+
+# 1. Ensure WEBOTS_HOME is set
+if "WEBOTS_HOME" not in os.environ:
+    # Default installation path on Windows
+    default_webots_home = r"C:\Program Files\Webots"
+    if os.path.exists(default_webots_home):
+        print(f"Configuring Webots environment from: {default_webots_home}")
+        os.environ["WEBOTS_HOME"] = default_webots_home
+    else:
+        print("WARNING: Webots installation not found at default location. Please set WEBOTS_HOME environment variable.")
+
+# 2. Add Webots Python API to sys.path (CRITICAL)
+# Do this even if WEBOTS_HOME was already set by the system
+if "WEBOTS_HOME" in os.environ:
+    webots_home = os.environ["WEBOTS_HOME"]
+    lib_path = os.path.join(webots_home, "lib", "controller", "python")
+    
+    # Check if we need to add it
+    if os.path.exists(lib_path):
+        if lib_path not in sys.path:
+            sys.path.append(lib_path)
+            print(f"Added Webots Python API to path: {lib_path}")
+    else:
+        print(f"WARNING: Could not find Webots Python library at: {lib_path}")
+
+# Imports
+try:
+    from controller import Supervisor
+except ImportError as e:
+    print(f"CRITICAL ERROR: Could not import 'controller' library. Error: {e}")
+    if "WEBOTS_HOME" in os.environ:
+        print(f"WEBOTS_HOME is set to: {os.environ['WEBOTS_HOME']}")
+    print(f"Current sys.path: {sys.path}")
+    sys.exit(1)
+
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,6 +53,7 @@ import json
 import base64
 import threading
 import random
+import time
 from typing import Dict, List, Optional, Tuple
 
 # MQTT imports
@@ -106,6 +146,31 @@ class BurgerNavigator:
         
         # Multi-step task queue (for medicine + elder delivery)
         self.task_queue: List[int] = []
+        
+        # Emergency Override Flag (Admin Stop)
+        self.emergency_stop_active = False
+
+        # ==================== MEDICATION SCHEDULE & TIME ====================
+        # Simulation Time: Starts at 06:00 (Morning)
+        # 1 real second = 1 simulation minute (slower, more realistic for robot speed)
+        self.sim_hour = 6
+        self.sim_minute = 0
+        self.last_time_update = time.time()
+        self.medication_schedule = {}
+        # Path to JSON in webapp folder (relative to this controller)
+        self.schedule_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../webapp_caretaker/medication_schedule.json"))
+        self._load_medication_schedule()
+        
+        # Track if we already delivered for a time slot today
+        self.delivery_status = {"morning": False, "afternoon": False, "evening": False}
+        
+        # Schedule Enable Flag (User Toggle / Auto-Stop)
+        self.schedule_enabled = True
+        
+        # Flag to distinguish Automatic Schedule tasks from Manual Button 'Auto' tasks
+        # True = Robot is executing a Time-Triggered Schedule
+        # False = Robot is executing a Manual Command (e.g. 'Give Medication' button)
+        self.is_scheduled_task = False
 
     def _resolve_map_file(self, map_file: str) -> str:
         if os.path.isabs(map_file) and os.path.exists(map_file):
@@ -133,9 +198,9 @@ class BurgerNavigator:
             self.mqtt_client.on_message = self._on_mqtt_message
             self.mqtt_client.on_disconnect = self._on_mqtt_disconnect
             
-            self.mqtt_client.connect("localhost", 1883, 60)
+            self.mqtt_client.connect("127.0.0.1", 1883, 60)
             self.mqtt_client.loop_start()
-            print("MQTT client started, connecting to localhost:1883")
+            print("MQTT client started, connecting to 127.0.0.1:1883")
         except Exception as e:
             print(f"MQTT connection failed: {e}")
             self.mqtt_client = None
@@ -174,13 +239,22 @@ class BurgerNavigator:
             "position": {
                 "x": round(self.trans_field.getSFVec3f()[0], 2),
                 "y": round(self.trans_field.getSFVec3f()[1], 2)
-            }
+            },
+            "time": f"{self.sim_hour:02d}:{self.sim_minute:02d}"
         }
         
         try:
             self.mqtt_client.publish("robot/status", json.dumps(status))
         except Exception as e:
             print(f"Error publishing status: {e}")
+
+    def _publish_schedule_status(self):
+        """Publish schedule enabled/disabled status"""
+        if self.mqtt_client:
+            try:
+                self.mqtt_client.publish("robot/schedule_status", json.dumps({"enabled": self.schedule_enabled}))
+            except Exception as e:
+                print(f"Error publishing schedule status: {e}")
 
     def _publish_camera(self):
         """Capture camera image and publish as Base64"""
@@ -253,30 +327,111 @@ class BurgerNavigator:
             
         print(f"Processing command: {command}")
         
-        # Command mapping
         if command == "stop":
+            # Nurse Stop (Standard stop, allows auto-dock if idle)
+            if self.is_scheduled_task: self._reset_current_delivery_status() # FIX
+            self.schedule_enabled = False # Auto-disable schedule
+            self.mode = "manual"  # Force manual mode to stop auto navigation
+            self.current_path = [] # Clear current path
+            self.path_index = 0
+            self.task_queue = [] # Clear pending tasks
+            self.left_motor.setVelocity(0.0)
+            self.right_motor.setVelocity(0.0)
+            self.current_task = "Stopped (Idle)"
+            print("Nurse STOP command received - Schedule Disabled, Queue Cleared")
+            self._publish_schedule_status()
+        elif command == "admin_stop":
+            # Admin Stop (Emergency stop, PREVENTS auto-dock)
+            if self.is_scheduled_task: self._reset_current_delivery_status() # FIX
+            self.schedule_enabled = False # Auto-disable schedule
+            self.task_queue = [] # Clear pending tasks
             self._emergency_stop()
+            self._publish_schedule_status()
+        elif command == "enable_schedule":
+            self.schedule_enabled = True
+            print("Schedule ENABLED by user")
+            self._publish_schedule_status()
+        elif command == "disable_schedule":
+            self.schedule_enabled = False
+            print("Schedule DISABLED by user")
+            self._publish_schedule_status()
+            
+            # Robust Stop: If robot is in AUTO mode AND it's a SCHEDULE Task, ABORT IT.
+            # This prevents stopping manual "Give Medicine" actions when toggling schedule.
+            if self.mode == "auto" and self.is_scheduled_task:
+                 print("Aborting SCHEDULE task (Schedule Disabled)...")
+                 self._reset_current_delivery_status() # FIX: Reset status so it can retry if re-enabled
+                 self.mode = "manual"
+                 self.is_scheduled_task = False # Reset flag
+                 self.current_path = []
+                 self.path_index = 0
+                 self.task_queue = []
+                 self.left_motor.setVelocity(0.0)
+                 self.right_motor.setVelocity(0.0)
+                 self.current_task = "Stopped (Schedule Disabled)"
+                 self._publish_schedule_status()
         elif command == "manual_mode":
+            self.mode = "manual"
+            self.is_scheduled_task = False # Reset flag
             self._switch_to_manual()
         elif command == "disable_manual_mode":
             self._disable_manual_mode()
         elif command == "goto_elder_1":
+            self.is_scheduled_task = False # Manual Action
             self._navigate_to(3, "Navigating to Elder 1")
         elif command == "goto_elder_2":
+            self.is_scheduled_task = False # Manual Action
             self._navigate_to(4, "Navigating to Elder 2")
         elif command == "goto_elder_3":
+            self.is_scheduled_task = False # Manual Action
             self._navigate_to(5, "Navigating to Elder 3")
-        elif command == "goto_medicine":
-            self._navigate_to(6, "Going to Medicine Cabinet")
-        elif command == "goto_dock":
-            self._navigate_to(7, "Returning to Dock")
-        elif command.startswith("goto_medicine_elder_"):
-            # Multi-step: medicine first, then elder
+        elif command.startswith("monitor_elder_"):
             try:
                 elder_num = int(command.split("_")[-1])
-                elder_target = 2 + elder_num  # 3, 4, or 5
-                self.task_queue = [6, elder_target]  # Medicine (6), then Elder
-                self._navigate_to(6, f"Getting medicine for Elder {elder_num}")
+                target = 2 + elder_num # 3, 4, 5
+                self.is_scheduled_task = False
+                self._navigate_to(target, f"Monitoring Elder {elder_num}")
+                # Removed explicit dock command, will auto-dock on idle
+                self.task_queue = [] 
+            except ValueError:
+                print(f"Invalid monitor command: {command}")
+
+        elif command.startswith("give_medicine_"):
+            # Format: give_medicine_ID_Name
+            parts = command.split("_")
+            if len(parts) >= 4:
+                try:
+                    elder_num = int(parts[2])
+                    med_name = "_".join(parts[3:]) # Rejoin name parts
+                    
+                    print(f"Giving medicine [{med_name}] to the Elder {elder_num}")
+                    
+                    self.is_scheduled_task = False
+                    self._navigate_to(6, f"Getting Medicine ({med_name})")
+                    # Queue: Elder only. Auto-dock will happen on idle.
+                    self.task_queue = [2 + elder_num]
+                except ValueError:
+                    print(f"Invalid medicine command parsing: {command}")
+            else:
+                 print(f"Invalid medicine command format: {command}")
+
+        elif command == "goto_medicine":
+            self.is_scheduled_task = False # Manual Action
+            self._navigate_to(6, "Going to Medicine Cabinet")
+        elif command == "goto_dock":
+            if self.is_scheduled_task: self._reset_current_delivery_status() # FIX
+            self.is_scheduled_task = False # Manual Action
+            self.schedule_enabled = False # EXISTING LOGIC REQUEST: Disable schedule
+            self.task_queue = [] # FIX: Clear pending scheduled tasks so we don't resume them
+            self._navigate_to(7, "Returning to Dock")
+            self._publish_schedule_status()
+        # Old command support (optional, can be removed if not used by admin)
+        elif command.startswith("goto_medicine_elder_"):
+            try:
+                elder_num = int(command.split("_")[-1])
+                self.is_scheduled_task = False
+                self._navigate_to(6, "Going to Medicine Cabinet")
+                self.task_queue = [2 + elder_num] # Removed explicit dock logic
             except:
                 print(f"Invalid command: {command}")
         elif command == "manual_forward":
@@ -298,6 +453,12 @@ class BurgerNavigator:
                 print(f"Speed set to {speed}")
             except:
                 print(f"Invalid speed command: {command}")
+                
+        # Reset emergency flag on any *new* movement command
+        if command and command not in ["stop", "admin_stop", "manual_stop", "manual_mode", "disable_manual_mode"]:
+            if self.emergency_stop_active:
+                self.emergency_stop_active = False
+                print("Emergency Stop RELEASED by new command")
 
     def _switch_to_manual(self):
         """Switch to manual driving mode"""
@@ -326,7 +487,7 @@ class BurgerNavigator:
             self.current_task = "Manual Drive Mode"
 
     def _emergency_stop(self):
-        """Emergency stop - halt all movement"""
+        """Emergency stop - halt all movement and BLOCK auto-docking"""
         self.mode = "manual"
         self.current_target_value = None
         self.current_path = []
@@ -334,8 +495,10 @@ class BurgerNavigator:
         self.task_queue = []
         self.left_motor.setVelocity(0.0)
         self.right_motor.setVelocity(0.0)
-        self.current_task = "Emergency Stop - Idle"
-        print("EMERGENCY STOP activated")
+        
+        self.emergency_stop_active = True
+        self.current_task = "ADMIN STOP - Auto-Dock Disabled"
+        print("ADMIN STOP activated: Auto-docking BLOCKED until new command")
 
     def _navigate_to(self, target: int, task_name: str):
         """Start navigation to a target"""
@@ -404,8 +567,8 @@ class BurgerNavigator:
         # Drain battery when moving
         elif self.mode == "auto" or (abs(self.left_motor.getVelocity()) > 0.1 or abs(self.right_motor.getVelocity()) > 0.1):
             self.battery_drain_counter += 1
-            # Drain 1% every ~50 steps (faster drain)
-            if self.battery_drain_counter >= 50:
+            # Drain 1% every ~300 steps (6x slower than before)
+            if self.battery_drain_counter >= 300:
                 self.battery_drain_counter = 0
                 if self.battery > 0:
                     self.battery -= 1
@@ -428,6 +591,142 @@ class BurgerNavigator:
         if self.battery > 20:
             self.auto_dock_triggered = False
 
+    # ==================== MEDICATION SCHEDULE METHODS ====================
+    def _reset_current_delivery_status(self):
+        """Resets the delivery status for the current time slot so schedule can retry."""
+        time_slot = None
+        if 7 <= self.sim_hour < 12:
+            time_slot = "morning"
+        elif 12 <= self.sim_hour < 18:
+            time_slot = "afternoon"
+        elif 18 <= self.sim_hour < 22:
+            time_slot = "evening"
+            
+        if time_slot:
+            self.delivery_status[time_slot] = False
+            print(f"Reset delivery status for {time_slot} due to interruption.")
+            
+    def _load_medication_schedule(self):
+        """Loads the medication schedule from a JSON file."""
+        if os.path.exists(self.schedule_file_path):
+            try:
+                with open(self.schedule_file_path, 'r') as f:
+                    self.medication_schedule = json.load(f)
+                print(f"Medication schedule loaded from {self.schedule_file_path}")
+            except Exception as e:
+                print(f"Error loading medication schedule: {e}")
+                self.medication_schedule = {}
+        else:
+            print(f"Medication schedule file not found: {self.schedule_file_path}")
+            self.medication_schedule = {}
+
+    def _check_medication_schedule(self):
+        """Checks the current simulation time against the medication schedule."""
+        # Always reload schedule to pick up live changes
+        self._load_medication_schedule()
+        
+        current_time_str = f"{self.sim_hour:02d}:{self.sim_minute:02d}"
+        
+        # Determine current time slot and exact trigger hour
+        time_slot = None
+        
+        # Morning: 07:00 - 12:00 (Trigger at 07:00)
+        # Note: We check if it is within the window, and if not delivered yet.
+        # This allows us to "catch up" if we start simulation at 8am, OR if we interrupt another task.
+        if 7 <= self.sim_hour < 12:
+            time_slot = "morning"
+        elif 12 <= self.sim_hour < 18:
+            time_slot = "afternoon"
+        elif 18 <= self.sim_hour < 22:
+            time_slot = "evening"
+
+        # If we are in a valid slot and HAVEN'T delivered yet for this slot
+        if time_slot and not self.delivery_status[time_slot]:
+            
+            # Condition 1: Schedule must be ENABLED
+            if not self.schedule_enabled:
+                return
+
+            # Condition 2: Priority Check (Low Priority)
+            # Only start if Robot is Idle, Charging, or Auto-docking.
+            # DO NOT start if in Manual Mode, Emergency Stop, or performing another Task.
+            # EXCEPTION: If is_scheduled_task is TRUE, allow self-interrupt (Evening replaces Afternoon).
+            
+            # Check if current task is interruptible (Idle, Charging, Auto-docking)
+            allowed_prefixes = ["idle", "charging", "auto-docking"]
+            current_task_lower = self.current_task.lower()
+            is_allowed_state = False # FIX: Initialize before loop
+            
+            for prefix in allowed_prefixes:
+                if current_task_lower.startswith(prefix) or current_task_lower == prefix:
+                    is_allowed_state = True
+                    break
+            
+            if is_allowed_state:
+                print(f"[SCHEDULE] Interrupting task '{self.current_task}' for medication delivery.")
+
+            
+            # Also allow if strictly idle
+            if self.current_path == [] and self.task_queue == [] and not self.emergency_stop_active:
+                is_allowed_state = True
+
+            # Allow Self-Interrupt (New Schedule overwrites Old Schedule)
+            if self.is_scheduled_task:
+                 is_allowed_state = True
+
+            if not is_allowed_state:
+                # Robot is busy with something else (e.g. Manual Mode). Skip check for now.
+                # We will check again in the next loop.
+                return
+            
+            if not self.emergency_stop_active:
+                
+                # Find which elders need meds in this slot
+                elders_to_visit = []
+                for elder_id, meds in self.medication_schedule.items():
+                    # Check if elder 1/2/3 has meds for this slot
+                    # meds[time_slot] is list of meds
+                    if time_slot in meds and len(meds[time_slot]) > 0:
+                        # Map elder IDs to targets: Elder 1 -> 3, Elder 2 -> 4, Elder 3 -> 5
+                        try:
+                            elder_num = int(str(elder_id).split('_')[1]) # Extract number from "elder_1"
+                            target_id = 2 + elder_num
+                            elders_to_visit.append(target_id)
+                        except ValueError:
+                            print(f"Warning: Could not parse elder ID from '{elder_id}'")
+                            pass
+                
+                if elders_to_visit:
+                    print(f"[{time_slot.upper()}] Starting Medication Delivery Route: {elders_to_visit}")
+                    
+                    self.is_scheduled_task = True # MARK AS SCHEDULED TASK
+                    
+                    # 1. Reset Path/Queue immediately (Interrupt logic)
+                    self.current_path = []
+                    self.path_index = 0
+                    
+                    # 2. Go to Medicine Cabinet First (Target 6)
+                    self._navigate_to(6, f"Scheduled: Collecting Meds (Cabinet)")
+                    
+                    # 3. Queue up the elders
+                    elders_to_visit.sort() # Ensure consistent delivery order
+                    self.task_queue = list(elders_to_visit) # Copy list to avoid reference issues
+                    
+                    # 4. Mark this slot as handled
+                    self.delivery_status[time_slot] = True
+                    
+                    
+                    # 5. Stop motors immediately (reset state)
+                    self.left_motor.setVelocity(0)
+                    self.right_motor.setVelocity(0)
+                    
+                    elder_names = [f"Elder {vid-2}" for vid in elders_to_visit]
+                    print(f"Started delivery route for {time_slot}: Cabinet -> {', '.join(elder_names)}")
+                else:
+                    # No meds needed for anyone this slot, mark as done so we don't check again
+                    self.delivery_status[time_slot] = True
+                    # print(f"No medications scheduled for {time_slot}. Skipping.")
+            
     # ==================== EXISTING NAVIGATION METHODS ====================
     def get_yaw(self) -> float:
         """Robot yaw in ENU (X-East, Y-North, Z-Up)."""
@@ -509,8 +808,29 @@ class BurgerNavigator:
             return []
         if not (0 <= gi < self.grid_size and 0 <= gj < self.grid_size):
             return []
-        if not self.passable[si, sj] or not self.passable[gi, gj]:
-            return []
+        if not self.passable[gi, gj]:
+             return []
+
+        # Relax Start Node Check: If start is blocked (drift), find nearest valid neighbor
+        if not self.passable[si, sj]:
+            print(f"Warning: Start ({si},{sj}) is blocked. Searching for valid neighbor...")
+            found_start = False
+            # Search radius 3
+            for r in range(1, 4):
+                for di_s in range(-r, r+1):
+                    for dj_s in range(-r, r+1):
+                        nsi, nsj = si + di_s, sj + dj_s
+                        if 0 <= nsi < self.grid_size and 0 <= nsj < self.grid_size and self.passable[nsi, nsj]:
+                            si, sj = nsi, nsj
+                            found_start = True
+                            print(f"Recovered start at ({si}, {sj})")
+                            break
+                    if found_start: break
+                if found_start: break
+            
+            if not found_start:
+                print("Could not find valid start node nearby.")
+                return []
 
         di = (1, 0, -1, 0)
         dj = (0, 1, 0, -1)
@@ -591,14 +911,22 @@ class BurgerNavigator:
         if not self.current_path or self.path_index >= len(self.current_path):
             self.left_motor.setVelocity(0.0)
             self.right_motor.setVelocity(0.0)
+            self.current_path = [] # CRITICAL FIX: Clear path so is_idle becomes True
             
             # Check for queued tasks
             if self.task_queue:
                 next_target = self.task_queue.pop(0)
                 target_names = {3: "Elder 1", 4: "Elder 2", 5: "Elder 3", 6: "Medicine", 7: "Dock"}
-                self._navigate_to(next_target, f"Delivering to {target_names.get(next_target, 'Unknown')}")
+                # Use "Going to Elder X" as requested
+                status_msg = f"Going to {target_names.get(next_target, 'Unknown')}"
+                if next_target == 6:
+                    status_msg = "Scheduled: Collecting Meds (Cabinet)"
+                self._navigate_to(next_target, status_msg)
             else:
                 self.current_task = "Idle"
+                self.mode = "manual" # IMPORTANT: Reset to manual to allow auto-dock triggers
+                self.is_scheduled_task = False # Reset schedule flag when queue finished
+                
                 # Check if we need to auto-dock after task completion
                 if self.battery <= 15 and not self.auto_dock_triggered:
                     self._navigate_to(7, "Auto-docking (Low Battery)")
@@ -720,7 +1048,8 @@ class BurgerNavigator:
             # Check if current task contains "Idle" or is exactly "Idle"
             has_idle_in_task = "Idle" in self.current_task or self.current_task == "Idle"
             
-            if is_not_moving and is_idle and not is_charging and not is_auto_docking:
+            # Only auto-dock if we are NOT in emergency stop
+            if is_not_moving and is_idle and not is_charging and not is_auto_docking and not self.emergency_stop_active:
                 # Update task to show idle status based on mode
                 if self.mode == "manual" and self.current_task == "Manual Drive Mode":
                     self.current_task = "Manual Mode (Idle)"
@@ -760,20 +1089,28 @@ class BurgerNavigator:
             # Get position for visualization
             pos = self.trans_field.getSFVec3f()
             mi, mj = self.world_to_grid(pos[0], pos[1])
-
-            # Matplotlib visualization update commented out
-            # if self.step_counter % 10 == 0:
-            #     display_map = self.static_map.copy()
-            #     
-            #     if 0 <= mi < self.grid_size and 0 <= mj < self.grid_size:
-            #         r = 5
-            #         i_min, i_max = max(0, mi - r), min(self.grid_size, mi + r + 1)
-            #         j_min, j_max = max(0, mj - r), min(self.grid_size, mj + r + 1)
-            #         display_map[i_min:i_max, j_min:j_max] = 8
-            #     
-            #     img.set_data(display_map.T)
-            #     plt.pause(0.001)
                 
+            # ==================== TIME SIMULATION ====================
+            current_real_time = time.time()
+            if current_real_time - self.last_time_update >= 1.0:  # Every 1 real second
+                self.last_time_update = current_real_time
+                self.sim_minute += 10 # 10 minute per second
+                if self.sim_minute >= 60:
+                    self.sim_minute = 0
+                    self.sim_hour += 1
+                if self.sim_hour >= 24:
+                    self.sim_hour = 0
+                    # Reset daily delivery status at midnight
+                    self.delivery_status = {"morning": False, "afternoon": False, "evening": False}
+                    print("NEW DAY: Delivery status reset")
+                
+                # Print time occasionally
+                if self.sim_minute == 0:
+                    print(f"🕒 SIMULATION TIME: {self.sim_hour:02d}:00")
+                
+                # Check Schedule
+                self._check_medication_schedule()
+
             # Publish status every 20 steps
             if self.step_counter % 10 == 0:
                 self._publish_status()
