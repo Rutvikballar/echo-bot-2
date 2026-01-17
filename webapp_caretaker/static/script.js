@@ -68,6 +68,11 @@ function initSocket() {
     socket.on('nurse_reply', (data) => {
         addChatMessage('nurse-chat', 'Nurse', data.message, 'nurse');
     });
+
+    socket.on('emergency_alert', function(data) {
+        showEmergencyAlert(data);
+    });
+
 }
 
 function updateConnectionStatus(connected) {
@@ -831,3 +836,164 @@ document.addEventListener('click', (e) => {
         e.target.classList.remove('active');
     }
 });
+
+
+// ============================================
+// EMERGENCY TEMPERATURE ALERT POPUP
+// Author: Shubham Ilhe
+// ============================================
+
+
+function showEmergencyAlert(data) {
+    // Create alert box dynamically
+    const alertBox = document.createElement('div');
+    alertBox.className = 'emergency-alert-popup';
+    alertBox.innerHTML = `
+        <div class="emergency-alert-content">
+            <div class="alert-icon">🚨</div>
+            <div class="alert-title">CRITICAL ALERT</div>
+            <div class="alert-message">
+                Elder ${data.elder_id} - ${data.vitals.emergency_reason}
+            </div>
+            <div class="alert-details">
+                Temperature: <strong>${data.vitals.temperature_c}°C</strong>
+            </div>
+            <div class="alert-timestamp">${data.vitals.timestamp}</div>
+        </div>
+    `;
+    
+    document.body.appendChild(alertBox);
+    
+    // Auto-remove after 3 seconds
+    setTimeout(() => {
+        alertBox.classList.add('fade-out');
+        setTimeout(() => alertBox.remove(), 500);
+    }, 3000);
+}
+
+// --- NEW LOGS MODAL LOGIC (clean, DB-only) ---
+
+let currentLogsData = null;
+
+async function openLogsModal() {
+  const modal = document.getElementById('logs-modal');
+  if (!modal) return;
+
+  modal.classList.add('active');
+  backToLogSelection();
+
+  await fetchLogsData(); // important
+}
+
+
+function backToLogSelection() {
+  const sel = document.getElementById('logs-selection-view');
+  const detail = document.getElementById('logs-detail-view');
+  if (sel) sel.style.display = 'flex';
+  if (detail) detail.style.display = 'none';
+}
+
+async function fetchLogsData() {
+  try {
+    const response = await fetch('/api/logs');
+    if (!response.ok) throw new Error('Failed to fetch /api/logs');
+    currentLogsData = await response.json();
+  } catch (error) {
+    console.error('Error fetching logs:', error);
+    currentLogsData = null;
+  }
+}
+
+function showElderLogs(elderId) {
+  const sel = document.getElementById('logs-selection-view');
+  const detail = document.getElementById('logs-detail-view');
+  if (sel) sel.style.display = 'none';
+  if (detail) detail.style.display = 'block';
+
+  const detailsContainer = document.getElementById('elder-static-details');
+  const medsBody = document.getElementById('elder-med-logs-body');
+  const vitalsBody = document.getElementById('elder-vital-logs-body');
+
+  if (!currentLogsData) {
+    if (detailsContainer) detailsContainer.innerHTML = `<div>Loading logs...</div>`;
+    if (medsBody) medsBody.innerHTML = `<tr><td colspan="3" style="padding:0.75rem;">Loading...</td></tr>`;
+    if (vitalsBody) vitalsBody.innerHTML = `<tr><td colspan="3" style="padding:0.75rem;">Loading...</td></tr>`;
+    return;
+  }
+
+  // Accept both backend shapes:
+  // old: medlogs/vitallogs + elderid
+  // new: med_logs/vital_logs + elder_id
+  const elders = currentLogsData.elders || [];
+  const medlogsAll = currentLogsData.medlogs || currentLogsData.med_logs || [];
+  const vitallogsAll = currentLogsData.vitallogs || currentLogsData.vital_logs || [];
+
+  const elderInfo = elders.find(e => String(e.id) === String(elderId));
+
+  const medLogs = medlogsAll.filter(m =>
+    String(m.elderid ?? m.elder_id) === String(elderId)
+  );
+
+  const vitalLogs = vitallogsAll.filter(v =>
+    String(v.elderid ?? v.elder_id) === String(elderId)
+  );
+
+  // Static details
+  if (detailsContainer) {
+    if (elderInfo) {
+      detailsContainer.innerHTML = `
+        <div><strong>Name:</strong> ${elderInfo.name ?? ''}</div>
+        <div><strong>Age:</strong> ${elderInfo.age ?? ''}</div>
+        <div><strong>Condition:</strong> ${elderInfo.history ?? elderInfo.medicalhistory ?? ''}</div>
+      `;
+    } else {
+      detailsContainer.innerHTML = `<div>No static data found for Elder ${elderId}</div>`;
+    }
+  }
+
+  // Med table
+  if (medsBody) {
+    const rows = medLogs.slice(0, 10);
+    medsBody.innerHTML = rows.length
+      ? rows.map(log => `
+          <tr>
+            <td style="padding:0.75rem; border-bottom:1px solid #374151;">${log.time ?? log.timestamp ?? ''}</td>
+            <td style="padding:0.75rem; border-bottom:1px solid #374151;">${log.type ?? log.deliverytype ?? ''}</td>
+            <td style="padding:0.75rem; border-bottom:1px solid #374151;">${log.medicine ?? log.medicinename ?? log.medicine_name ?? ''}</td>
+          </tr>
+        `).join('')
+      : `<tr><td colspan="3" style="padding:0.75rem;">No records found.</td></tr>`;
+  }
+
+  // Vital table
+// Vitals table (DB-only)
+    if (vitalsBody) {
+    const rows = vitalLogs.slice(0, 10);
+    vitalsBody.innerHTML = rows.length
+        ? rows.map(log => {
+            const temp = (log.temp ?? log.temperature ?? '');
+            const bp = (log.bp ?? log.bloodpressure ?? ''); // NEW LINE
+            const emergencyFlag = (log.emergency ?? log.isemergency ?? log.is_alert);
+            const isAlert = (emergencyFlag === 'YES' || emergencyFlag === true);
+
+            return `
+            <tr>
+                <td style="padding:0.75rem; border-bottom:1px solid #374151;">${log.time ?? log.timestamp ?? ''}</td>
+                <td style="padding:0.75rem; border-bottom:1px solid #374151;">${temp}${temp !== '' ? '°C' : ''}</td>
+                <td style="padding:0.75rem; border-bottom:1px solid #374151;">${bp}</td>
+                <td style="padding:0.75rem; border-bottom:1px solid #374151;">
+                ${isAlert
+                    ? '<span style="color:#ef4444">⚠️ Alert</span>'
+                    : '<span style="color:#10b981">Normal</span>'}
+                </td>
+            </tr>
+            `;
+        }).join('')
+        : '<tr><td colspan="4" style="padding:0.75rem;">No records found.</td></tr>'; // 4 columns now
+}
+
+}
+
+
+
+

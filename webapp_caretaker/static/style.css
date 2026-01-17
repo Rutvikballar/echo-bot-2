@@ -1067,3 +1067,98 @@ body {
     transform: scale(1.05);
     box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
+
+
+/* ============================================
+   EMERGENCY TEMPERATURE ALERT POPUP
+   Author: Shubham Ilhe
+   ============================================ */
+
+.emergency-alert-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    animation: alertSlideIn 0.3s ease-out;
+}
+
+.emergency-alert-content {
+    background: linear-gradient(135deg, #ff4444, #ff6b35);
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    padding: 30px 50px;
+    box-shadow: 0 10px 40px rgba(255, 0, 0, 0.5);
+    text-align: center;
+    min-width: 400px;
+}
+
+.alert-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: alertPulse 0.5s infinite alternate;
+}
+
+.alert-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.alert-message {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.alert-details {
+    font-size: 24px;
+    color: #ffff00;
+    margin-bottom: 10px;
+}
+
+.alert-details strong {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.alert-timestamp {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 15px;
+}
+
+@keyframes alertSlideIn {
+    from {
+        transform: translate(-50%, -70%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+@keyframes alertPulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.emergency-alert-popup.fade-out {
+    animation: alertFadeOut 0.5s ease-in;
+}
+
+@keyframes alertFadeOut {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+    }
+}

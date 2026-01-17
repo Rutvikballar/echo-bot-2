@@ -1,6 +1,7 @@
-flask
-flask-cors
-flask-socketio
-eventlet
+Flask
+Flask-SQLAlchemy
+Flask-SocketIO
+Flask-Cors
 paho-mqtt
-gunicorn
+eventlet
+Werkzeug
