@@ -72,6 +72,8 @@ Server runs at: `http://localhost:5050`
 | Admin | http://localhost:5050/admin | admin / admin123 |
 | Nurse | http://localhost:5050/nurse | nurse / nurse123 |
 | Elder 1 | http://localhost:5050/elder/1 | elder_1 / 1234 |
+| Elder 2 | http://localhost:5050/elder/1 | elder_2 / 1234 |
+| Elder 3 | http://localhost:5050/elder/1 | elder_3 / 1234 |
 
 ## Project Structure
 
