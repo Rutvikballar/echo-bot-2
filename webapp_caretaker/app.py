@@ -254,7 +254,8 @@ def setup_mqtt():
         mqtt_client.on_disconnect = on_mqtt_disconnect
         
         print("Connecting to MQTT broker at 127.0.0.1:1883...")
-        mqtt_client.connect("127.0.0.1", 1883, 60)
+        # mqtt_client.connect("127.0.0.1", 1883, 60)
+        mqtt_client.connect("10.88.101.244", 1883, 60)
         mqtt_client.loop_start()
         print("MQTT client loop started")
         return True
