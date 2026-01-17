@@ -22,6 +22,9 @@
             <a href="/elder/1" class="nav-link">👴 Elder 1</a>
             <a href="/elder/2" class="nav-link">👴 Elder 2</a>
             <a href="/elder/3" class="nav-link">👴 Elder 3</a>
+            <!-- Add this line to the nav-links in all 3 html files -->
+            <a href="/logout" class="nav-link" style="color: var(--danger);">Logout</a>
+
         </div>
     </nav>
 
@@ -112,7 +115,7 @@
                     </div>
                     <div class="control-row">
                         <button class="control-btn" id="btn-left">◄</button>
-                        <button class="control-btn stop-btn" id="btn-stop">STOP</button>
+                        <div style="width: 3rem;"></div> <!-- Spacer -->
                         <button class="control-btn" id="btn-right">►</button>
                     </div>
                     <div class="control-row">
@@ -142,6 +145,8 @@
             <div class="control-card">
                 <h3>🚀 Quick Actions</h3>
                 <div class="quick-actions">
+                    <button class="action-btn stop-btn" id="btn-admin-stop"
+                        style="background: linear-gradient(135deg, #ef4444, #b91c1c);">🛑 Emergency Stop</button>
                     <button class="action-btn dock-btn" id="btn-dock">🔌 Force Dock</button>
                 </div>
             </div>
