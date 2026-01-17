@@ -9,7 +9,13 @@ from flask_socketio import SocketIO, emit
 import paho.mqtt.client as mqtt
 import json
 import threading
+import os
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 
+import json
+import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.urandom(24)
 
@@ -136,7 +142,8 @@ robot_state = {
     'temperature': 42,
     'speed': 15,
     'task': 'Idle',
-    'position': {'x': 0, 'y': 0}
+    'position': {'x': 0, 'y': 0},
+    'schedule_enabled': True
 }
 
 # MQTT Client
@@ -149,7 +156,11 @@ def on_mqtt_connect(client, userdata, flags, rc):
         client.subscribe("robot/status")
         client.subscribe("robot/camera")
         client.subscribe("robot/map")
-        print("[OK] Subscribed to: robot/status, robot/camera, robot/map")
+        client.subscribe("robot/schedule_status")
+        client.subscribe("robot/emergency_alert")
+        client.subscribe("robot/log/vitals")
+        client.subscribe("robot/log/medication")
+        print("[OK] Subscribed to: robot/status, robot/camera, robot/map, robot/schedule_status, robot/emergency_alert")
     else:
         print(f"[ERROR] MQTT connection failed with code: {rc}")
 
@@ -171,6 +182,58 @@ def on_mqtt_message(client, userdata, message):
         elif topic == 'robot/map':
             socketio.emit('map_update', {'data': payload})
             print("[MAP] Update sent to clients")
+
+        elif topic == 'robot/schedule_status':
+            schedule_data = json.loads(payload)
+            # Update global state
+            robot_state['schedule_enabled'] = schedule_data.get('enabled', True)
+            socketio.emit('schedule_status', schedule_data)
+            print(f"[SCHEDULE] Update sent: {schedule_data}")
+        
+        elif topic == "robot/emergency_alert":
+            alert_data = json.loads(payload)
+            socketio.emit('emergency_alert', alert_data)
+            print(f"EMERGENCY ALERT: Forwarded to UI - Elder {alert_data.get('elder_id')}")
+
+        # DB Logging
+        elif topic == "robot/log/medication":
+            try:
+                data = json.loads(payload)
+                with app.app_context():
+                    log = MedicationLog(
+                        elder_id=data['elder_id'],
+                        medicine_name=data['medicine_name'],
+                        delivery_type=data['delivery_type'],
+                        timestamp=datetime.strptime(data['timestamp'], "%Y-%m-%d %H:%M:%S")
+                    )
+                    db.session.add(log)
+                    db.session.commit()
+                print(f"DB: Saved Medication Log for Elder {data['elder_id']}")
+            except Exception as e:
+                print(f"DB ERROR (Medication): {e}")
+
+        elif topic == "robot/log/vitals":
+            try:
+                data = json.loads(payload)
+                with app.app_context():
+                    log = VitalLog(
+                        elder_id=data['elder_id'],
+                        temperature=data['temperature_c'],
+                        blood_pressure=data['blood_pressure'],
+                        heart_rate=data['heart_rate_bpm'],
+                        oxygen_sat=data['oxygen_saturation_pct'],
+                        is_emergency=data['is_emergency'],
+                        emergency_reason=data.get('emergency_reason'),
+                        timestamp=datetime.strptime(data['timestamp'], "%Y-%m-%d %H:%M:%S")
+                    )
+                    db.session.add(log)
+                    db.session.commit()
+                print(f"DB: Saved Vital Log for Elder {data['elder_id']}")
+            except Exception as e:
+                print(f"DB ERROR (Vitals): {e}")
+
+
+
             
     except Exception as e:
         print(f"[ERROR] Processing MQTT message on {topic}: {e}")
@@ -272,6 +335,29 @@ def elder(elder_id):
         return redirect(url_for('login', next=f'/elder/{elder_id}'))
         
     return render_template('elder.html', elder_id=elder_id)
+
+# Medication Schedule API
+SCHEDULE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'medication_schedule.json')
+@app.route('/api/medication_schedule', methods=['GET'])
+def get_medication_schedule():
+    if os.path.exists(SCHEDULE_FILE):
+        with open(SCHEDULE_FILE, 'r') as f:
+            return jsonify(json.load(f))
+    else:
+        # Default empty structure if file missing
+        return jsonify({
+            "elder_1": {"morning": [], "afternoon": [], "evening": []},
+            "elder_2": {"morning": [], "afternoon": [], "evening": []},
+            "elder_3": {"morning": [], "afternoon": [], "evening": []}
+        })
+@app.route('/api/medication_schedule', methods=['POST'])
+def save_medication_schedule():
+    data = request.json
+    with open(SCHEDULE_FILE, 'w') as f:
+        json.dump(data, f, indent=2)
+    return jsonify({"status": "success"})
+
+
 
 
 # ==================== REST API ====================
