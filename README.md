@@ -33,13 +33,13 @@ The system uses a **decoupled architecture**:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://git.oth-aw.de/c311/echo-bot-2.git
+git clone https://github.com/Rutvikballar/echo-bot-2.git
 cd echo-bot-2
 ```
 
 ### 2. Install Python Dependencies
 ```bash
-cd webapp_caretaker
+# Install all required dependencies from root:
 pip install -r requirements.txt
 ```
 
@@ -51,6 +51,14 @@ net start mosquitto
 # Linux/Mac
 mosquitto -v
 ```
+
+## Documentation
+
+Comprehensive project documentation and technical reports are available in the [`docs/`](docs/) directory:
+
+- 📄 **Project Report (PDF)**: [Echo_bot-2_Balar_Rutvikkumar_MDIA.pdf](docs/Echo_bot-2_Balar_Rutvikkumar_MDIA.pdf) — Methods of Digital Automation (MDIA) Master's Project Report by Rutvikkumar Babubhai Balar.
+- 📝 **Individual Contribution Report (Markdown)**: [Rutvikkumar_Balar_Project_Report.md](docs/Rutvikkumar_Balar_Project_Report.md) — Detailed technical implementation report detailing the protocol bridge, real-time video/map streaming, and robot controllers.
+- 🏛️ **System Architecture Diagram**: [system architecture3.png](docs/system%20architecture3.png)
 
 ## Running the System
 
@@ -78,23 +86,29 @@ Server runs at: `http://localhost:5050`
 ## Project Structure
 
 ```
-care-robot-master/
+echo-bot-2/
+├── docs/
+│   ├── Echo_bot-2_Balar_Rutvikkumar_MDIA.pdf # Master's Project Report
+│   ├── Rutvikkumar_Balar_Project_Report.md  # Detailed Documentation
+│   └── system architecture3.png             # Architecture Diagram
+├── requirements.txt                         # Global Python dependencies
 ├── webapp_caretaker/
-│   ├── app.py                 # Flask backend server
-│   ├── requirements.txt       # Python dependencies
+│   ├── app.py                               # Flask backend server
+│   ├── requirements.txt                     # Webapp dependencies
 │   ├── templates/
-│   │   ├── admin.html         # Admin dashboard
-│   │   ├── nurse.html         # Nurse dashboard
-│   │   └── elder.html         # Elder panel
+│   │   ├── admin.html                       # Admin dashboard
+│   │   ├── nurse.html                       # Nurse dashboard
+│   │   └── elder.html                       # Elder panel
 │   └── static/
-│       ├── style.css          # Styling
-│       └── script.js          # Frontend logic
+│       ├── style.css                        # Styling
+│       └── script.js                        # Frontend logic
 ├── webots/
 │   ├── worlds/
-│   │   └── Alia_Delivery.wbt  # Simulation world
+│   │   └── Alia_Delivery.wbt                # Simulation world
 │   └── controllers/
 │       └── caretaker/
-│           └── caretaker.py   # Robot controller
+│           ├── caretaker.py                 # Robot controller
+│           └── requirements.txt             # Controller dependencies
 └── README.md
 ```
 

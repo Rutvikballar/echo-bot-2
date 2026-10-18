@@ -1,0 +1,14 @@
+# Web Application (Flask, Sockets, MQTT)
+Flask
+Flask-SQLAlchemy
+Flask-SocketIO
+Flask-Cors
+flask-mqtt
+paho-mqtt
+eventlet
+Werkzeug
+
+# Robot Controller & Simulation (Webots)
+numpy
+matplotlib
+pillow
